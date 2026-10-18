@@ -1,0 +1,252 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "common_requirements.schema.json",
+  "$defs": {
+    "CommonRequirement": {
+      "additionalProperties": false,
+      "properties": {
+        "cr_id": {
+          "minLength": 1,
+          "pattern": "^CR\\.[A-Z]+\\.\\d{3}(\\.\\d+)*$",
+          "title": "Cr Id",
+          "type": "string"
+        },
+        "title": {
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        },
+        "statement": {
+          "minLength": 1,
+          "title": "Statement",
+          "type": "string"
+        },
+        "parent_cr": {
+          "default": "",
+          "title": "Parent Cr",
+          "type": "string"
+        },
+        "decomposition": {
+          "anyOf": [
+            {
+              "description": "Key of register list DECOMP",
+              "enum": [
+                "AND",
+                "OR"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Decomposition"
+        },
+        "refines": {
+          "default": [],
+          "description": "CRs this CR refines without being their child (D0026, D0033)",
+          "items": {
+            "$ref": "#/$defs/Refinement"
+          },
+          "title": "Refines",
+          "type": "array"
+        },
+        "cr_type": {
+          "description": "Key of register list CRTYPE",
+          "enum": [
+            "DESIGN",
+            "TEST",
+            "DOC",
+            "PROCESS",
+            "ORG",
+            "IFU"
+          ],
+          "title": "Cr Type",
+          "type": "string"
+        },
+        "object_level": {
+          "description": "Key of register list OBJLEVEL",
+          "enum": [
+            "ORG",
+            "PRD",
+            "SF",
+            "AIF",
+            "TE",
+            "DEV"
+          ],
+          "title": "Object Level",
+          "type": "string"
+        },
+        "verification_method": {
+          "anyOf": [
+            {
+              "description": "Key of register list VMETHOD",
+              "enum": [
+                "DOCREV",
+                "ANALYSIS",
+                "WITNESS",
+                "TESTREC",
+                "INSPECT",
+                "INTERVIEW",
+                "AUDIT"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Verification Method"
+        },
+        "acceptance_criterion": {
+          "default": "",
+          "title": "Acceptance Criterion",
+          "type": "string"
+        },
+        "criterion_source": {
+          "default": "",
+          "title": "Criterion Source",
+          "type": "string"
+        },
+        "assessor_guidance": {
+          "default": "",
+          "title": "Assessor Guidance",
+          "type": "string"
+        },
+        "expected_evidence": {
+          "default": "",
+          "title": "Expected Evidence",
+          "type": "string"
+        },
+        "lifecycle_phase": {
+          "anyOf": [
+            {
+              "description": "Key of register list PHASE",
+              "enum": [
+                "CONCEPT",
+                "REQ",
+                "DATA",
+                "DEV",
+                "VV",
+                "DEPLOY",
+                "POST"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Lifecycle Phase"
+        },
+        "applicability_rule": {
+          "default": "TRUE",
+          "title": "Applicability Rule",
+          "type": "string"
+        },
+        "tension_flag": {
+          "default": false,
+          "title": "Tension Flag",
+          "type": "boolean"
+        },
+        "status": {
+          "description": "Key of register list CRSTATUS",
+          "enum": [
+            "DRAFT",
+            "RELEASED",
+            "DEPRECATED"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "author": {
+          "default": "",
+          "title": "Author",
+          "type": "string"
+        },
+        "notes": {
+          "default": "",
+          "title": "Notes",
+          "type": "string"
+        }
+      },
+      "required": [
+        "cr_id",
+        "title",
+        "statement",
+        "cr_type",
+        "object_level",
+        "status"
+      ],
+      "title": "CommonRequirement",
+      "type": "object"
+    },
+    "Refinement": {
+      "additionalProperties": false,
+      "description": "Non-hierarchical refinement of another CR (D0026). FULL: the FULL refinements of `cr` with the same `set`\ntogether satisfy it completely; a project that selects a complete set substitutes `cr` (no own CIs, status from\nthe refining CRs, D0033, D0045). Several sets (e.g. one per standard) may refine the same CR. PARTLY: information\nonly; `cr` is still assessed.",
+      "properties": {
+        "cr": {
+          "minLength": 1,
+          "title": "Cr",
+          "type": "string"
+        },
+        "coverage": {
+          "default": "PARTLY",
+          "description": "Key of register list REFCOV",
+          "enum": [
+            "FULL",
+            "PARTLY"
+          ],
+          "title": "Coverage",
+          "type": "string"
+        },
+        "set": {
+          "default": "",
+          "description": "Full-refinement set, usually the source it comes from (FULL only)",
+          "title": "Set",
+          "type": "string"
+        },
+        "note": {
+          "default": "",
+          "title": "Note",
+          "type": "string"
+        }
+      },
+      "required": [
+        "cr"
+      ],
+      "title": "Refinement",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "$Schema"
+    },
+    "requirements": {
+      "items": {
+        "$ref": "#/$defs/CommonRequirement"
+      },
+      "title": "Requirements",
+      "type": "array"
+    }
+  },
+  "required": [
+    "requirements"
+  ],
+  "title": "CommonRequirementsFile",
+  "type": "object"
+}

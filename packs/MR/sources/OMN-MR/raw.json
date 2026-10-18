@@ -1,0 +1,43 @@
+{
+  "$schema": "../../../../schemas/amendments.schema.json",
+  "doc_id": "OMN-MR",
+  "title": "Reg. (EU) 2026/1744, Article 3 – amendments to Regulation (EU) 2023/1230 (machinery)",
+  "amends": "MR",
+  "amendments": [
+    {
+      "op": "insert",
+      "amending_ref": "Art 3(1) Reg. (EU) 2026/1744",
+      "insert_after": "8-2",
+      "provisions": [
+        {
+          "ref": "8-3",
+          "parent": "8",
+          "kind": "paragraph",
+          "text": "The Commission shall adopt delegated acts in accordance with Article 47 of this Regulation to amend Annex III to this Regulation by adding health and safety requirements in respect of Artificial Intelligence (AI) systems that are classified as high-risk pursuant to Article 6(1) of Regulation (EU) 2024/1689 of the European Parliament and of the Council due to the fact that they are a safety component in a product covered by this Regulation, or they are themselves a product covered by this Regulation. Those requirements shall ensure that the relevant requirements set out in Chapter III, Section 2, and Articles 17, 19, 72 and 73 of Regulation (EU) 2024/1689 are reflected.",
+          "note": "Footnote reference (*) to Reg. (EU) 2024/1689 omitted"
+        },
+        {
+          "ref": "8-4",
+          "parent": "8",
+          "kind": "paragraph",
+          "text": "When adopting the delegated acts referred to in the third paragraph, the Commission shall take into account the objectives of Regulation (EU) 2024/1689 and ensure a level of protection consistent with that Regulation. Those delegated acts shall apply by 2 August 2028."
+        }
+      ],
+      "note": "Delegated acts adding AI health and safety requirements to Annex III (basis of the MR-AIDA proxy, D0003)"
+    },
+    {
+      "op": "insert",
+      "amending_ref": "Art 3(2) Reg. (EU) 2026/1744",
+      "insert_after": "20(9)",
+      "provisions": [
+        {
+          "ref": "20(10)",
+          "parent": "20",
+          "kind": "paragraph",
+          "text": "Until harmonised standards or common specifications are referenced or adopted pursuant to this Article as regards high-risk AI systems, high-risk AI systems within the scope of this Regulation which comply with the relevant harmonised standards referenced, or common specifications adopted pursuant to Articles 40 and, respectively, 41 of Regulation (EU) 2024/1689 shall be presumed to be in conformity with the essential health and safety requirements set out in Annex III to this Regulation as regards high-risk AI systems."
+        }
+      ],
+      "note": "Legal bridge: AIA harmonised standards / common specifications give presumption for MR Annex III as regards high-risk AI systems until MR-specific ones exist"
+    }
+  ]
+}

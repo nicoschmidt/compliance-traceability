@@ -1,0 +1,8 @@
+{
+  "$schema": "../../../../../schemas/pack.schema.json",
+  "pack_id": "MR-AIDA",
+  "title": "MR Annex III amendment by delegated act under MR Art 8 3rd para (anticipated)",
+  "sources": [
+    "MR-AIDA"
+  ]
+}

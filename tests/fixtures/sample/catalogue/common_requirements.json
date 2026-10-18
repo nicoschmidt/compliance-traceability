@@ -1,0 +1,201 @@
+{
+  "$schema": "../../../../schemas/common_requirements.schema.json",
+  "requirements": [
+    {
+      "cr_id": "CR.PERF.004",
+      "title": "Detection performance specified, verified and declared",
+      "statement": "Detection performance of the AI function is specified, verified against prior-defined statistical thresholds, and declared.",
+      "decomposition": "AND",
+      "cr_type": "TEST",
+      "object_level": "AIF",
+      "verification_method": "TESTREC",
+      "lifecycle_phase": "VV",
+      "tension_flag": true,
+      "status": "RELEASED",
+      "author": "Sample author"
+    },
+    {
+      "cr_id": "CR.PERF.004.1",
+      "title": "Performance metrics selected and justified",
+      "statement": "Performance metrics are selected and their appropriateness for the safety function is justified.",
+      "parent_cr": "CR.PERF.004",
+      "cr_type": "DOC",
+      "object_level": "AIF",
+      "verification_method": "DOCREV",
+      "acceptance_criterion": "Metric set documented with justification per safety-relevant output.",
+      "assessor_guidance": "Example: recall per distance band and person pose; false-negative rate as primary safety metric.",
+      "expected_evidence": "V&V plan",
+      "status": "RELEASED",
+      "author": "Sample author"
+    },
+    {
+      "cr_id": "CR.PERF.004.2",
+      "title": "Acceptance thresholds defined before testing",
+      "statement": "Acceptance thresholds are defined before testing and derived from the required risk reduction.",
+      "parent_cr": "CR.PERF.004",
+      "refines": [
+        {
+          "cr": "CR.LOG.001",
+          "coverage": "FULL"
+        }
+      ],
+      "cr_type": "DOC",
+      "object_level": "AIF",
+      "verification_method": "DOCREV",
+      "acceptance_criterion": "Thresholds dated before test execution; derivation from PL/SIL/AI-SC shown.",
+      "expected_evidence": "V&V plan",
+      "status": "RELEASED",
+      "author": "Sample author"
+    },
+    {
+      "cr_id": "CR.PERF.004.3",
+      "title": "Results meet thresholds with stated confidence",
+      "statement": "Test results per HARA scenario meet the thresholds with stated statistical confidence.",
+      "parent_cr": "CR.PERF.004",
+      "refines": [
+        {
+          "cr": "CR.LOG.001",
+          "coverage": "FULL"
+        }
+      ],
+      "cr_type": "TEST",
+      "object_level": "AIF",
+      "verification_method": "TESTREC",
+      "acceptance_criterion": "All scenarios meet thresholds at the stated confidence level.",
+      "expected_evidence": "V&V / test report",
+      "status": "RELEASED",
+      "author": "Sample author"
+    },
+    {
+      "cr_id": "CR.PERF.004.4",
+      "title": "Accuracy declared in IFU",
+      "statement": "Achieved accuracy levels and metrics are declared in the instructions for use.",
+      "parent_cr": "CR.PERF.004",
+      "cr_type": "IFU",
+      "object_level": "PRD",
+      "verification_method": "DOCREV",
+      "acceptance_criterion": "IFU section states metrics, levels and influencing conditions.",
+      "expected_evidence": "Instructions for use",
+      "status": "RELEASED",
+      "author": "Sample author"
+    },
+    {
+      "cr_id": "CR.ROB.001",
+      "title": "Single fault does not lead to hazardous situation",
+      "statement": "A single fault in hardware or logic of the safety function does not lead to a hazardous situation.",
+      "decomposition": "OR",
+      "cr_type": "DESIGN",
+      "object_level": "SF",
+      "verification_method": "DOCREV",
+      "applicability_rule": "sys.control_system = yes OR sys.protective_device = yes",
+      "status": "RELEASED",
+      "author": "Sample author"
+    },
+    {
+      "cr_id": "CR.ROB.001.1",
+      "title": "Redundant channel",
+      "statement": "Fault tolerance is achieved by a redundant (diverse) channel.",
+      "parent_cr": "CR.ROB.001",
+      "cr_type": "DESIGN",
+      "object_level": "SF",
+      "verification_method": "DOCREV",
+      "acceptance_criterion": "Second channel present; common-cause failures analysed.",
+      "status": "RELEASED",
+      "author": "Sample author"
+    },
+    {
+      "cr_id": "CR.ROB.001.2",
+      "title": "Diagnostics with fail-safe reaction",
+      "statement": "Faults are detected by diagnostics and lead to a safe state within the process safety time.",
+      "parent_cr": "CR.ROB.001",
+      "cr_type": "DESIGN",
+      "object_level": "SF",
+      "verification_method": "DOCREV",
+      "acceptance_criterion": "Diagnostic coverage and reaction time demonstrated by fault injection.",
+      "status": "RELEASED",
+      "author": "Sample author"
+    },
+    {
+      "cr_id": "CR.FS.001",
+      "title": "No unexpected start",
+      "statement": "No unexpected start on control-system fault or on interruption/restoration of power or network connection.",
+      "cr_type": "TEST",
+      "object_level": "SF",
+      "verification_method": "TESTREC",
+      "acceptance_criterion": "No start in fault-injection and power-cycle tests.",
+      "applicability_rule": "sys.control_system = yes",
+      "status": "RELEASED",
+      "author": "Sample author"
+    },
+    {
+      "cr_id": "CR.LOG.001",
+      "title": "Event logging over lifetime",
+      "statement": "Safety-relevant events, interventions and software versions are logged automatically over the lifetime.",
+      "cr_type": "DESIGN",
+      "object_level": "AIF",
+      "verification_method": "DOCREV",
+      "acceptance_criterion": "Log specification covers events, interventions, versions; retention defined.",
+      "status": "RELEASED",
+      "author": "Sample author"
+    },
+    {
+      "cr_id": "CR.PHYS.001",
+      "title": "Noise emission minimised",
+      "statement": "Risks from airborne noise are reduced to the lowest level, in particular at source.",
+      "cr_type": "DESIGN",
+      "object_level": "PRD",
+      "verification_method": "DOCREV",
+      "acceptance_criterion": "Noise reduction at source documented.",
+      "status": "RELEASED",
+      "author": "Sample author"
+    },
+    {
+      "cr_id": "CR.PMM.001",
+      "title": "Post-market monitoring system",
+      "statement": "A documented, proportionate post-market monitoring system collects and analyses performance data.",
+      "cr_type": "PROCESS",
+      "object_level": "ORG",
+      "verification_method": "DOCREV",
+      "acceptance_criterion": "PMM procedure and plan exist and cover AI performance data.",
+      "lifecycle_phase": "POST",
+      "status": "RELEASED",
+      "author": "Sample author"
+    },
+    {
+      "cr_id": "CR.HO.001",
+      "title": "Supervisor information complete",
+      "statement": "The supervisory function gives a complete and accurate view of operation and safe positioning.",
+      "refines": [
+        {
+          "cr": "CR.PHYS.001",
+          "coverage": "FULL",
+          "note": "refiner N/A by rule -> no substitution"
+        }
+      ],
+      "cr_type": "DESIGN",
+      "object_level": "PRD",
+      "verification_method": "DOCREV",
+      "acceptance_criterion": "Supervisor HMI shows operation, movement and position.",
+      "applicability_rule": "sys.supervisory_function = yes",
+      "status": "RELEASED",
+      "author": "Sample author"
+    },
+    {
+      "cr_id": "CR.PERF.901",
+      "title": "Demo: output confidence reported",
+      "statement": "The AI function reports a confidence value with each output.",
+      "refines": [
+        {
+          "cr": "CR.PERF.004.3"
+        }
+      ],
+      "cr_type": "DESIGN",
+      "object_level": "AIF",
+      "verification_method": "TESTREC",
+      "acceptance_criterion": "Confidence value present and calibrated.",
+      "status": "DRAFT",
+      "author": "Test",
+      "notes": "Reached only by the private pack DEMO."
+    }
+  ]
+}

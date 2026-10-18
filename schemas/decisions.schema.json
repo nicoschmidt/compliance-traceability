@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "decisions.schema.json",
+  "$defs": {
+    "Decision": {
+      "additionalProperties": false,
+      "properties": {
+        "dec_id": {
+          "minLength": 1,
+          "pattern": "^D\\d{4}$",
+          "title": "Dec Id",
+          "type": "string"
+        },
+        "date": {
+          "format": "date",
+          "title": "Date",
+          "type": "string"
+        },
+        "author": {
+          "minLength": 1,
+          "title": "Author",
+          "type": "string"
+        },
+        "type": {
+          "description": "Key of register list DECTYPE",
+          "enum": [
+            "MERGE",
+            "SPLIT",
+            "DERIVED",
+            "LINK",
+            "REFINE",
+            "CATNA",
+            "CONFLICT",
+            "CRITERION",
+            "SCOPE",
+            "OTHER"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "affected_ids": {
+          "minLength": 1,
+          "title": "Affected Ids",
+          "type": "string"
+        },
+        "rationale": {
+          "minLength": 1,
+          "title": "Rationale",
+          "type": "string"
+        },
+        "source_refs": {
+          "default": "",
+          "title": "Source Refs",
+          "type": "string"
+        }
+      },
+      "required": [
+        "dec_id",
+        "date",
+        "author",
+        "type",
+        "affected_ids",
+        "rationale"
+      ],
+      "title": "Decision",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "$Schema"
+    },
+    "decisions": {
+      "items": {
+        "$ref": "#/$defs/Decision"
+      },
+      "title": "Decisions",
+      "type": "array"
+    }
+  },
+  "required": [
+    "decisions"
+  ],
+  "title": "DecisionsFile",
+  "type": "object"
+}

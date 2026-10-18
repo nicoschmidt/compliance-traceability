@@ -1,0 +1,271 @@
+{
+  "$schema": "../schemas/decisions.schema.json",
+  "decisions": [
+    {
+      "dec_id": "D0001",
+      "date": "2026-10-09",
+      "author": "Catalogue author",
+      "type": "SCOPE",
+      "affected_ids": "MR Annex III",
+      "rationale": "All provisions listed (rule A10); only AI-relevant provisions atomised. Physical / general machinery requirements are out of catalogue scope for the AI-component catalogue (D1)."
+    },
+    {
+      "dec_id": "D0002",
+      "date": "2026-10-09",
+      "author": "Catalogue author",
+      "type": "SCOPE",
+      "affected_ids": "MR Annex III ch. 2, 4, 5, 6",
+      "rationale": "Machine-type chapters deferred to Phase 5, incl. AI-relevant provisions 2.3(c), 2.4.3, 4.1.2.6, 4.2.2, 5.4. Chapter 3 (mobility) AI-relevant provisions included because autonomous mobile machinery is a main AI use case."
+    },
+    {
+      "dec_id": "D0003",
+      "date": "2026-10-09",
+      "author": "Catalogue author",
+      "type": "OTHER",
+      "affected_ids": "MR-AIDA",
+      "rationale": "Anticipated delegated act not populated. AIA provisions are used as proxy in project bases (MR + AIA). On adoption, the delegated act is ingested as its own source and linked to the existing CRs (spec § 5.7)."
+    },
+    {
+      "dec_id": "D0004",
+      "date": "2026-10-09",
+      "author": "Catalogue author",
+      "type": "MERGE",
+      "affected_ids": "MR 1.2.1 ¶4(a,b,d,f,g); MR 1.2.6 ¶2(a,b,c,e,f); CR.FS.002–005",
+      "rationale": "Identical wording with different triggers (control fault vs power/network disturbance) verified together (rule A2)."
+    },
+    {
+      "dec_id": "D0005",
+      "date": "2026-10-09",
+      "author": "Catalogue author",
+      "type": "MERGE",
+      "affected_ids": "MR 1.2.2 ¶5, 1.2.3 ¶4, 1.3.7 ¶1, 1.3.8.2 ¶1(c), 1.4.3 ¶1(a)(b), 3.2.1 ¶1, 3.3 ¶5, 3.3.3 ¶6(ii), 3.5.1 ¶3; CR.FS.009; CR.PERF.001",
+      "rationale": "Protective-function EHSRs realised by AI collapse onto one SF-level protective-function CR and one AIF-level performance CR (assessed once per AI function)."
+    },
+    {
+      "dec_id": "D0006",
+      "date": "2026-10-09",
+      "author": "Catalogue author",
+      "type": "SPLIT",
+      "affected_ids": "MR 1.1.9 ¶2; MR GP1 ¶3",
+      "rationale": "Two sentences with different evidence / applicability -> two SRs each (rule A1)."
+    },
+    {
+      "dec_id": "D0007",
+      "date": "2026-10-09",
+      "author": "Catalogue author",
+      "type": "CONFLICT",
+      "affected_ids": "CR.PERF.001; CR.ROB.004",
+      "rationale": "MR absolute wording vs AIA probabilistic thresholds: acceptance derived from the required risk reduction; tension flag set; to be refined by AI functional-safety standards."
+    },
+    {
+      "dec_id": "D0008",
+      "date": "2026-10-09",
+      "author": "Catalogue author",
+      "type": "CONFLICT",
+      "affected_ids": "CR.LOG.004; CR.LOG.005; CR.LOG.006",
+      "rationale": "MR log retention (5 y interventions/versions; 1 y decision data, authority requests only) and AIA (>= 6 months, also PMM) kept as separate CRs; both apply."
+    },
+    {
+      "dec_id": "D0009",
+      "date": "2026-10-09",
+      "author": "Catalogue author",
+      "type": "CATNA",
+      "affected_ids": "AIA 8(2), 11(2), 72(4), 12(3), 14(5), 17(4), 19(2), 72(4)-2, 73(9), 73(10), 11(3), 15(2), 73(7), 73(8), 73(11)",
+      "rationale": "Section-A integration, biometric, financial-institution, Annex III/MDR-only and authority provisions listed, not atomised."
+    },
+    {
+      "dec_id": "D0010",
+      "date": "2026-10-09",
+      "author": "Catalogue author",
+      "type": "OTHER",
+      "affected_ids": "AIA 9(3), 10(6), 14(2), 17(2); 9(7), 9(10), 15(4)-2, 17(3)",
+      "rationale": "Scope statements -> role Scope/Applicability; permissions (\"may\") -> role Informative (no SR)."
+    },
+    {
+      "dec_id": "D0011",
+      "date": "2026-10-09",
+      "author": "Catalogue author",
+      "type": "OTHER",
+      "affected_ids": "CR.RM.010",
+      "rationale": "Fundamental-rights risk analysis kept as CR with rule scope.FR = yes (decision D5)."
+    },
+    {
+      "dec_id": "D0012",
+      "date": "2026-10-09",
+      "author": "Catalogue author",
+      "type": "LINK",
+      "affected_ids": "1.1.9 ¶5 -> CR.QMS.001.1; 10(4) -> CR.ODD.001; 72(2) -> CR.PERF.001.4; 1.2.1 ¶3(c) -> CR.HO.006; 1.7.1.2 ¶1 -> CR.HO.003; 1.7.4.2(m) -> CR.HO.002.2",
+      "rationale": "\"Supports – process\" where the CR provides the process or design that produces the evidence, without satisfying the SR by itself."
+    },
+    {
+      "dec_id": "D0013",
+      "date": "2026-10-09",
+      "author": "Catalogue author",
+      "type": "SPLIT",
+      "affected_ids": "AIA 4a(1), 4a(1)(a)-(f), 4a(2), 4a(2)(a)-(b), 4a(2)-2; SR.AIA.0029; CR.DATA.001.4",
+      "rationale": "Condensed Art 4a text replaced by the OJ wording. Conditions 4a(1)(a)-(f) are verified together with the chapeau (rule A2): one SR built from 4a(1) and its points, covered by CR.DATA.001.4. 4a(2) concerns other AI systems/models and deployers (permission only) -> Not applicable (catalogue).",
+      "source_refs": "Reg. (EU) 2026/1744 Art 1(6)"
+    },
+    {
+      "dec_id": "D0014",
+      "date": "2026-10-09",
+      "author": "Catalogue author",
+      "type": "SCOPE",
+      "affected_ids": "MR Arts 1-3, 6-11, 17-25, 52, 54; Annexes I, II, IV-X",
+      "rationale": "MR completed for the manufacturer of a product: all articles that define scope, classification and presumption or are addressed to the manufacturer, and Annexes I-X, are listed (rule A10). Not ingested: Arts 4, 5, 12-16, 26-51, 53 (Member States, authorised representatives, importers, distributors, notified bodies, market surveillance, Commission powers, final provisions) – they would all be \"Not applicable (catalogue)\"; Annex XI (assembly instructions for partly completed machinery, see D0015) and Annex XII (correlation table).",
+      "source_refs": "Reg. (EU) 2023/1230"
+    },
+    {
+      "dec_id": "D0015",
+      "date": "2026-10-09",
+      "author": "Catalogue author",
+      "type": "SCOPE",
+      "affected_ids": "MR:8-2; MR:11; MR:22; MR:IV-A-2(j); MR:IV-B; MR:V-B",
+      "rationale": "Partly completed machinery (PCM) is listed but out of catalogue scope; PCM requirements are deferred like the machine-type chapters (Phase 5). An AI safety component is placed on the market as a related product, not as PCM."
+    },
+    {
+      "dec_id": "D0016",
+      "date": "2026-10-09",
+      "author": "Catalogue author",
+      "type": "CATNA",
+      "affected_ids": "MR:6(2)-(11); MR:7(2)-(3); MR:20(2)-(5),(7),(8); MR:24(5); MR:25(5); notified-body tasks in Annexes VII, IX, X",
+      "rationale": "Provisions addressed only to the Commission, Member States or notified bodies create no manufacturer obligation. NB tasks are still relevant as context for the manufacturer's own module obligations, which are atomised."
+    },
+    {
+      "dec_id": "D0017",
+      "date": "2026-10-09",
+      "author": "Catalogue author",
+      "type": "SCOPE",
+      "affected_ids": "OMN-MR (MR:8-3, MR:8-4, MR:20(10))",
+      "rationale": "Omnibus Art 3(1) and (2) ingested as amending act OMN-MR on MR. Art 8 third/fourth paragraph confirm the MR-AIDA proxy (D0003): the delegated act must reflect AIA Ch. III Sec. 2 and Arts 17, 19, 72, 73, which are exactly the AIA provisions in the catalogue. Art 20(10) is the legal bridge for presumption via AIA harmonised standards; it will be used as basis \"Legal bridge\" for correspondences when prEN 18228 is onboarded. Omnibus Art 3(3) (MR Art 47) not ingested (Art 47 out of scope).",
+      "source_refs": "Reg. (EU) 2026/1744 Art 3"
+    },
+    {
+      "dec_id": "D0018",
+      "date": "2026-10-09",
+      "author": "Catalogue author",
+      "type": "OTHER",
+      "affected_ids": "MR-COR (MR:6(9), 6(10)-4, 52(1), 54-2, 54(a)-(d))",
+      "rationale": "The OJ text of 29.6.2023 contains wrong dates, corrected by corrigendum (OJ L 169, 4.7.2023): application from 20 January 2027 instead of 14 January 2027, and the other dates shifted by six days. Modelled as amending act MR-COR (replace). Source: secondary summary of the corrigendum; verify against EUR-Lex before release.",
+      "source_refs": "Corrigendum OJ L 169, 4.7.2023"
+    },
+    {
+      "dec_id": "D0019",
+      "date": "2026-10-09",
+      "author": "Catalogue author",
+      "type": "MERGE",
+      "affected_ids": "CR.CONF.001-005, CR.CONF.001.2.1-4, CR.CHG.007",
+      "rationale": "New domain CONF (conformity assessment, declaration, marking). Art 25 and Annexes VI-X are mapped to one requirement group: classification (CONF.001.1) and an OR of the four module routes (CONF.001.2.x) with rules by AI.cat, so only the chosen route is assessed. Module obligations that recur in every module (TD, production control, CE, DoC, retention) are mapped to the same CRs as Art 10 (no per-module duplicates). Notified-body change notification is its own CR (CHG.007) because model updates make it a key AI check."
+    },
+    {
+      "dec_id": "D0020",
+      "date": "2026-10-09",
+      "author": "Catalogue author",
+      "type": "REFINE",
+      "affected_ids": "CR.TD.002.7; CR.INFO.001; CR.TD.002.1; CR.TD.002.1.8; CR.TD.002.5; CR.RM.015; MR Annex IV Part A",
+      "rationale": "MR Annex IV Part A is mapped onto the existing AIA-based TD requirements where equivalent ((a)->TD.002.1, (b)->TD.002.5, (b)(i)->RM.015, (e)/(f)->TD.002.7, (i)->TD.002.1.8, (n)->four AIA TD elements partly) and new TD.011-016 for MR-only elements. TD.002.7 reworded neutrally (standards / common specifications / other solutions for each applicable requirement); INFO.001 extended by product-model identification (MR Art 10(7))."
+    },
+    {
+      "dec_id": "D0021",
+      "date": "2026-10-09",
+      "author": "Catalogue author",
+      "type": "LINK",
+      "affected_ids": "MR:IX-3.2(a)-(f) -> CR.QMS.001.13, .5, .2, .3, .4, .11",
+      "rationale": "Module H quality-system elements reuse the AIA Art 17 QMS requirements; one QMS audit serves both. IX-3.2(g) (monitoring effectiveness) is covered by CONF.001.2.3."
+    },
+    {
+      "dec_id": "D0022",
+      "date": "2026-10-09",
+      "author": "Catalogue author",
+      "type": "SPLIT",
+      "affected_ids": "MR:10(2); 10(2)-2; 10(3); VI-4.2; VIII-3.2; IX-5.2; X-5.2",
+      "rationale": "Provisions combining two verifiable obligations (e.g. draw up DoC + retain for 10 years) are split into two SRs with the literal partial wording."
+    },
+    {
+      "dec_id": "D0023",
+      "date": "2026-10-09",
+      "author": "Catalogue author",
+      "type": "LINK",
+      "affected_ids": "MR:18-2 -> CR.CONF.001 (Covers partly) + CR.CONF.002 (Covers partly)",
+      "rationale": "A person carrying out a substantial modification becomes the manufacturer (Art 18): in such a project the modifier is the ORG object and the normal conformity checks apply; no separate CR needed."
+    },
+    {
+      "dec_id": "D0024",
+      "date": "2026-10-09",
+      "author": "Catalogue author",
+      "type": "REFINE",
+      "affected_ids": "CR.CONF.001.2.1-4; CR.CHG.007; CR.INFO.020; CR.INFO.021; tags prod.type, conf.module, ifu.digital, use.non_professional",
+      "rationale": "New scoping tags replace manual N/A: the conformity route chosen (conf.module) selects one child of the OR group CONF.001.2; CHG.007 applies to B+C and H only; digital IFU and non-professional use select INFO.020 / INFO.021. Whether the chosen route is legally permitted for the classification stays an acceptance criterion of each route (assessed, not scoped), so a wrong choice shows as Fail instead of disappearing as N/A. prod.type has no rule yet; it is reserved for atomising partly completed machinery (Phase 5)."
+    },
+    {
+      "dec_id": "D0038",
+      "date": "2026-10-10",
+      "author": "Catalogue author",
+      "type": "OTHER",
+      "affected_ids": "Tags AI.rl, dev.virtual_testing; rule TS.SWTC != I; object level TE",
+      "rationale": "New tags (code change): AI.rl (reinforcement learning or other reward-based optimisation used; TR 8.4.3) for reward hacking and safe exploration; dev.virtual_testing (virtual test results used in the safety argument; TR 9.4.2) for the toolchain qualification group. TR clause 9 addresses data-driven (Class II) technology: TR CRs specific to it carry the rule TS.SWTC != I. Per-element classification and treatment (TR 7.1, 6.2, Annex A) is assessed on TE objects (one per element group of the same class)."
+    },
+    {
+      "dec_id": "D0039",
+      "date": "2026-10-10",
+      "author": "Catalogue author",
+      "type": "OTHER",
+      "affected_ids": "Phase 3 backlog: combined checklist view",
+      "rationale": "Open task recorded at the project owner's request: a checklist view in which a legal CR and its partial refinements (PARTLY) are reviewed together in one step (e.g. legal CR row followed by its refiners, with a combined status), so that overlapping MR/AIA/TS/TR requirements are not assessed separately. To be specified in Phase 3 (workbook views)."
+    },
+    {
+      "dec_id": "D0040",
+      "date": "2026-10-17",
+      "author": "Catalogue author",
+      "type": "SCOPE",
+      "affected_ids": "Repository split: core catalogue and packs",
+      "rationale": "The public repository holds the core catalogue (MR, AIA, Omnibus, corrigendum, MR-AIDA) and the master list of all CRs that may be published. Licensed sources live in packs in the private repository: raw and derived files (SPs, SRs, coverage links, correspondences), pack-own CRs, CR overlays and pack decisions. References point from pack to core only; CRs created from a pack source carry it in `provenance` and are dormant without the pack. Decision IDs form one sequence across core and packs. D0007 reworded without draft terms.",
+      "source_refs": "spec § 7, § 8.3"
+    },
+    {
+      "dec_id": "D0042",
+      "date": "2026-10-17",
+      "author": "Catalogue author",
+      "type": "OTHER",
+      "affected_ids": "Tags TS.AUL -> AI.usage_level, TS.SWTC -> AI.tech_class; register lists USAGELVL, TECHCLASS",
+      "rationale": "Neutral terminology in the public catalogue: usage level and AI technology class as published in ISO/IEC TR 5469 6.2 replace the TS 22440-1 draft terms AUL/SWTC in tag names, rules and CR wording. The TS terms appear only in pack overlays. Code change (vocab).",
+      "source_refs": "spec § 4.6"
+    },
+    {
+      "dec_id": "D0043",
+      "date": "2026-10-18",
+      "author": "Catalogue author",
+      "type": "SCOPE",
+      "affected_ids": "catalogue/ (master list); packs/MR, packs/AIA, packs/MR-AIDA; private packs TS22440-1, TR5469",
+      "rationale": "Supersedes the core/pack split of D0040. The public master list (catalogue/) holds every common requirement (all leaf requirements are public) and the catalogue-wide decisions; it names all known packs. Every source document is its own pack (pack.json, sources/<SD>/raw.json and derived.json with SPs, SRs and coverage links, optional decisions.json), with the same format and loading mechanism for public and private packs. Amending acts belong to the pack of the act they amend (MR: MR-COR, OMN-MR; AIA: OMN). Packs reference the master list only; correspondences between packs need \"requires\". CRs that only unloaded known packs reach are reported as unreached, not as orphans. CR attribute provenance and pack-own CRs are removed.",
+      "source_refs": "spec § 7, § 8.3"
+    },
+    {
+      "dec_id": "D0044",
+      "date": "2026-10-18",
+      "author": "Catalogue author",
+      "type": "LINK",
+      "affected_ids": "CoverageLink.condition, CoverageLink.guidance; CR overlays and the implicit tag basis.<SD> removed",
+      "rationale": "Source-specific applicability is a condition on the coverage link, not on the CR: in a project a leaf CR is applicable if its own rule holds and, for at least one source of the basis, a condition of that source holds (OR across sources; a link without condition always holds). Per source only the links on the nearest linked CR on the path leaf -> root count, so a child linked with a rated condition is not made applicable by an unconditional link of the same source on its parent. Source-specific assessor guidance is on the link and is added to the check items it selects with a [<SD>] prefix. Replaces the CR overlays of D0041 (AND semantics).",
+      "source_refs": "spec § 4.5, § 5.4"
+    },
+    {
+      "dec_id": "D0045",
+      "date": "2026-10-18",
+      "author": "Catalogue author",
+      "type": "REFINE",
+      "affected_ids": "Refinement.set; all FULL refinements",
+      "rationale": "Resolves the open method question of D0036: a CR may have several sets of full refinements, e.g. one per standard. A set is complete in a project when all its members are selected and applicable; the refined leaf CR is substituted when at least one set is complete, and its status combines the members of all complete sets. Existing full refinements are labelled with the source of the refining CR (TS22440-1 or TR5469). Candidate TR 5469 full sets for CRs already refined by TS 22440-1 are to be reviewed separately.",
+      "source_refs": "spec § 4.5"
+    },
+    {
+      "dec_id": "D0046",
+      "date": "2026-10-18",
+      "author": "Catalogue author",
+      "type": "OTHER",
+      "affected_ids": "CR.VV.003, CR.VV.003.1-13, CR.PERF.003, CR.DATA.003.1, CR.DATA.005, CR.TOOL.001, CR.TOOL.001.1-6; rules of CR.GEN.004, CR.RM.022, CR.VV.012, CR.DATA.008, CR.DATA.008.1-3, CR.ROB.014, CR.MODEL.008, CR.MODEL.009",
+      "rationale": "Supersedes D0041 at the project owner's request: the 24 CRs kept in the TS pack are moved to the public master list, reworded in our own words without draft values; standard terms and clause references may be used in CR text. Rating-derived rules (usage level, AI-SC, AI technology class) moved from the CRs and the overlays to conditions on the TS 22440-1 and TR 5469 links; the CR rules keep only source-independent conditions (e.g. dev.ai_tools). The former overlay wording is link guidance in the TS pack.",
+      "source_refs": "spec § 4.5, § 7"
+    }
+  ]
+}

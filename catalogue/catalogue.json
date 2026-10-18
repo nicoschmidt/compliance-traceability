@@ -1,0 +1,35 @@
+{
+  "$schema": "../schemas/catalogue.schema.json",
+  "baseline": "CAT-2026.1-draft",
+  "title": "Master list of common requirements (public) and the known packs",
+  "known_packs": [
+    {
+      "pack_id": "MR",
+      "title": "Machinery Regulation (EU) 2023/1230 incl. corrigendum and Omnibus amendments",
+      "access": "public",
+      "path": "../packs/MR"
+    },
+    {
+      "pack_id": "AIA",
+      "title": "AI Act (EU) 2024/1689 incl. Omnibus (EU) 2026/1744",
+      "access": "public",
+      "path": "../packs/AIA"
+    },
+    {
+      "pack_id": "MR-AIDA",
+      "title": "MR Annex III amendment by delegated act (anticipated)",
+      "access": "public",
+      "path": "../packs/MR-AIDA"
+    },
+    {
+      "pack_id": "TS22440-1",
+      "title": "ISO/IEC CD TS 22440-1 (licensed, committee draft)",
+      "access": "private"
+    },
+    {
+      "pack_id": "TR5469",
+      "title": "ISO/IEC TR 5469:2024 (licensed)",
+      "access": "private"
+    }
+  ]
+}

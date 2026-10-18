@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../schemas/decisions.schema.json",
+  "decisions": [
+    {
+      "dec_id": "D0001",
+      "date": "2026-10-09",
+      "author": "Sample author",
+      "type": "MERGE",
+      "affected_ids": "SR.MR.0004; CR.FS.001",
+      "rationale": "MR 1.2.1 ¶4(a) and 1.2.6 ¶2(a) share wording; verified together with two trigger conditions (rule A2).",
+      "source_refs": "MR Annex III"
+    },
+    {
+      "dec_id": "D0002",
+      "date": "2026-10-09",
+      "author": "Sample author",
+      "type": "SCOPE",
+      "affected_ids": "MR:III-1.5.9",
+      "rationale": "Physical hazard outside the AI-component catalogue scope; listed, not atomised."
+    }
+  ]
+}

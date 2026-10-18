@@ -1,0 +1,12 @@
+{
+  "$schema": "../../../../../../../schemas/raw.schema.json",
+  "doc_id": "EN18228",
+  "title": "prEN 18228 AI risk management (sample rows only)",
+  "extracted": "SAMPLE fixture (test data, not a real extraction)",
+  "provisions": [
+    {
+      "ref": "8.2",
+      "heading": "Test plan (reference only)"
+    }
+  ]
+}

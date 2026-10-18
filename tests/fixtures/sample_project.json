@@ -1,0 +1,112 @@
+{
+  "$schema": "../../schemas/project.schema.json",
+  "prj": {
+    "project_id": "P26001",
+    "client": "SAMPLE client",
+    "product": "Camera-based person detection (slow-down / stop)",
+    "description": "Test project for the Phase-1 template; not a real assessment.",
+    "use_cases": "UC1a, UC1b, UC2-G",
+    "catalogue_baseline": "CAT-SAMPLE",
+    "boundary_statement": "AI safety component incl. safety logic; host machine excluded.",
+    "agreed_exclusions": "PHYS domain (noise etc.) – offer 2026-117 §3",
+    "assessor": "A. Assessor",
+    "reviewer": "R. Reviewer",
+    "start_date": "2026-10-09"
+  },
+  "basis": [
+    {
+      "sd_id": "MR",
+      "edition": "2023",
+      "use_case": "UC1A"
+    },
+    {
+      "sd_id": "AIA",
+      "edition": "consolidated 2026-07",
+      "use_case": "UC1A"
+    },
+    {
+      "sd_id": "MR-AIDA",
+      "edition": "anticipated",
+      "use_case": "UC1A"
+    },
+    {
+      "sd_id": "EN18228",
+      "edition": "ENQ",
+      "use_case": "UC1B"
+    },
+    {
+      "sd_id": "TR5469",
+      "edition": "2024",
+      "use_case": "UC2G"
+    }
+  ],
+  "tags": {
+    "AI.cat": "B15",
+    "AI.learning": "static",
+    "AIA.high_risk_6_1": "tbd",
+    "AI.usage_level": "A1",
+    "AI.tech_class": "II",
+    "INT.PL": "d",
+    "sys.control_system": "yes",
+    "sys.protective_device": "yes",
+    "sys.supervisory_function": "no",
+    "sys.hmi": "yes",
+    "feat.mobile": "no",
+    "scope.FR": "no"
+  },
+  "objects": [
+    {
+      "object_id": "P26001-ORG-01",
+      "level": "ORG",
+      "name": "Manufacturer",
+      "description": "Provider / manufacturer organisation"
+    },
+    {
+      "object_id": "P26001-PRD-01",
+      "level": "PRD",
+      "name": "Camera protective device",
+      "description": "Safety component placed on the market"
+    },
+    {
+      "object_id": "P26001-SF-01",
+      "level": "SF",
+      "name": "Slow-down on person detection",
+      "parent_object": "P26001-PRD-01"
+    },
+    {
+      "object_id": "P26001-SF-02",
+      "level": "SF",
+      "name": "Stop on person in protective field",
+      "parent_object": "P26001-PRD-01"
+    },
+    {
+      "object_id": "P26001-AIF-01",
+      "level": "AIF",
+      "name": "CNN person detector",
+      "parent_object": "P26001-PRD-01"
+    }
+  ],
+  "ev": [
+    {
+      "ev_id": "P26001-EV-001",
+      "title": "V&V plan",
+      "client_doc_id": "DOC-VV-01",
+      "version": "1.2",
+      "type": "VVPLAN"
+    },
+    {
+      "ev_id": "P26001-EV-002",
+      "title": "Test report person detection",
+      "client_doc_id": "DOC-TR-07",
+      "version": "1.0",
+      "type": "VVREP"
+    },
+    {
+      "ev_id": "P26001-EV-003",
+      "title": "Instructions for use",
+      "client_doc_id": "IFU-01",
+      "version": "A",
+      "type": "IFU"
+    }
+  ]
+}

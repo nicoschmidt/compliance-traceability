@@ -1,0 +1,41 @@
+{
+  "$schema": "../../../../../../../schemas/derived.schema.json",
+  "sd": {
+    "sd_id": "MR-AIDA",
+    "title": "MR Annex III amendment by delegated act under MR Art 8 3rd para (anticipated)",
+    "edition": "—",
+    "doc_type": "DA",
+    "lifecycle_status": "ANTICIPATED",
+    "normative_strength": "BINDING",
+    "licence_class": "PUBLIC",
+    "notes": "Placeholder until adoption; apply by 2 Aug 2028"
+  },
+  "provisions": [
+    {
+      "ref": "AI-PERF",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true
+    }
+  ],
+  "requirements": [
+    {
+      "sr_id": "SR.MR-AIDA.0001",
+      "sp_refs": [
+        "MR-AIDA:AI-PERF"
+      ],
+      "statement": "[Anticipated] Health and safety requirement reflecting AIA Art 15(1).",
+      "obligation": "SHALL",
+      "origin": "DERIVED",
+      "author": "Sample author",
+      "date": "2026-10-09",
+      "rationale": "Placeholder per MR Art 8 3rd para until the delegated act is adopted",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.PERF.004",
+          "type": "COVERS"
+        }
+      ]
+    }
+  ]
+}

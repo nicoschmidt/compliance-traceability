@@ -1,0 +1,13 @@
+{
+  "$schema": "../../../../schemas/decisions.schema.json",
+  "decisions": [
+    {
+      "dec_id": "D9001",
+      "date": "2026-10-17",
+      "author": "Test",
+      "type": "SCOPE",
+      "affected_ids": "DEMO",
+      "rationale": "Sample pack decision."
+    }
+  ]
+}

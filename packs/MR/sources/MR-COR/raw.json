@@ -1,0 +1,65 @@
+{
+  "$schema": "../../../../schemas/amendments.schema.json",
+  "doc_id": "MR-COR",
+  "title": "Corrigendum to Regulation (EU) 2023/1230 (application and other dates)",
+  "amends": "MR",
+  "oj_ref": "OJ L 169, 4.7.2023",
+  "amendments": [
+    {
+      "op": "replace",
+      "amending_ref": "Corrigendum OJ L 169, 4.7.2023",
+      "target_ref": "6(9)",
+      "text": "By 20 July 2025, and every five years thereafter, Member States shall provide the data and information referred to in paragraph 5, including information to the effect that none of the events referred to in paragraph 5 has occurred, for every category of machinery or related products which is included in Annex I or which is not included in Annex I where that non-inclusion is a cause of concern for the Member State.",
+      "note": "Date corrected by the corrigendum (taken from a secondary source; verify against EUR-Lex, D0018)"
+    },
+    {
+      "op": "replace",
+      "amending_ref": "Corrigendum OJ L 169, 4.7.2023",
+      "target_ref": "6(10)-4",
+      "text": "The first such implementing act shall be adopted not later than 20 July 2024.",
+      "note": "Date corrected by the corrigendum (taken from a secondary source; verify against EUR-Lex, D0018)"
+    },
+    {
+      "op": "replace",
+      "amending_ref": "Corrigendum OJ L 169, 4.7.2023",
+      "target_ref": "52(1)",
+      "text": "Member States shall not impede the making available on the market of products which were placed on the market in conformity with Directive 2006/42/EC before 20 January 2027. However, Chapter VI of this Regulation shall apply, from 19 July 2023, mutatis mutandis to such products instead of Article 11 of that Directive, including products for which a procedure has already been initiated under Article 11 of Directive 2006/42/EC.",
+      "note": "Date corrected by the corrigendum (taken from a secondary source; verify against EUR-Lex, D0018)"
+    },
+    {
+      "op": "replace",
+      "amending_ref": "Corrigendum OJ L 169, 4.7.2023",
+      "target_ref": "54-2",
+      "text": "It shall apply from 20 January 2027.",
+      "note": "Date corrected by the corrigendum (taken from a secondary source; verify against EUR-Lex, D0018)"
+    },
+    {
+      "op": "replace",
+      "amending_ref": "Corrigendum OJ L 169, 4.7.2023",
+      "target_ref": "54(a)",
+      "text": "Articles 26 to 42 from 20 January 2024;",
+      "note": "Date corrected by the corrigendum (taken from a secondary source; verify against EUR-Lex, D0018)"
+    },
+    {
+      "op": "replace",
+      "amending_ref": "Corrigendum OJ L 169, 4.7.2023",
+      "target_ref": "54(b)",
+      "text": "Article 50(1) from 20 October 2023;",
+      "note": "Date corrected by the corrigendum (taken from a secondary source; verify against EUR-Lex, D0018)"
+    },
+    {
+      "op": "replace",
+      "amending_ref": "Corrigendum OJ L 169, 4.7.2023",
+      "target_ref": "54(c)",
+      "text": "Article 6(7) and Articles 48 and 52 from 19 July 2023;",
+      "note": "Date corrected by the corrigendum (taken from a secondary source; verify against EUR-Lex, D0018)"
+    },
+    {
+      "op": "replace",
+      "amending_ref": "Corrigendum OJ L 169, 4.7.2023",
+      "target_ref": "54(d)",
+      "text": "Article 6(2) to (6), (8) and (11) and Articles 47 and 53(3) from 20 July 2024.",
+      "note": "Date corrected by the corrigendum (taken from a secondary source; verify against EUR-Lex, D0018)"
+    }
+  ]
+}

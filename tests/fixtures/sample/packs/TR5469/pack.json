@@ -1,0 +1,8 @@
+{
+  "$schema": "../../../../../schemas/pack.schema.json",
+  "pack_id": "TR5469",
+  "title": "ISO/IEC TR 5469:2024 Functional safety and AI systems (sample rows only)",
+  "sources": [
+    "TR5469"
+  ]
+}

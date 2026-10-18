@@ -1,0 +1,50 @@
+{
+  "$schema": "../../../../../../../schemas/derived.schema.json",
+  "sd": {
+    "sd_id": "EN18228",
+    "title": "prEN 18228 AI risk management (sample rows only)",
+    "edition": "ENQ draft",
+    "doc_type": "HEN",
+    "lifecycle_status": "DRAFT",
+    "normative_strength": "PRESUMPTION",
+    "legal_link": "AIA / M/613",
+    "licence_class": "LICENSED"
+  },
+  "provisions": [
+    {
+      "ref": "8.2",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true
+    }
+  ],
+  "requirements": [
+    {
+      "sr_id": "SR.EN18228.0001",
+      "sp_refs": [
+        "EN18228:8.2"
+      ],
+      "statement": "[Paraphrase] The provider plans tests with predefined metrics and thresholds.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Sample author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.PERF.004.2",
+          "type": "COVERS"
+        }
+      ]
+    }
+  ],
+  "correspondences": [
+    {
+      "corr_id": "C0001",
+      "basis": "ZA",
+      "from_sp": "EN18228:8.2",
+      "to_sp": "AIA:9(8)",
+      "declared_coverage": "COVERED",
+      "remarks": "Table ZA.1: Art 9(8) <- 8.1, 8.2, 8.4 (sample shows 8.2 only)"
+    }
+  ]
+}

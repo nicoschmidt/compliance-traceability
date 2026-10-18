@@ -1,0 +1,65 @@
+{
+  "$schema": "../../../../../../../schemas/raw.schema.json",
+  "doc_id": "MR",
+  "title": "Regulation (EU) 2023/1230 on machinery",
+  "extracted": "SAMPLE fixture (test data, not a real extraction)",
+  "provisions": [
+    {
+      "ref": "III-A(e)",
+      "heading": "Definition of risk",
+      "text": "(e) 'risk' means a combination of the probability and the degree of an injury or damage to health that can arise in a hazardous situation;"
+    },
+    {
+      "ref": "III-1.2.1",
+      "heading": "Safety and reliability of control systems"
+    },
+    {
+      "ref": "III-1.2.1-2",
+      "parent": "III-1.2.1",
+      "text": "Control systems shall be designed and constructed in such a way that:"
+    },
+    {
+      "ref": "III-1.2.1-2(b)",
+      "parent": "III-1.2.1-2",
+      "text": "(b) a fault in the hardware or the logic of the control system shall not lead to hazardous situations;"
+    },
+    {
+      "ref": "III-1.2.1-2(c)",
+      "parent": "III-1.2.1-2",
+      "text": "(c) errors in the control system logic shall not lead to hazardous situations;"
+    },
+    {
+      "ref": "III-1.2.1-2(f)",
+      "parent": "III-1.2.1-2",
+      "text": "(f) the tracing log of the data generated in relation to an intervention and of the versions of safety software uploaded after the machinery or related product has been placed on the market or put into service is enabled for five years after such upload, exclusively to demonstrate the conformity of the machinery or related product with this Annex further to a reasoned request from a competent national authority."
+    },
+    {
+      "ref": "III-1.2.1-4(a)",
+      "parent": "III-1.2.1",
+      "text": "(a) the machinery or related product shall not start unexpectedly;"
+    },
+    {
+      "ref": "III-1.2.6",
+      "heading": "Failure of the power supply or communication network connection"
+    },
+    {
+      "ref": "III-1.2.6-2(a)",
+      "parent": "III-1.2.6",
+      "text": "(a) the machinery or related product shall not start unexpectedly;"
+    },
+    {
+      "ref": "III-1.5.8",
+      "heading": "Noise",
+      "text": "Machinery or related products shall be designed and constructed in such a way that risks resulting from the emission of airborne noise are reduced to the lowest level, taking account of technical progress and the availability of means of reducing noise, in particular at source."
+    },
+    {
+      "ref": "III-1.5.9",
+      "heading": "Vibrations"
+    },
+    {
+      "ref": "III-3.2.4-2",
+      "heading": "Supervisory function",
+      "text": "The information the supervisor receives from the machinery when the supervisory function is active shall enable the supervisor to have a complete and accurate view of the operation, movement and safe positioning of the machinery in its travel and working area."
+    }
+  ]
+}

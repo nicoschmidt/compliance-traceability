@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../../../../../schemas/raw.schema.json",
+  "doc_id": "TR5469",
+  "title": "ISO/IEC TR 5469:2024 Functional safety and AI systems (sample rows only)",
+  "extracted": "SAMPLE fixture (test data, not a real extraction)",
+  "provisions": [
+    {
+      "ref": "9.3.4",
+      "heading": "Choice of AI metrics (reference only)"
+    },
+    {
+      "ref": "10.2.5",
+      "heading": "AI system design with statistical evaluation (reference only)"
+    }
+  ]
+}

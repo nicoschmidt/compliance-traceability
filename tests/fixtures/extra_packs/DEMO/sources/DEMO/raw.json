@@ -1,0 +1,26 @@
+{
+  "$schema": "../../../../../../schemas/raw.schema.json",
+  "doc_id": "DEMO",
+  "title": "DEMO standard (synthetic test data)",
+  "extracted": "SAMPLE fixture: invented text standing in for a licensed source",
+  "provisions": [
+    {
+      "ref": "1",
+      "kind": "section",
+      "heading": "Demo clause",
+      "text": "Synthetic licensed text of clause 1."
+    },
+    {
+      "ref": "1.1",
+      "parent": "1",
+      "kind": "paragraph",
+      "text": "The demo function shall report its confidence."
+    },
+    {
+      "ref": "1.2",
+      "parent": "1",
+      "kind": "paragraph",
+      "text": "The demo safety function shall be rated A1 for usage level A1 only."
+    }
+  ]
+}

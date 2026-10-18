@@ -1,0 +1,135 @@
+{
+  "$schema": "../../../../schemas/amendments.schema.json",
+  "doc_id": "OMN",
+  "title": "Reg. (EU) 2026/1744 amending Regulation (EU) 2024/1689 – amendments to the provisions in catalogue scope",
+  "amends": "AIA",
+  "amendments": [
+    {
+      "op": "replace",
+      "amending_ref": "Art 1(4)(a) Reg. (EU) 2026/1744",
+      "target_ref": "3(14)",
+      "text": "'safety component' means a component of a product or of an AI system which fulfils a safety function for that product or AI system, or the failure or malfunctioning of which endangers the health and safety of persons or property; for the purposes of this definition, a component fulfils a safety function where its intended purpose is to prevent or mitigate risks to health and safety of persons or property;",
+      "note": "Amended by Art 1(4)(a) Reg. 2026/1744 (safety function = prevent/mitigate H&S risks)"
+    },
+    {
+      "op": "insert",
+      "amending_ref": "Art 1(6) Reg. (EU) 2026/1744",
+      "insert_after": "3",
+      "provisions": [
+        {
+          "ref": "4a",
+          "kind": "article",
+          "heading": "Processing of special categories of personal data for bias detection and correction"
+        },
+        {
+          "ref": "4a(1)",
+          "parent": "4a",
+          "kind": "paragraph",
+          "text": "To the extent strictly necessary to ensure bias detection and correction in relation to high-risk AI systems in accordance with Article 10(2), points (f) and (g), of this Regulation, providers of such systems may exceptionally process special categories of personal data, subject to appropriate safeguards for the fundamental rights and freedoms of natural persons. In addition to the provisions set out in Regulations (EU) 2016/679 and (EU) 2018/1725 and Directive (EU) 2016/680, as applicable, all the following conditions shall be met in order for such processing to occur:"
+        },
+        {
+          "ref": "4a(1)(a)",
+          "parent": "4a(1)",
+          "kind": "point",
+          "text": "the bias detection and correction cannot be effectively fulfilled by processing other data, including synthetic or anonymised data;"
+        },
+        {
+          "ref": "4a(1)(b)",
+          "parent": "4a(1)",
+          "kind": "point",
+          "text": "the special categories of personal data are subject to technical limitations on the re-use of personal data, and state-of-the-art security and privacy-preserving measures, including pseudonymisation;"
+        },
+        {
+          "ref": "4a(1)(c)",
+          "parent": "4a(1)",
+          "kind": "point",
+          "text": "the special categories of personal data are subject to measures to ensure that the personal data processed are secured and protected, subject to suitable safeguards, including strict controls and documentation of the access, to avoid misuse and to ensure that only authorised persons have access to those personal data with appropriate confidentiality obligations;"
+        },
+        {
+          "ref": "4a(1)(d)",
+          "parent": "4a(1)",
+          "kind": "point",
+          "text": "the special categories of personal data are not transmitted, transferred or otherwise accessed by other parties;"
+        },
+        {
+          "ref": "4a(1)(e)",
+          "parent": "4a(1)",
+          "kind": "point",
+          "text": "the special categories of personal data are deleted once the bias has been corrected or the personal data has reached the end of its retention period, whichever comes first; and"
+        },
+        {
+          "ref": "4a(1)(f)",
+          "parent": "4a(1)",
+          "kind": "point",
+          "text": "the records of processing activities pursuant to Regulations (EU) 2016/679 and (EU) 2018/1725 and Directive (EU) 2016/680 include the reasons why the processing of special categories of personal data was strictly necessary to detect and correct biases, and why that objective could not be achieved by processing other data."
+        },
+        {
+          "ref": "4a(2)",
+          "parent": "4a",
+          "kind": "paragraph",
+          "text": "Providers and deployers of other AI systems and models and deployers of high-risk AI systems may exceptionally process special categories of personal data to the extent that:"
+        },
+        {
+          "ref": "4a(2)(a)",
+          "parent": "4a(2)",
+          "kind": "point",
+          "text": "such processing is strictly necessary to ensure bias detection and correction in view of possible biases that are likely to affect the health and safety of persons, have a negative impact on fundamental rights or lead to discrimination prohibited pursuant to Union law, especially where data outputs influence inputs for future operations; and"
+        },
+        {
+          "ref": "4a(2)(b)",
+          "parent": "4a(2)",
+          "kind": "point",
+          "text": "all of the conditions and safeguards set out in paragraph 1 are applied."
+        },
+        {
+          "ref": "4a(2)-2",
+          "parent": "4a(2)",
+          "kind": "subparagraph",
+          "text": "This paragraph does not create any obligation to conduct such bias detection and correction."
+        }
+      ],
+      "note": "Inserted by Art 1(6) Reg. 2026/1744 (replaces Art 10(5))"
+    },
+    {
+      "op": "replace",
+      "amending_ref": "Art 1(9)(a) Reg. (EU) 2026/1744",
+      "target_ref": "10(1)",
+      "text": "High-risk AI systems which make use of techniques involving the training of AI models with data shall be developed on the basis of training, validation and testing data sets that meet the quality criteria referred to in paragraphs 2, 3 and 4 of this Article and in Article 4a(1) whenever such data sets are used.",
+      "note": "Replaced by Art 1(9)(a) Reg. 2026/1744 (now refers to 10(2)-(4) and Art 4a(1))"
+    },
+    {
+      "op": "delete",
+      "amending_ref": "Art 1(9)(b) Reg. (EU) 2026/1744",
+      "target_ref": "10(5)",
+      "note": "Deleted by Art 1(9)(b) Reg. 2026/1744; content moved to new Art 4a"
+    },
+    {
+      "op": "replace",
+      "amending_ref": "Art 1(9)(c) Reg. (EU) 2026/1744",
+      "target_ref": "10(6)",
+      "text": "For the development of high-risk AI systems not using techniques involving the training of AI models, paragraphs 2, 3 and 4 of this Article and Article 4a(1) shall apply only to the testing data sets.",
+      "note": "Replaced by Art 1(9)(c) Reg. 2026/1744"
+    },
+    {
+      "op": "replace",
+      "amending_ref": "Art 1(10) Reg. (EU) 2026/1744",
+      "target_ref": "11(1)-2",
+      "text": "That technical documentation shall be drawn up in such a way as to demonstrate that the high-risk AI system complies with the requirements set out in this Section and to provide national competent authorities and notified bodies with the necessary information in a clear and comprehensive form to assess the compliance of the AI system with those requirements. It shall contain, at a minimum, the elements set out in Annex IV. SMEs, including start-ups, and SMCs, may provide the elements of the technical documentation specified in Annex IV in a simplified manner. To that end, the Commission shall establish a simplified technical documentation form targeted at the needs of SMEs, including start-ups, and SMCs. Where an SME, including a start-up, or an SMC, opts to provide the information required in Annex IV in a simplified manner, it shall use the form referred to in this paragraph. Notified bodies shall accept the form for the purposes of the conformity assessment.",
+      "note": "Replaced by Art 1(10) Reg. 2026/1744 (SMC simplified form added)"
+    },
+    {
+      "op": "replace",
+      "amending_ref": "Art 1(11) Reg. (EU) 2026/1744",
+      "target_ref": "17(2)",
+      "text": "The implementation of the aspects referred to in paragraph 1 shall be proportionate to the size of the provider's organisation, in particular, if the provider is an SME, including a start-up, or an SMC. Providers shall, in any event, respect the degree of rigour and the level of protection required to ensure the compliance of their high-risk AI systems with this Regulation.",
+      "note": "Replaced by Art 1(11) Reg. 2026/1744 (SME/SMC proportionality)"
+    },
+    {
+      "op": "replace",
+      "amending_ref": "Art 1(30) Reg. (EU) 2026/1744",
+      "target_ref": "72(3)",
+      "text": "The post-market monitoring system shall be based on a post-market monitoring plan. The post-market monitoring plan shall be part of the technical documentation referred to in Annex IV. The Commission, taking utmost account of the opinion of the Board, shall adopt guidance, including a template, on the post-market monitoring plan by 2 September 2027.",
+      "note": "Replaced by Art 1(30) Reg. 2026/1744 (guidance + template instead of implementing act)"
+    }
+  ]
+}

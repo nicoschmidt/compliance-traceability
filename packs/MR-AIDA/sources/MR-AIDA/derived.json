@@ -1,0 +1,13 @@
+{
+  "$schema": "../../../../schemas/derived.schema.json",
+  "sd": {
+    "sd_id": "MR-AIDA",
+    "title": "MR Annex III amendment by delegated act (MR Art 8, 3rd para) – anticipated",
+    "edition": "—",
+    "doc_type": "DA",
+    "lifecycle_status": "ANTICIPATED",
+    "normative_strength": "BINDING",
+    "licence_class": "PUBLIC",
+    "notes": "Not populated (decision D0003). Apply by 2 Aug 2028."
+  }
+}

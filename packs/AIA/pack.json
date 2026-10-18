@@ -1,0 +1,11 @@
+{
+  "$schema": "../../schemas/pack.schema.json",
+  "pack_id": "AIA",
+  "title": "AI Act (EU) 2024/1689 incl. Omnibus (EU) 2026/1744",
+  "sources": [
+    "AIA"
+  ],
+  "amending_acts": [
+    "OMN"
+  ]
+}

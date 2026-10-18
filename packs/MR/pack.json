@@ -1,0 +1,12 @@
+{
+  "$schema": "../../schemas/pack.schema.json",
+  "pack_id": "MR",
+  "title": "Machinery Regulation (EU) 2023/1230 incl. corrigendum and Omnibus amendments",
+  "sources": [
+    "MR"
+  ],
+  "amending_acts": [
+    "MR-COR",
+    "OMN-MR"
+  ]
+}

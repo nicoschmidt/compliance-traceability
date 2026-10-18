@@ -1,0 +1,74 @@
+{
+  "$schema": "../../../../../../schemas/derived.schema.json",
+  "sd": {
+    "sd_id": "DEMO",
+    "title": "DEMO standard (synthetic test data)",
+    "edition": "0",
+    "doc_type": "TS",
+    "lifecycle_status": "DRAFT",
+    "normative_strength": "NORMATIVE",
+    "licence_class": "LICENSED",
+    "notes": "Test fixture only"
+  },
+  "provisions": [
+    {
+      "ref": "1",
+      "role": "UMBRELLA",
+      "in_catalogue_scope": true
+    },
+    {
+      "ref": "1.1",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true
+    },
+    {
+      "ref": "1.2",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true
+    }
+  ],
+  "requirements": [
+    {
+      "sr_id": "SR.DEMO.0001",
+      "sp_refs": [
+        "DEMO:1.1"
+      ],
+      "statement": "Report the confidence of the output (paraphrase).",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Test",
+      "date": "2026-10-17",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.PERF.004.3",
+          "type": "PARTLY"
+        },
+        {
+          "cr": "CR.PERF.901",
+          "type": "PARTLY"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.DEMO.0002",
+      "sp_refs": [
+        "DEMO:1.2"
+      ],
+      "statement": "Control-fault behaviour required for usage level A1 (paraphrase).",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Test",
+      "date": "2026-10-18",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.FS.001",
+          "type": "COVERS",
+          "condition": "AI.usage_level = A1",
+          "guidance": "Demo rating: required for usage level A1 only."
+        }
+      ]
+    }
+  ]
+}

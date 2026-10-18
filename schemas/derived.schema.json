@@ -1,0 +1,433 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "derived.schema.json",
+  "$defs": {
+    "Correspondence": {
+      "additionalProperties": false,
+      "description": "Declared SP <-> SP correspondence claimed by this source document (spec § 4.10).",
+      "properties": {
+        "corr_id": {
+          "minLength": 1,
+          "pattern": "^C\\d{4}$",
+          "title": "Corr Id",
+          "type": "string"
+        },
+        "basis": {
+          "description": "Key of register list CORRBASIS",
+          "enum": [
+            "ZA",
+            "LEGAL"
+          ],
+          "title": "Basis",
+          "type": "string"
+        },
+        "from_sp": {
+          "minLength": 1,
+          "title": "From Sp",
+          "type": "string"
+        },
+        "to_sp": {
+          "minLength": 1,
+          "title": "To Sp",
+          "type": "string"
+        },
+        "declared_coverage": {
+          "description": "Key of register list ZACOV",
+          "enum": [
+            "COVERED",
+            "PARTIAL"
+          ],
+          "title": "Declared Coverage",
+          "type": "string"
+        },
+        "remarks": {
+          "default": "",
+          "title": "Remarks",
+          "type": "string"
+        }
+      },
+      "required": [
+        "corr_id",
+        "basis",
+        "from_sp",
+        "to_sp",
+        "declared_coverage"
+      ],
+      "title": "Correspondence",
+      "type": "object"
+    },
+    "CoverageLink": {
+      "additionalProperties": false,
+      "description": "SR -> CR coverage link (spec § 4.5). Identity is (sr_id, cr); author/date default to the SR's.\n`condition` restricts when this source requires the CR (and its descendants): in a project, a leaf CR is applicable\nif its own rule holds and, for at least one source of the basis, a condition of that source's nearest linking CR\nholds (spec § 4.5, § 5.4). `guidance` is source-specific assessor guidance added to the check items it selects.",
+      "properties": {
+        "cr": {
+          "minLength": 1,
+          "title": "Cr",
+          "type": "string"
+        },
+        "type": {
+          "description": "Key of register list LINKTYPE",
+          "enum": [
+            "COVERS",
+            "PARTLY",
+            "SUP_METHOD",
+            "SUP_PROCESS",
+            "CONTEXT"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "condition": {
+          "default": "",
+          "description": "Applicability rule (rule vocabulary, spec § 4.6); empty = always",
+          "title": "Condition",
+          "type": "string"
+        },
+        "guidance": {
+          "default": "",
+          "description": "Source-specific guidance shown with the check items this link selects",
+          "title": "Guidance",
+          "type": "string"
+        },
+        "rationale": {
+          "default": "",
+          "title": "Rationale",
+          "type": "string"
+        },
+        "author": {
+          "default": "",
+          "title": "Author",
+          "type": "string"
+        },
+        "date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Date"
+        }
+      },
+      "required": [
+        "cr",
+        "type"
+      ],
+      "title": "CoverageLink",
+      "type": "object"
+    },
+    "ProvisionAnnotation": {
+      "additionalProperties": false,
+      "description": "Our judgement on one raw provision (rule A10: every provision gets one).",
+      "properties": {
+        "ref": {
+          "minLength": 1,
+          "title": "Ref",
+          "type": "string"
+        },
+        "role": {
+          "description": "Key of register list SPROLE",
+          "enum": [
+            "UMBRELLA",
+            "ATOMIC",
+            "LEADIN",
+            "DEF",
+            "SCOPE",
+            "INFO",
+            "MTABLE",
+            "CATNA"
+          ],
+          "title": "Role",
+          "type": "string"
+        },
+        "in_catalogue_scope": {
+          "title": "In Catalogue Scope",
+          "type": "boolean"
+        },
+        "scope_note": {
+          "default": "",
+          "title": "Scope Note",
+          "type": "string"
+        },
+        "label": {
+          "default": "",
+          "description": "Short label (our wording)",
+          "title": "Label",
+          "type": "string"
+        },
+        "condition_text": {
+          "default": "",
+          "title": "Condition Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "ref",
+        "role",
+        "in_catalogue_scope"
+      ],
+      "title": "ProvisionAnnotation",
+      "type": "object"
+    },
+    "SourceDocument": {
+      "additionalProperties": false,
+      "properties": {
+        "sd_id": {
+          "minLength": 1,
+          "title": "Sd Id",
+          "type": "string"
+        },
+        "title": {
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        },
+        "edition": {
+          "default": "",
+          "title": "Edition",
+          "type": "string"
+        },
+        "doc_type": {
+          "description": "Key of register list SDTYPE",
+          "enum": [
+            "REG",
+            "DA",
+            "HEN",
+            "EN",
+            "IS",
+            "TS",
+            "TR",
+            "GUIDE",
+            "INHOUSE"
+          ],
+          "title": "Doc Type",
+          "type": "string"
+        },
+        "lifecycle_status": {
+          "description": "Key of register list SDSTATUS",
+          "enum": [
+            "ANTICIPATED",
+            "DRAFT",
+            "PUBLISHED",
+            "CITED",
+            "WITHDRAWN"
+          ],
+          "title": "Lifecycle Status",
+          "type": "string"
+        },
+        "status_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Status Date"
+        },
+        "normative_strength": {
+          "description": "Key of register list STRENGTH",
+          "enum": [
+            "BINDING",
+            "PRESUMPTION",
+            "NORMATIVE",
+            "INFORMATIVE"
+          ],
+          "title": "Normative Strength",
+          "type": "string"
+        },
+        "legal_link": {
+          "default": "",
+          "title": "Legal Link",
+          "type": "string"
+        },
+        "licence_class": {
+          "description": "Key of register list LICENCE",
+          "enum": [
+            "PUBLIC",
+            "LICENSED",
+            "CLIENT"
+          ],
+          "title": "Licence Class",
+          "type": "string"
+        },
+        "notes": {
+          "default": "",
+          "title": "Notes",
+          "type": "string"
+        }
+      },
+      "required": [
+        "sd_id",
+        "title",
+        "doc_type",
+        "lifecycle_status",
+        "normative_strength",
+        "licence_class"
+      ],
+      "title": "SourceDocument",
+      "type": "object"
+    },
+    "SourceRequirement": {
+      "additionalProperties": false,
+      "properties": {
+        "sr_id": {
+          "minLength": 1,
+          "pattern": "^SR\\.[A-Za-z0-9\\-]+\\.\\d{4}$",
+          "title": "Sr Id",
+          "type": "string"
+        },
+        "sp_refs": {
+          "description": "SP IDs (<SD>:<ref>) of this source document",
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Sp Refs",
+          "type": "array"
+        },
+        "statement": {
+          "minLength": 1,
+          "title": "Statement",
+          "type": "string"
+        },
+        "obligation": {
+          "description": "Key of register list OBLIG",
+          "enum": [
+            "SHALL",
+            "SHOULD",
+            "MAY",
+            "DERIVED"
+          ],
+          "title": "Obligation",
+          "type": "string"
+        },
+        "origin": {
+          "description": "Key of register list ORIGIN",
+          "enum": [
+            "LITERAL",
+            "DERIVED"
+          ],
+          "title": "Origin",
+          "type": "string"
+        },
+        "author": {
+          "default": "",
+          "title": "Author",
+          "type": "string"
+        },
+        "date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Date"
+        },
+        "rationale": {
+          "default": "",
+          "title": "Rationale",
+          "type": "string"
+        },
+        "parameters": {
+          "default": "",
+          "title": "Parameters",
+          "type": "string"
+        },
+        "measure_rating": {
+          "default": "",
+          "title": "Measure Rating",
+          "type": "string"
+        },
+        "coverage_complete": {
+          "title": "Coverage Complete",
+          "type": "boolean"
+        },
+        "notes": {
+          "default": "",
+          "title": "Notes",
+          "type": "string"
+        },
+        "links": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/CoverageLink"
+          },
+          "title": "Links",
+          "type": "array"
+        }
+      },
+      "required": [
+        "sr_id",
+        "sp_refs",
+        "statement",
+        "obligation",
+        "origin",
+        "coverage_complete"
+      ],
+      "title": "SourceRequirement",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "derived.json of one source document.",
+  "properties": {
+    "$schema": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "$Schema"
+    },
+    "sd": {
+      "$ref": "#/$defs/SourceDocument"
+    },
+    "provisions": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/ProvisionAnnotation"
+      },
+      "title": "Provisions",
+      "type": "array"
+    },
+    "requirements": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/SourceRequirement"
+      },
+      "title": "Requirements",
+      "type": "array"
+    },
+    "correspondences": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/Correspondence"
+      },
+      "title": "Correspondences",
+      "type": "array"
+    }
+  },
+  "required": [
+    "sd"
+  ],
+  "title": "SourceCatalogue",
+  "type": "object"
+}

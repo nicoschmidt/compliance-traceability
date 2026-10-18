@@ -1,0 +1,32 @@
+{
+  "$schema": "../../../../../../../schemas/raw.schema.json",
+  "doc_id": "AIA",
+  "title": "Regulation (EU) 2024/1689 (AI Act), as amended by Reg. (EU) 2026/1744",
+  "extracted": "SAMPLE fixture (test data, not a real extraction)",
+  "provisions": [
+    {
+      "ref": "9(8)",
+      "text": "The testing of high-risk AI systems shall be performed, as appropriate, at any time throughout the development process, and, in any event, prior to their being placed on the market or put into service. Testing shall be carried out against prior defined metrics and probabilistic thresholds that are appropriate to the intended purpose of the high-risk AI system."
+    },
+    {
+      "ref": "12(1)",
+      "text": "High-risk AI systems shall technically allow for the automatic recording of events (logs) over the lifetime of the system."
+    },
+    {
+      "ref": "13(3)(b)(ii)",
+      "text": "the level of accuracy, including its metrics, robustness and cybersecurity referred to in Article 15 against which the high-risk AI system has been tested and validated and which can be expected, and any known and foreseeable circumstances that may have an impact on that expected level of accuracy, robustness and cybersecurity;"
+    },
+    {
+      "ref": "15(1)",
+      "text": "High-risk AI systems shall be designed and developed in such a way that they achieve an appropriate level of accuracy, robustness, and cybersecurity, and that they perform consistently in those respects throughout their lifecycle."
+    },
+    {
+      "ref": "15(3)",
+      "text": "The levels of accuracy and the relevant accuracy metrics of high-risk AI systems shall be declared in the accompanying instructions of use."
+    },
+    {
+      "ref": "72(1)",
+      "text": "Providers shall establish and document a post-market monitoring system in a manner that is proportionate to the nature of the AI technologies and the risks of the high-risk AI system."
+    }
+  ]
+}

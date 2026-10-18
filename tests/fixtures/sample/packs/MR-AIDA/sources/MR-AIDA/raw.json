@@ -1,0 +1,12 @@
+{
+  "$schema": "../../../../../../../schemas/raw.schema.json",
+  "doc_id": "MR-AIDA",
+  "title": "MR Annex III amendment by delegated act under MR Art 8 3rd para (anticipated)",
+  "extracted": "SAMPLE fixture (test data, not a real extraction)",
+  "provisions": [
+    {
+      "ref": "AI-PERF",
+      "heading": "Anticipated EHSR reflecting AIA Art 15(1)"
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "$schema": "../../../../../../../schemas/derived.schema.json",
+  "sd": {
+    "sd_id": "AIA",
+    "title": "Regulation (EU) 2024/1689 (AI Act), as amended by Reg. (EU) 2026/1744",
+    "edition": "consolidated 2026-07",
+    "doc_type": "REG",
+    "lifecycle_status": "PUBLISHED",
+    "status_date": "2026-07-27",
+    "normative_strength": "BINDING",
+    "licence_class": "PUBLIC",
+    "notes": "Reference source for machinery (Annex I Section B)"
+  },
+  "provisions": [
+    {
+      "ref": "9(8)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true
+    },
+    {
+      "ref": "12(1)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true
+    },
+    {
+      "ref": "13(3)(b)(ii)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true
+    },
+    {
+      "ref": "15(1)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true
+    },
+    {
+      "ref": "15(3)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true
+    },
+    {
+      "ref": "72(1)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true
+    }
+  ],
+  "requirements": [
+    {
+      "sr_id": "SR.AIA.0001",
+      "sp_refs": [
+        "AIA:9(8)"
+      ],
+      "statement": "Testing against prior defined metrics and probabilistic thresholds, before placing on the market.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Sample author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.PERF.004.2",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0002",
+      "sp_refs": [
+        "AIA:15(1)"
+      ],
+      "statement": "Appropriate level of accuracy, robustness and cybersecurity; consistent performance over the lifecycle.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Sample author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.PERF.004.1",
+          "type": "PARTLY"
+        },
+        {
+          "cr": "CR.ROB.001",
+          "type": "PARTLY"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0003",
+      "sp_refs": [
+        "AIA:15(3)"
+      ],
+      "statement": "Accuracy levels and metrics declared in the instructions for use.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Sample author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.PERF.004.4",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0004",
+      "sp_refs": [
+        "AIA:13(3)(b)(ii)"
+      ],
+      "statement": "IFU state tested/validated accuracy, robustness, cybersecurity and influencing circumstances.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Sample author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.PERF.004.4",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0005",
+      "sp_refs": [
+        "AIA:12(1)"
+      ],
+      "statement": "Automatic recording of events (logs) over the lifetime of the system.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Sample author",
+      "date": "2026-10-09",
+      "coverage_complete": false,
+      "links": [
+        {
+          "cr": "CR.LOG.001",
+          "type": "PARTLY",
+          "rationale": "Lifetime logging; PMM purpose not yet covered -> gap"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0006",
+      "sp_refs": [
+        "AIA:72(1)"
+      ],
+      "statement": "Establish and document a proportionate post-market monitoring system.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Sample author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.PMM.001",
+          "type": "COVERS"
+        }
+      ]
+    }
+  ]
+}

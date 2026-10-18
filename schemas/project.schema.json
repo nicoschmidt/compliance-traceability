@@ -1,0 +1,316 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "project.schema.json",
+  "$defs": {
+    "AssessmentObject": {
+      "additionalProperties": false,
+      "properties": {
+        "object_id": {
+          "minLength": 1,
+          "title": "Object Id",
+          "type": "string"
+        },
+        "level": {
+          "description": "Key of register list OBJLEVEL",
+          "enum": [
+            "ORG",
+            "PRD",
+            "SF",
+            "AIF",
+            "TE",
+            "DEV"
+          ],
+          "title": "Level",
+          "type": "string"
+        },
+        "name": {
+          "default": "",
+          "title": "Name",
+          "type": "string"
+        },
+        "description": {
+          "default": "",
+          "title": "Description",
+          "type": "string"
+        },
+        "parent_object": {
+          "default": "",
+          "title": "Parent Object",
+          "type": "string"
+        }
+      },
+      "required": [
+        "object_id",
+        "level"
+      ],
+      "title": "AssessmentObject",
+      "type": "object"
+    },
+    "BasisEntry": {
+      "additionalProperties": false,
+      "properties": {
+        "sd_id": {
+          "minLength": 1,
+          "title": "Sd Id",
+          "type": "string"
+        },
+        "edition": {
+          "default": "",
+          "title": "Edition",
+          "type": "string"
+        },
+        "use_case": {
+          "anyOf": [
+            {
+              "description": "Key of register list USECASE",
+              "enum": [
+                "UC1A",
+                "UC1B",
+                "UC2",
+                "UC2G"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Use Case"
+        },
+        "note": {
+          "default": "",
+          "title": "Note",
+          "type": "string"
+        }
+      },
+      "required": [
+        "sd_id"
+      ],
+      "title": "BasisEntry",
+      "type": "object"
+    },
+    "EvidenceItem": {
+      "additionalProperties": false,
+      "properties": {
+        "ev_id": {
+          "minLength": 1,
+          "pattern": "^P\\d{5}-EV-\\d{3}$",
+          "title": "Ev Id",
+          "type": "string"
+        },
+        "title": {
+          "default": "",
+          "title": "Title",
+          "type": "string"
+        },
+        "client_doc_id": {
+          "default": "",
+          "title": "Client Doc Id",
+          "type": "string"
+        },
+        "version": {
+          "default": "",
+          "title": "Version",
+          "type": "string"
+        },
+        "date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Date"
+        },
+        "type": {
+          "anyOf": [
+            {
+              "description": "Key of register list EVTYPE",
+              "enum": [
+                "ODD",
+                "HARA",
+                "SRS",
+                "ARCH",
+                "DMP",
+                "DATASHEET",
+                "MODELDOC",
+                "VVPLAN",
+                "VVREP",
+                "FMEA",
+                "IFU",
+                "TD",
+                "QMS",
+                "PMM",
+                "INC",
+                "CERT",
+                "OTHER"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Type"
+        },
+        "owner": {
+          "default": "",
+          "title": "Owner",
+          "type": "string"
+        },
+        "confidentiality": {
+          "default": "",
+          "title": "Confidentiality",
+          "type": "string"
+        },
+        "location": {
+          "default": "",
+          "title": "Location",
+          "type": "string"
+        }
+      },
+      "required": [
+        "ev_id"
+      ],
+      "title": "EvidenceItem",
+      "type": "object"
+    },
+    "ProjectHeader": {
+      "additionalProperties": false,
+      "properties": {
+        "project_id": {
+          "minLength": 1,
+          "pattern": "^P\\d{5}$",
+          "title": "Project Id",
+          "type": "string"
+        },
+        "client": {
+          "default": "",
+          "title": "Client",
+          "type": "string"
+        },
+        "product": {
+          "default": "",
+          "title": "Product",
+          "type": "string"
+        },
+        "description": {
+          "default": "",
+          "title": "Description",
+          "type": "string"
+        },
+        "use_cases": {
+          "default": "",
+          "title": "Use Cases",
+          "type": "string"
+        },
+        "catalogue_baseline": {
+          "default": "",
+          "title": "Catalogue Baseline",
+          "type": "string"
+        },
+        "boundary_statement": {
+          "default": "",
+          "title": "Boundary Statement",
+          "type": "string"
+        },
+        "agreed_exclusions": {
+          "default": "",
+          "title": "Agreed Exclusions",
+          "type": "string"
+        },
+        "assessor": {
+          "default": "",
+          "title": "Assessor",
+          "type": "string"
+        },
+        "reviewer": {
+          "default": "",
+          "title": "Reviewer",
+          "type": "string"
+        },
+        "start_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Start Date"
+        }
+      },
+      "required": [
+        "project_id"
+      ],
+      "title": "ProjectHeader",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Initial content of a project workbook's input sheets (build_project.py --init --seed).",
+  "properties": {
+    "$schema": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "$Schema"
+    },
+    "prj": {
+      "$ref": "#/$defs/ProjectHeader"
+    },
+    "basis": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/BasisEntry"
+      },
+      "title": "Basis",
+      "type": "array"
+    },
+    "tags": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "default": {},
+      "description": "Tag -> value, in the rule vocabulary (e.g. \"AI.learning\": \"static\")",
+      "title": "Tags",
+      "type": "object"
+    },
+    "objects": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/AssessmentObject"
+      },
+      "title": "Objects",
+      "type": "array"
+    },
+    "ev": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/EvidenceItem"
+      },
+      "title": "Ev",
+      "type": "array"
+    }
+  },
+  "required": [
+    "prj"
+  ],
+  "title": "ProjectSeed",
+  "type": "object"
+}

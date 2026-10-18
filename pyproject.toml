@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "compliance-traceability"
+version = "0.4.0"
+description = "Compliance traceability toolkit: JSON catalogue store, catalogue checks, Excel catalogue and project workbooks"
+requires-python = ">=3.9"
+dependencies = ["openpyxl>=3.1", "pydantic>=2.6"]
+
+[project.optional-dependencies]
+dev = ["pytest", "jsonschema"]
+
+[tool.setuptools]
+packages = ["ctm"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_model.py"]   # tests/test_phase1.py is a script (needs OUTDIR and a LibreOffice recalc script)

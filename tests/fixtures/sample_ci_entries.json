@@ -1,0 +1,47 @@
+{
+  "P26001-AIF-01/CR.PERF.004.1": {
+    "verdict": "PASS",
+    "finding_severity": "OBS",
+    "evidence_refs": "P26001-EV-001 §3",
+    "assessor_remarks": "Metric set adequate; add per-pose breakdown."
+  },
+  "P26001-AIF-01/CR.PERF.004.2": {
+    "verdict": "PASS",
+    "evidence_refs": "P26001-EV-001 §4"
+  },
+  "P26001-AIF-01/CR.PERF.004.3": {
+    "verdict": "INFO",
+    "evidence_refs": "P26001-EV-002",
+    "assessor_remarks": "Confidence level not stated."
+  },
+  "P26001-PRD-01/CR.PERF.004.4": {
+    "verdict": "PASS",
+    "evidence_refs": "P26001-EV-003 §7"
+  },
+  "P26001-SF-01/CR.ROB.001.1": {
+    "verdict": "FAIL",
+    "finding_severity": "MAJOR",
+    "assessor_remarks": "No second channel."
+  },
+  "P26001-SF-02/CR.ROB.001.1": {
+    "verdict": "FAIL",
+    "finding_severity": "MAJOR"
+  },
+  "P26001-SF-01/CR.ROB.001.2": {
+    "verdict": "PASS"
+  },
+  "P26001-SF-02/CR.ROB.001.2": {
+    "verdict": "PASS"
+  },
+  "P26001-SF-01/CR.FS.001": {
+    "verdict": "PASS"
+  },
+  "P26001-PRD-01/CR.PHYS.001": {
+    "applicability": "NIS",
+    "applicability_justification": "Offer 2026-117 §3"
+  },
+  "P26001-ORG-01/CR.PMM.001": {
+    "applicability": "INHERITED",
+    "applicability_justification": "ORG assessment P25014 (2025-11)"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "../../../../../schemas/pack.schema.json",
+  "pack_id": "EN18228",
+  "title": "prEN 18228 AI risk management (sample rows only)",
+  "requires": [
+    "AIA"
+  ],
+  "sources": [
+    "EN18228"
+  ]
+}

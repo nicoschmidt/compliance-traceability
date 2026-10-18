@@ -1,0 +1,37 @@
+{
+  "$schema": "../../../../schemas/catalogue.schema.json",
+  "baseline": "CAT-SAMPLE",
+  "title": "SAMPLE fixture for tests/test_phase1.py",
+  "known_packs": [
+    {
+      "pack_id": "MR",
+      "access": "public",
+      "path": "../packs/MR"
+    },
+    {
+      "pack_id": "AIA",
+      "access": "public",
+      "path": "../packs/AIA"
+    },
+    {
+      "pack_id": "MR-AIDA",
+      "access": "public",
+      "path": "../packs/MR-AIDA"
+    },
+    {
+      "pack_id": "EN18228",
+      "access": "public",
+      "path": "../packs/EN18228"
+    },
+    {
+      "pack_id": "TR5469",
+      "access": "public",
+      "path": "../packs/TR5469"
+    },
+    {
+      "pack_id": "DEMO",
+      "title": "Synthetic licensed pack (tests/fixtures/extra_packs/DEMO)",
+      "access": "private"
+    }
+  ]
+}

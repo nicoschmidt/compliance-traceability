@@ -1,0 +1,12 @@
+{
+  "$schema": "../../../../../schemas/pack.schema.json",
+  "pack_id": "MR",
+  "title": "Regulation (EU) 2023/1230 on machinery",
+  "requires": [
+    "AIA",
+    "MR-AIDA"
+  ],
+  "sources": [
+    "MR"
+  ]
+}

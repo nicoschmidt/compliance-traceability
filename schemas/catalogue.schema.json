@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "catalogue.schema.json",
+  "$defs": {
+    "KnownPack": {
+      "additionalProperties": false,
+      "description": "A pack the master list is built from (spec § 8.3). Public packs give their default location; private packs are\nfound via --pack, CTM_PACKS or ctm.local.json. CRs reached only by packs that are not loaded are not orphans.",
+      "properties": {
+        "pack_id": {
+          "minLength": 1,
+          "title": "Pack Id",
+          "type": "string"
+        },
+        "title": {
+          "default": "",
+          "title": "Title",
+          "type": "string"
+        },
+        "access": {
+          "enum": [
+            "public",
+            "private"
+          ],
+          "title": "Access",
+          "type": "string"
+        },
+        "path": {
+          "default": "",
+          "description": "Default location relative to the master list directory (loaded by default)",
+          "title": "Path",
+          "type": "string"
+        }
+      },
+      "required": [
+        "pack_id",
+        "access"
+      ],
+      "title": "KnownPack",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "catalogue.json of the master list.",
+  "properties": {
+    "$schema": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "$Schema"
+    },
+    "baseline": {
+      "description": "Catalogue baseline ID, e.g. CAT-2026.1-draft",
+      "minLength": 1,
+      "title": "Baseline",
+      "type": "string"
+    },
+    "title": {
+      "default": "",
+      "title": "Title",
+      "type": "string"
+    },
+    "known_packs": {
+      "default": [],
+      "description": "All packs of this baseline, in catalogue order",
+      "items": {
+        "$ref": "#/$defs/KnownPack"
+      },
+      "title": "Known Packs",
+      "type": "array"
+    }
+  },
+  "required": [
+    "baseline"
+  ],
+  "title": "CatalogueManifest",
+  "type": "object"
+}

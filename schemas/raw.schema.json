@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "raw.schema.json",
+  "$defs": {
+    "RawProvision": {
+      "additionalProperties": false,
+      "description": "One unit of the source's native structure. Text is verbatim; text of licensed sources is internal only and\nstripped from exports (spec § 7).",
+      "properties": {
+        "ref": {
+          "description": "Native reference, unique in the document; SP ID = <SD>:<ref>",
+          "minLength": 1,
+          "title": "Ref",
+          "type": "string"
+        },
+        "parent": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "ref of the parent provision",
+          "title": "Parent"
+        },
+        "kind": {
+          "anyOf": [
+            {
+              "enum": [
+                "section",
+                "article",
+                "annex",
+                "paragraph",
+                "subparagraph",
+                "point",
+                "subpoint",
+                "definition"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Kind"
+        },
+        "heading": {
+          "default": "",
+          "title": "Heading",
+          "type": "string"
+        },
+        "text": {
+          "default": "",
+          "title": "Text",
+          "type": "string"
+        },
+        "verbatim": {
+          "default": true,
+          "description": "false if the text is condensed or otherwise not the official wording",
+          "title": "Verbatim",
+          "type": "boolean"
+        },
+        "note": {
+          "default": "",
+          "title": "Note",
+          "type": "string"
+        }
+      },
+      "required": [
+        "ref"
+      ],
+      "title": "RawProvision",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "$Schema"
+    },
+    "doc_id": {
+      "minLength": 1,
+      "title": "Doc Id",
+      "type": "string"
+    },
+    "title": {
+      "minLength": 1,
+      "title": "Title",
+      "type": "string"
+    },
+    "oj_ref": {
+      "default": "",
+      "title": "Oj Ref",
+      "type": "string"
+    },
+    "source_url": {
+      "default": "",
+      "title": "Source Url",
+      "type": "string"
+    },
+    "extracted": {
+      "default": "",
+      "description": "How and from what the text was extracted",
+      "title": "Extracted",
+      "type": "string"
+    },
+    "provisions": {
+      "description": "In document order (defines SP sequence)",
+      "items": {
+        "$ref": "#/$defs/RawProvision"
+      },
+      "title": "Provisions",
+      "type": "array"
+    }
+  },
+  "required": [
+    "doc_id",
+    "title",
+    "provisions"
+  ],
+  "title": "RawDocument",
+  "type": "object"
+}

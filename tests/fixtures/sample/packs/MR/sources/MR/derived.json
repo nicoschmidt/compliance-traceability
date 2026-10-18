@@ -1,0 +1,206 @@
+{
+  "$schema": "../../../../../../../schemas/derived.schema.json",
+  "sd": {
+    "sd_id": "MR",
+    "title": "Regulation (EU) 2023/1230 on machinery",
+    "edition": "2023 (OJ L 165)",
+    "doc_type": "REG",
+    "lifecycle_status": "PUBLISHED",
+    "status_date": "2023-06-29",
+    "normative_strength": "BINDING",
+    "licence_class": "PUBLIC",
+    "notes": "Applies from 20 Jan 2027"
+  },
+  "provisions": [
+    {
+      "ref": "III-A(e)",
+      "role": "DEF",
+      "in_catalogue_scope": true
+    },
+    {
+      "ref": "III-1.2.1",
+      "role": "UMBRELLA",
+      "in_catalogue_scope": true
+    },
+    {
+      "ref": "III-1.2.1-2",
+      "role": "LEADIN",
+      "in_catalogue_scope": true
+    },
+    {
+      "ref": "III-1.2.1-2(b)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true
+    },
+    {
+      "ref": "III-1.2.1-2(c)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true
+    },
+    {
+      "ref": "III-1.2.1-2(f)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true
+    },
+    {
+      "ref": "III-1.2.1-4(a)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true
+    },
+    {
+      "ref": "III-1.2.6",
+      "role": "UMBRELLA",
+      "in_catalogue_scope": true
+    },
+    {
+      "ref": "III-1.2.6-2(a)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true
+    },
+    {
+      "ref": "III-1.5.8",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true
+    },
+    {
+      "ref": "III-1.5.9",
+      "role": "ATOMIC",
+      "in_catalogue_scope": false,
+      "scope_note": "Physical hazard; listed, not atomised in this sample"
+    },
+    {
+      "ref": "III-3.2.4-2",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "condition_text": "autonomous mobile machinery"
+    }
+  ],
+  "requirements": [
+    {
+      "sr_id": "SR.MR.0001",
+      "sp_refs": [
+        "MR:III-1.2.1-2(b)"
+      ],
+      "statement": "A fault in the hardware or the logic of the control system shall not lead to hazardous situations.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Sample author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.ROB.001",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.MR.0002",
+      "sp_refs": [
+        "MR:III-1.2.1-2(c)"
+      ],
+      "statement": "Errors in the control system logic shall not lead to hazardous situations.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Sample author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.PERF.004",
+          "type": "PARTLY",
+          "rationale": "Statistical performance of AI logic"
+        },
+        {
+          "cr": "CR.ROB.001",
+          "type": "PARTLY",
+          "rationale": "Fault reaction to logic errors"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.MR.0003",
+      "sp_refs": [
+        "MR:III-1.2.1-2(f)"
+      ],
+      "statement": "Tracing log of interventions and uploaded safety-software versions enabled for five years.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Sample author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.LOG.001",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.MR.0004",
+      "sp_refs": [
+        "MR:III-1.2.1-4(a)",
+        "MR:III-1.2.6-2(a)"
+      ],
+      "statement": "The machinery shall not start unexpectedly (control fault; power or network interruption/restoration).",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Sample author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.FS.001",
+          "type": "COVERS",
+          "rationale": "Two trigger conditions in one CR (rule A2)"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.MR.0005",
+      "sp_refs": [
+        "MR:III-1.5.8"
+      ],
+      "statement": "Risks from airborne noise emission reduced to the lowest level.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Sample author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.PHYS.001",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.MR.0006",
+      "sp_refs": [
+        "MR:III-3.2.4-2"
+      ],
+      "statement": "Supervisor information gives a complete and accurate view of operation, movement and safe positioning.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Sample author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.HO.001",
+          "type": "COVERS"
+        }
+      ]
+    }
+  ],
+  "correspondences": [
+    {
+      "corr_id": "C0002",
+      "basis": "LEGAL",
+      "from_sp": "AIA:15(1)",
+      "to_sp": "MR-AIDA:AI-PERF",
+      "declared_coverage": "COVERED",
+      "remarks": "MR Art 20(10): AIA hEN presumption extends to Annex III AI EHSRs"
+    }
+  ]
+}

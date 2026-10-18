@@ -1,0 +1,8 @@
+{
+  "$schema": "../../../../schemas/pack.schema.json",
+  "pack_id": "DEMO",
+  "title": "SAMPLE pack fixture for tests (synthetic, not a real standard)",
+  "sources": [
+    "DEMO"
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "$schema": "../../../../../../../schemas/derived.schema.json",
+  "sd": {
+    "sd_id": "TR5469",
+    "title": "ISO/IEC TR 5469:2024 Functional safety and AI systems (sample rows only)",
+    "edition": "2024",
+    "doc_type": "TR",
+    "lifecycle_status": "PUBLISHED",
+    "normative_strength": "INFORMATIVE",
+    "licence_class": "LICENSED"
+  },
+  "provisions": [
+    {
+      "ref": "9.3.4",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true
+    },
+    {
+      "ref": "10.2.5",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true
+    }
+  ],
+  "requirements": [
+    {
+      "sr_id": "SR.TR5469.0001",
+      "sp_refs": [
+        "TR5469:9.3.4"
+      ],
+      "statement": "Select appropriate AI performance metrics and justify them.",
+      "obligation": "DERIVED",
+      "origin": "DERIVED",
+      "author": "Sample author",
+      "date": "2026-10-09",
+      "rationale": "Derived from TR 5469 9.3.4 (informative)",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.PERF.004.1",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.TR5469.0002",
+      "sp_refs": [
+        "TR5469:10.2.5"
+      ],
+      "statement": "Evaluate AI system performance statistically, incl. confidence intervals.",
+      "obligation": "DERIVED",
+      "origin": "DERIVED",
+      "author": "Sample author",
+      "date": "2026-10-09",
+      "rationale": "Derived from TR 5469 10.2.5 (informative)",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.PERF.004.3",
+          "type": "COVERS"
+        },
+        {
+          "cr": "CR.PERF.004.2",
+          "type": "SUP_METHOD",
+          "rationale": "Statistical method for thresholds"
+        }
+      ]
+    }
+  ]
+}

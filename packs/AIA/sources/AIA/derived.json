@@ -1,0 +1,3214 @@
+{
+  "$schema": "../../../../schemas/derived.schema.json",
+  "sd": {
+    "sd_id": "AIA",
+    "title": "Regulation (EU) 2024/1689 (AI Act) – Arts 3, 4a, 8–15, 17, 19, 72, 73, Annex IV",
+    "edition": "consolidated with Reg. (EU) 2026/1744",
+    "doc_type": "REG",
+    "lifecycle_status": "PUBLISHED",
+    "status_date": "2026-07-27",
+    "normative_strength": "BINDING",
+    "licence_class": "PUBLIC",
+    "notes": "Reference source for machinery (Annex I Section B); requirements to be reflected in MR Annex III by delegated act."
+  },
+  "provisions": [
+    {
+      "ref": "3",
+      "role": "UMBRELLA",
+      "in_catalogue_scope": true
+    },
+    {
+      "ref": "3(1)",
+      "role": "DEF",
+      "in_catalogue_scope": true,
+      "label": "Definition: 'AI system'"
+    },
+    {
+      "ref": "3(2)",
+      "role": "DEF",
+      "in_catalogue_scope": true,
+      "label": "Definition: 'risk'"
+    },
+    {
+      "ref": "3(4)",
+      "role": "DEF",
+      "in_catalogue_scope": true,
+      "label": "Definition: 'deployer'"
+    },
+    {
+      "ref": "3(12)",
+      "role": "DEF",
+      "in_catalogue_scope": true,
+      "label": "Definition: 'intended purpose'"
+    },
+    {
+      "ref": "3(13)",
+      "role": "DEF",
+      "in_catalogue_scope": true,
+      "label": "Definition: 'reasonably foreseeable misuse'"
+    },
+    {
+      "ref": "3(14)",
+      "role": "DEF",
+      "in_catalogue_scope": true,
+      "label": "Definition: 'safety component' (as amended by Omnibus)"
+    },
+    {
+      "ref": "3(23)",
+      "role": "DEF",
+      "in_catalogue_scope": true,
+      "label": "Definition: 'substantial modification'"
+    },
+    {
+      "ref": "3(49)",
+      "role": "DEF",
+      "in_catalogue_scope": true,
+      "label": "Definition: 'serious incident'"
+    },
+    {
+      "ref": "8",
+      "role": "UMBRELLA",
+      "in_catalogue_scope": true
+    },
+    {
+      "ref": "8(1)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Compliance with Section 2 requirements, considering intended purpose and AI state of the art"
+    },
+    {
+      "ref": "8(2)",
+      "role": "CATNA",
+      "in_catalogue_scope": true,
+      "scope_note": "N/A – Section A mechanism (machinery moved to Annex I Section B)",
+      "label": "Integration into Section A product-legislation documentation/procedures"
+    },
+    {
+      "ref": "9",
+      "role": "UMBRELLA",
+      "in_catalogue_scope": true
+    },
+    {
+      "ref": "9(1)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "RMS established, implemented, documented and maintained"
+    },
+    {
+      "ref": "9(2)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "RMS = continuous iterative process over entire lifecycle, regular systematic review"
+    },
+    {
+      "ref": "9(2)(a)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Identify & analyse known/foreseeable risks to health, safety, fundamental rights (intended purpose)"
+    },
+    {
+      "ref": "9(2)(b)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Estimate & evaluate risks incl. reasonably foreseeable misuse"
+    },
+    {
+      "ref": "9(2)(c)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Evaluate other risks from post-market monitoring data"
+    },
+    {
+      "ref": "9(2)(d)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Adopt appropriate, targeted risk management measures"
+    },
+    {
+      "ref": "9(3)",
+      "role": "SCOPE",
+      "in_catalogue_scope": true,
+      "label": "Scope: risks mitigable through development/design or technical information"
+    },
+    {
+      "ref": "9(4)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Consider combined effects/interaction of Section 2 measures"
+    },
+    {
+      "ref": "9(5)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Residual risk per hazard and overall residual risk judged acceptable"
+    },
+    {
+      "ref": "9(5)(a)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Eliminate/reduce risks by adequate design and development"
+    },
+    {
+      "ref": "9(5)(b)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Mitigation and control measures for risks that cannot be eliminated"
+    },
+    {
+      "ref": "9(5)(c)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Information (Art 13) and, where appropriate, training to deployers"
+    },
+    {
+      "ref": "9(5)-2",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Consider deployer's technical knowledge, experience, education, training and context of use"
+    },
+    {
+      "ref": "9(6)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Testing to identify RM measures, consistent performance and compliance"
+    },
+    {
+      "ref": "9(7)",
+      "role": "INFO",
+      "in_catalogue_scope": true,
+      "label": "Testing may include real-world testing (Art 60)"
+    },
+    {
+      "ref": "9(8)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Test throughout development and before placing on market, against prior-defined metrics & probabilistic thresholds"
+    },
+    {
+      "ref": "9(9)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Consider adverse impact on persons under 18 and other vulnerable groups"
+    },
+    {
+      "ref": "9(10)",
+      "role": "INFO",
+      "in_catalogue_scope": true,
+      "label": "RMS may be combined with RM procedures under other Union law"
+    },
+    {
+      "ref": "10",
+      "role": "UMBRELLA",
+      "in_catalogue_scope": true
+    },
+    {
+      "ref": "10(1)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Training/validation/testing data sets meeting quality criteria (10(2)-(4), 4a(1))"
+    },
+    {
+      "ref": "10(2)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Data governance and management practices appropriate to intended purpose"
+    },
+    {
+      "ref": "10(2)(a)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Data governance: relevant design choices"
+    },
+    {
+      "ref": "10(2)(b)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Data governance: collection processes and data origin (personal data: original purpose)"
+    },
+    {
+      "ref": "10(2)(c)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Data governance: preparation (annotation, labelling, cleaning, updating, enrichment, aggregation)"
+    },
+    {
+      "ref": "10(2)(d)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Data governance: formulation of assumptions (what data measure/represent)"
+    },
+    {
+      "ref": "10(2)(e)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Data governance: availability, quantity and suitability of data sets"
+    },
+    {
+      "ref": "10(2)(f)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Data governance: examination for biases affecting health & safety / fundamental rights, feedback effects"
+    },
+    {
+      "ref": "10(2)(g)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Data governance: measures to detect, prevent, mitigate identified biases"
+    },
+    {
+      "ref": "10(2)(h)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Data governance: identify data gaps/shortcomings and how to address them"
+    },
+    {
+      "ref": "10(3)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Data sets relevant, sufficiently representative, error-free & complete; appropriate statistical properties"
+    },
+    {
+      "ref": "10(4)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Data sets reflect specific geographical, contextual, behavioural or functional setting"
+    },
+    {
+      "ref": "4a",
+      "role": "UMBRELLA",
+      "in_catalogue_scope": true
+    },
+    {
+      "ref": "4a(1)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Processing of special categories of personal data for bias detection/correction – conditions (a)-(f)"
+    },
+    {
+      "ref": "4a(1)(a)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Special categories: only if not achievable with other data (incl. synthetic/anonymised)"
+    },
+    {
+      "ref": "4a(1)(b)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Special categories: re-use limitations, state-of-the-art security/privacy measures incl. pseudonymisation"
+    },
+    {
+      "ref": "4a(1)(c)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Special categories: secured and protected; strict, documented access controls"
+    },
+    {
+      "ref": "4a(1)(d)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Special categories: no transmission, transfer or access by other parties"
+    },
+    {
+      "ref": "4a(1)(e)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Special categories: deletion once bias corrected or retention period ends"
+    },
+    {
+      "ref": "4a(1)(f)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Special categories: records state why processing was strictly necessary"
+    },
+    {
+      "ref": "4a(2)",
+      "role": "CATNA",
+      "in_catalogue_scope": true,
+      "scope_note": "N/A – other AI systems and deployers only (permission, no provider obligation for high-risk AI systems)",
+      "label": "Other AI systems/models and deployers: processing of special categories for bias correction"
+    },
+    {
+      "ref": "4a(2)(a)",
+      "role": "CATNA",
+      "in_catalogue_scope": true,
+      "scope_note": "N/A – other AI systems and deployers only (permission, no provider obligation for high-risk AI systems)",
+      "label": "Other AI systems: strictly necessary for bias detection/correction"
+    },
+    {
+      "ref": "4a(2)(b)",
+      "role": "CATNA",
+      "in_catalogue_scope": true,
+      "scope_note": "N/A – other AI systems and deployers only (permission, no provider obligation for high-risk AI systems)",
+      "label": "Other AI systems: conditions and safeguards of paragraph 1 applied"
+    },
+    {
+      "ref": "4a(2)-2",
+      "role": "CATNA",
+      "in_catalogue_scope": true,
+      "scope_note": "N/A – other AI systems and deployers only (permission, no provider obligation for high-risk AI systems)",
+      "label": "No obligation to conduct bias detection and correction"
+    },
+    {
+      "ref": "10(6)",
+      "role": "SCOPE",
+      "in_catalogue_scope": true,
+      "label": "Systems without model training: data criteria apply only to testing data sets"
+    },
+    {
+      "ref": "11",
+      "role": "UMBRELLA",
+      "in_catalogue_scope": true
+    },
+    {
+      "ref": "11(1)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Technical documentation drawn up before placing on market and kept up to date"
+    },
+    {
+      "ref": "11(1)-2",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Tech doc demonstrates compliance, at minimum Annex IV elements; simplified SME/SMC form"
+    },
+    {
+      "ref": "11(2)",
+      "role": "CATNA",
+      "in_catalogue_scope": true,
+      "scope_note": "N/A – Section A mechanism (machinery moved to Annex I Section B)",
+      "label": "Single set of technical documentation for Section A products"
+    },
+    {
+      "ref": "11(3)",
+      "role": "CATNA",
+      "in_catalogue_scope": true,
+      "scope_note": "N/A – Commission/authority task (no provider obligation)",
+      "label": "Commission may amend Annex IV by delegated act"
+    },
+    {
+      "ref": "12",
+      "role": "UMBRELLA",
+      "in_catalogue_scope": true
+    },
+    {
+      "ref": "12(1)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Automatic recording of events (logs) over the lifetime of the system"
+    },
+    {
+      "ref": "12(2)",
+      "role": "LEADIN",
+      "in_catalogue_scope": true,
+      "label": "Logging for traceability appropriate to intended purpose"
+    },
+    {
+      "ref": "12(2)(a)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Logs: identify situations presenting a risk (Art 79(1)) or a substantial modification"
+    },
+    {
+      "ref": "12(2)(b)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Logs: facilitate post-market monitoring (Art 72)"
+    },
+    {
+      "ref": "12(2)(c)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Logs: enable deployer monitoring of operation (Art 26(5))"
+    },
+    {
+      "ref": "12(3)",
+      "role": "CATNA",
+      "in_catalogue_scope": true,
+      "scope_note": "N/A – remote biometric identification only",
+      "label": "Remote biometric identification – minimum logging content"
+    },
+    {
+      "ref": "12(3)(a)",
+      "role": "CATNA",
+      "in_catalogue_scope": true,
+      "scope_note": "N/A – remote biometric identification only",
+      "label": "Biometric: period of each use"
+    },
+    {
+      "ref": "12(3)(b)",
+      "role": "CATNA",
+      "in_catalogue_scope": true,
+      "scope_note": "N/A – remote biometric identification only",
+      "label": "Biometric: reference database"
+    },
+    {
+      "ref": "12(3)(c)",
+      "role": "CATNA",
+      "in_catalogue_scope": true,
+      "scope_note": "N/A – remote biometric identification only",
+      "label": "Biometric: input data leading to match"
+    },
+    {
+      "ref": "12(3)(d)",
+      "role": "CATNA",
+      "in_catalogue_scope": true,
+      "scope_note": "N/A – remote biometric identification only",
+      "label": "Biometric: persons verifying results"
+    },
+    {
+      "ref": "13",
+      "role": "UMBRELLA",
+      "in_catalogue_scope": true
+    },
+    {
+      "ref": "13(1)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Operation sufficiently transparent for deployers to interpret output and use it appropriately"
+    },
+    {
+      "ref": "13(2)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Instructions for use: digital or other format; concise, complete, correct, clear, accessible"
+    },
+    {
+      "ref": "13(3)",
+      "role": "LEADIN",
+      "in_catalogue_scope": true,
+      "label": "IFU minimum content (chapeau)"
+    },
+    {
+      "ref": "13(3)(a)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "IFU: identity and contact details of provider / authorised representative"
+    },
+    {
+      "ref": "13(3)(b)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "IFU: characteristics, capabilities and limitations of performance"
+    },
+    {
+      "ref": "13(3)(b)(i)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "IFU: intended purpose"
+    },
+    {
+      "ref": "13(3)(b)(ii)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "IFU: tested/validated level of accuracy (metrics), robustness, cybersecurity and influencing circumstances"
+    },
+    {
+      "ref": "13(3)(b)(iii)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "IFU: known/foreseeable circumstances (use or misuse) leading to risks"
+    },
+    {
+      "ref": "13(3)(b)(iv)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "IFU: technical capabilities to provide information explaining output"
+    },
+    {
+      "ref": "13(3)(b)(v)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "IFU: performance regarding specific persons or groups of persons"
+    },
+    {
+      "ref": "13(3)(b)(vi)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "IFU: input-data specifications / information on training, validation, testing data"
+    },
+    {
+      "ref": "13(3)(b)(vii)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "IFU: information enabling deployers to interpret and appropriately use output"
+    },
+    {
+      "ref": "13(3)(c)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "IFU: pre-determined changes to system and performance"
+    },
+    {
+      "ref": "13(3)(d)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "IFU: human oversight measures incl. technical measures for output interpretation"
+    },
+    {
+      "ref": "13(3)(e)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "IFU: computational & hardware resources, expected lifetime, maintenance incl. software updates"
+    },
+    {
+      "ref": "13(3)(f)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "IFU: mechanisms for deployers to collect, store and interpret logs"
+    },
+    {
+      "ref": "14",
+      "role": "UMBRELLA",
+      "in_catalogue_scope": true
+    },
+    {
+      "ref": "14(1)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Designed for effective oversight by natural persons, incl. HMI tools"
+    },
+    {
+      "ref": "14(2)",
+      "role": "SCOPE",
+      "in_catalogue_scope": true,
+      "label": "Oversight aims to prevent/minimise risks, esp. those persisting after other measures"
+    },
+    {
+      "ref": "14(3)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Oversight commensurate with risks, level of autonomy and context of use"
+    },
+    {
+      "ref": "14(3)(a)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Oversight measures built into the system by the provider"
+    },
+    {
+      "ref": "14(3)(b)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Oversight measures identified by provider, implemented by deployer"
+    },
+    {
+      "ref": "14(4)",
+      "role": "LEADIN",
+      "in_catalogue_scope": true,
+      "label": "Overseers enabled to… (chapeau)"
+    },
+    {
+      "ref": "14(4)(a)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Overseer: understand capacities/limitations, monitor operation, detect anomalies & unexpected performance"
+    },
+    {
+      "ref": "14(4)(b)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Overseer: remain aware of automation bias"
+    },
+    {
+      "ref": "14(4)(c)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Overseer: correctly interpret output"
+    },
+    {
+      "ref": "14(4)(d)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Overseer: decide not to use, disregard, override or reverse output"
+    },
+    {
+      "ref": "14(4)(e)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Overseer: intervene or interrupt via 'stop' to a safe state"
+    },
+    {
+      "ref": "14(5)",
+      "role": "CATNA",
+      "in_catalogue_scope": true,
+      "scope_note": "N/A – remote biometric identification only",
+      "label": "Remote biometric identification – dual verification"
+    },
+    {
+      "ref": "14(5)-2",
+      "role": "CATNA",
+      "in_catalogue_scope": true,
+      "scope_note": "N/A – remote biometric identification only",
+      "label": "Remote biometric identification – exception"
+    },
+    {
+      "ref": "15",
+      "role": "UMBRELLA",
+      "in_catalogue_scope": true
+    },
+    {
+      "ref": "15(1)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Appropriate accuracy, robustness, cybersecurity; consistent performance throughout lifecycle"
+    },
+    {
+      "ref": "15(2)",
+      "role": "CATNA",
+      "in_catalogue_scope": true,
+      "scope_note": "N/A – Commission/authority task (no provider obligation)",
+      "label": "Commission to encourage benchmarks & measurement methodologies"
+    },
+    {
+      "ref": "15(3)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Accuracy levels and metrics declared in instructions for use"
+    },
+    {
+      "ref": "15(4)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Resilience to errors, faults, inconsistencies (system, environment, interaction with persons/systems)"
+    },
+    {
+      "ref": "15(4)-2",
+      "role": "INFO",
+      "in_catalogue_scope": true,
+      "label": "Robustness via technical redundancy, backup or fail-safe plans"
+    },
+    {
+      "ref": "15(4)-3",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Continual learning: eliminate/reduce biased feedback loops"
+    },
+    {
+      "ref": "15(5)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Resilience against unauthorised third parties exploiting vulnerabilities"
+    },
+    {
+      "ref": "15(5)-2",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Cybersecurity solutions appropriate to circumstances and risks"
+    },
+    {
+      "ref": "15(5)-3",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "AI-specific vulnerabilities: data/model poisoning, adversarial examples, confidentiality attacks, model flaws"
+    },
+    {
+      "ref": "17",
+      "role": "UMBRELLA",
+      "in_catalogue_scope": true
+    },
+    {
+      "ref": "17(1)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Documented quality management system ensuring compliance (chapeau)"
+    },
+    {
+      "ref": "17(1)(a)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "QMS: regulatory-compliance strategy incl. conformity assessment and modification management"
+    },
+    {
+      "ref": "17(1)(b)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "QMS: design, design control, design verification"
+    },
+    {
+      "ref": "17(1)(c)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "QMS: development, quality control, quality assurance"
+    },
+    {
+      "ref": "17(1)(d)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "QMS: examination, test, validation procedures and frequency"
+    },
+    {
+      "ref": "17(1)(e)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "QMS: technical specifications/standards applied; means where hENs not applied in full"
+    },
+    {
+      "ref": "17(1)(f)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "QMS: data management systems and procedures"
+    },
+    {
+      "ref": "17(1)(g)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "QMS: risk management system (Art 9)"
+    },
+    {
+      "ref": "17(1)(h)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "QMS: post-market monitoring system (Art 72)"
+    },
+    {
+      "ref": "17(1)(i)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "QMS: serious-incident reporting procedures (Art 73)"
+    },
+    {
+      "ref": "17(1)(j)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "QMS: communication with authorities, notified bodies, operators, customers"
+    },
+    {
+      "ref": "17(1)(k)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "QMS: record-keeping of documentation and information"
+    },
+    {
+      "ref": "17(1)(l)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "QMS: resource management incl. security of supply"
+    },
+    {
+      "ref": "17(1)(m)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "QMS: accountability framework (management and staff responsibilities)"
+    },
+    {
+      "ref": "17(2)",
+      "role": "SCOPE",
+      "in_catalogue_scope": true,
+      "label": "QMS proportionate to organisation size (SME/SMC), without lowering rigour"
+    },
+    {
+      "ref": "17(3)",
+      "role": "INFO",
+      "in_catalogue_scope": true,
+      "label": "QMS aspects may be included in sectoral QMS"
+    },
+    {
+      "ref": "17(4)",
+      "role": "CATNA",
+      "in_catalogue_scope": true,
+      "scope_note": "N/A – financial institutions only",
+      "label": "Financial institutions – QMS via financial-services governance"
+    },
+    {
+      "ref": "19",
+      "role": "UMBRELLA",
+      "in_catalogue_scope": true
+    },
+    {
+      "ref": "19(1)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Provider keeps automatically generated logs under its control ≥ 6 months"
+    },
+    {
+      "ref": "19(2)",
+      "role": "CATNA",
+      "in_catalogue_scope": true,
+      "scope_note": "N/A – financial institutions only",
+      "label": "Financial institutions – logs kept under financial-services law"
+    },
+    {
+      "ref": "72",
+      "role": "UMBRELLA",
+      "in_catalogue_scope": true
+    },
+    {
+      "ref": "72(1)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Establish and document a proportionate post-market monitoring system"
+    },
+    {
+      "ref": "72(2)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "PMM actively collects/analyses lifetime performance data; continuous compliance; interaction with other AI systems"
+    },
+    {
+      "ref": "72(3)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "PMM plan, part of technical documentation (Commission template/guidance by 2 Sep 2027)"
+    },
+    {
+      "ref": "72(4)",
+      "role": "CATNA",
+      "in_catalogue_scope": true,
+      "scope_note": "N/A – Section A mechanism (machinery moved to Annex I Section B)",
+      "label": "Integration into existing Section A PMM systems"
+    },
+    {
+      "ref": "72(4)-2",
+      "role": "CATNA",
+      "in_catalogue_scope": true,
+      "scope_note": "N/A – financial institutions only",
+      "label": "Financial institutions (Annex III point 5) – integration"
+    },
+    {
+      "ref": "73",
+      "role": "UMBRELLA",
+      "in_catalogue_scope": true
+    },
+    {
+      "ref": "73(1)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Report serious incidents to market surveillance authorities"
+    },
+    {
+      "ref": "73(2)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Report immediately after causal link established, ≤ 15 days after awareness"
+    },
+    {
+      "ref": "73(3)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Widespread infringement / critical-infrastructure incident: ≤ 2 days"
+    },
+    {
+      "ref": "73(4)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Death of a person: ≤ 10 days"
+    },
+    {
+      "ref": "73(5)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Initial incomplete report permitted, followed by complete report"
+    },
+    {
+      "ref": "73(6)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Investigate incident: risk assessment and corrective action"
+    },
+    {
+      "ref": "73(6)-2",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "Cooperate with authorities; do not alter the system before informing them"
+    },
+    {
+      "ref": "73(7)",
+      "role": "CATNA",
+      "in_catalogue_scope": true,
+      "scope_note": "N/A – Commission/authority task (no provider obligation)",
+      "label": "MSA informs fundamental-rights bodies; Commission guidance"
+    },
+    {
+      "ref": "73(8)",
+      "role": "CATNA",
+      "in_catalogue_scope": true,
+      "scope_note": "N/A – Commission/authority task (no provider obligation)",
+      "label": "MSA measures within 7 days"
+    },
+    {
+      "ref": "73(9)",
+      "role": "CATNA",
+      "in_catalogue_scope": true,
+      "scope_note": "N/A – Annex III / MDR-IVDR systems only",
+      "label": "Annex III systems under equivalent sectoral reporting – limited notification"
+    },
+    {
+      "ref": "73(10)",
+      "role": "CATNA",
+      "in_catalogue_scope": true,
+      "scope_note": "N/A – Annex III / MDR-IVDR systems only",
+      "label": "MDR/IVDR devices – limited notification"
+    },
+    {
+      "ref": "73(11)",
+      "role": "CATNA",
+      "in_catalogue_scope": true,
+      "scope_note": "N/A – Commission/authority task (no provider obligation)",
+      "label": "National authorities notify the Commission"
+    },
+    {
+      "ref": "AnnexIV",
+      "role": "LEADIN",
+      "in_catalogue_scope": true,
+      "label": "Technical documentation – minimum content (chapeau)"
+    },
+    {
+      "ref": "AnnexIV-1",
+      "role": "LEADIN",
+      "in_catalogue_scope": true,
+      "label": "TD: general description of the AI system"
+    },
+    {
+      "ref": "AnnexIV-1(a)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "TD: intended purpose, provider, version and relation to previous versions"
+    },
+    {
+      "ref": "AnnexIV-1(b)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "TD: interaction with hardware/software/other AI systems not part of the AI system"
+    },
+    {
+      "ref": "AnnexIV-1(c)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "TD: software/firmware versions and version-update requirements"
+    },
+    {
+      "ref": "AnnexIV-1(d)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "TD: forms in which placed on market (embedded, download, API)"
+    },
+    {
+      "ref": "AnnexIV-1(e)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "TD: hardware on which the AI system runs"
+    },
+    {
+      "ref": "AnnexIV-1(f)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "TD: photos/illustrations of product incl. marking and internal layout"
+    },
+    {
+      "ref": "AnnexIV-1(g)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "TD: basic description of user interface"
+    },
+    {
+      "ref": "AnnexIV-1(h)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "TD: instructions for use for the deployer"
+    },
+    {
+      "ref": "AnnexIV-2",
+      "role": "LEADIN",
+      "in_catalogue_scope": true,
+      "label": "TD: detailed description of elements and development process"
+    },
+    {
+      "ref": "AnnexIV-2(a)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "TD: development methods/steps incl. third-party pre-trained systems/tools"
+    },
+    {
+      "ref": "AnnexIV-2(b)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "TD: design specifications, algorithm logic, key design choices, optimisation targets, trade-offs"
+    },
+    {
+      "ref": "AnnexIV-2(c)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "TD: system architecture; computational resources for development/training/testing"
+    },
+    {
+      "ref": "AnnexIV-2(d)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "TD: datasheets – training methodologies, data provenance, selection, labelling, cleaning"
+    },
+    {
+      "ref": "AnnexIV-2(e)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "TD: assessment of human oversight measures (Art 14, 13(3)(d))"
+    },
+    {
+      "ref": "AnnexIV-2(f)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "TD: pre-determined changes and solutions ensuring continuous compliance"
+    },
+    {
+      "ref": "AnnexIV-2(g)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "TD: validation & testing procedures, data, metrics, dated & signed test logs/reports"
+    },
+    {
+      "ref": "AnnexIV-2(h)",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "TD: cybersecurity measures"
+    },
+    {
+      "ref": "AnnexIV-3",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "TD: monitoring, functioning and control – capabilities/limitations, accuracy, unintended outcomes, oversight, input specs"
+    },
+    {
+      "ref": "AnnexIV-4",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "TD: appropriateness of performance metrics"
+    },
+    {
+      "ref": "AnnexIV-5",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "TD: detailed description of risk management system"
+    },
+    {
+      "ref": "AnnexIV-6",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "TD: relevant changes made through lifecycle"
+    },
+    {
+      "ref": "AnnexIV-7",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "TD: harmonised standards applied / other solutions and specifications"
+    },
+    {
+      "ref": "AnnexIV-8",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "TD: copy of EU declaration of conformity"
+    },
+    {
+      "ref": "AnnexIV-9",
+      "role": "ATOMIC",
+      "in_catalogue_scope": true,
+      "label": "TD: post-market performance-evaluation system and PMM plan"
+    }
+  ],
+  "requirements": [
+    {
+      "sr_id": "SR.AIA.0001",
+      "sp_refs": [
+        "AIA:8(1)"
+      ],
+      "statement": "High-risk AI systems shall comply with the requirements laid down in this Section, taking into account their intended purpose as well as the generally acknowledged state of the art on AI and AI-related technologies. The risk management system referred to in Article 9 shall be taken into account when ensuring compliance with those requirements.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.GEN.001",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0002",
+      "sp_refs": [
+        "AIA:9(1)"
+      ],
+      "statement": "A risk management system shall be established, implemented, documented and maintained in relation to high-risk AI systems.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.RM.001",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0003",
+      "sp_refs": [
+        "AIA:9(2)"
+      ],
+      "statement": "The risk management system shall be understood as a continuous iterative process planned and run throughout the entire lifecycle of a high-risk AI system, requiring regular systematic review and updating. It shall comprise the following steps:",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.RM.001",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0004",
+      "sp_refs": [
+        "AIA:9(2)(a)"
+      ],
+      "statement": "The risk management system shall be understood as a continuous iterative process planned and run throughout the entire lifecycle of a high-risk AI system, requiring regular systematic review and updating. It shall comprise the following steps: the identification and analysis of the known and the reasonably foreseeable risks that the high-risk AI system can pose to health, safety or fundamental rights when the high-risk AI system is used in accordance with its intended purpose;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.RM.003",
+          "type": "PARTLY"
+        },
+        {
+          "cr": "CR.RM.010",
+          "type": "PARTLY"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0005",
+      "sp_refs": [
+        "AIA:9(2)(b)"
+      ],
+      "statement": "The risk management system shall be understood as a continuous iterative process planned and run throughout the entire lifecycle of a high-risk AI system, requiring regular systematic review and updating. It shall comprise the following steps: the estimation and evaluation of the risks that may emerge when the high-risk AI system is used in accordance with its intended purpose, and under conditions of reasonably foreseeable misuse;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.RM.004",
+          "type": "PARTLY"
+        },
+        {
+          "cr": "CR.RM.005",
+          "type": "PARTLY"
+        },
+        {
+          "cr": "CR.RM.002",
+          "type": "PARTLY"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0006",
+      "sp_refs": [
+        "AIA:9(2)(c)"
+      ],
+      "statement": "The risk management system shall be understood as a continuous iterative process planned and run throughout the entire lifecycle of a high-risk AI system, requiring regular systematic review and updating. It shall comprise the following steps: the evaluation of other risks possibly arising, based on the analysis of data gathered from the post-market monitoring system referred to in Article 72;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.RM.011",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0007",
+      "sp_refs": [
+        "AIA:9(2)(d)"
+      ],
+      "statement": "The risk management system shall be understood as a continuous iterative process planned and run throughout the entire lifecycle of a high-risk AI system, requiring regular systematic review and updating. It shall comprise the following steps: the adoption of appropriate and targeted risk management measures designed to address the risks identified pursuant to point (a).",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.RM.006",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0008",
+      "sp_refs": [
+        "AIA:9(4)"
+      ],
+      "statement": "The risk management measures referred to in paragraph 2, point (d), shall give due consideration to the effects and possible interaction resulting from the combined application of the requirements set out in this Section, with a view to minimising risks more effectively while achieving an appropriate balance in implementing the measures to fulfil those requirements.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.RM.007",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0009",
+      "sp_refs": [
+        "AIA:9(5)"
+      ],
+      "statement": "The risk management measures referred to in paragraph 2, point (d), shall be such that the relevant residual risk associated with each hazard, as well as the overall residual risk of the high-risk AI systems is judged to be acceptable.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.RM.005",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0010",
+      "sp_refs": [
+        "AIA:9(5)(a)"
+      ],
+      "statement": "elimination or reduction of risks identified and evaluated pursuant to paragraph 2 in as far as technically feasible through adequate design and development of the high-risk AI system;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.RM.006.1",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0011",
+      "sp_refs": [
+        "AIA:9(5)(b)"
+      ],
+      "statement": "where appropriate, implementation of adequate mitigation and control measures addressing risks that cannot be eliminated;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.RM.006.2",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0012",
+      "sp_refs": [
+        "AIA:9(5)(c)"
+      ],
+      "statement": "provision of information required pursuant to Article 13 and, where appropriate, training to deployers.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.RM.006.3",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0013",
+      "sp_refs": [
+        "AIA:9(5)-2"
+      ],
+      "statement": "With a view to eliminating or reducing risks related to the use of the high-risk AI system, due consideration shall be given to the technical knowledge, experience, education, the training to be expected by the deployer, and the presumable context in which the system is intended to be used.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.RM.008",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0014",
+      "sp_refs": [
+        "AIA:9(6)"
+      ],
+      "statement": "High-risk AI systems shall be tested for the purpose of identifying the most appropriate and targeted risk management measures. Testing shall ensure that high-risk AI systems perform consistently for their intended purpose and that they are in compliance with the requirements set out in this Section.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.VV.001",
+          "type": "PARTLY"
+        },
+        {
+          "cr": "CR.PERF.001.3",
+          "type": "PARTLY"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0015",
+      "sp_refs": [
+        "AIA:9(8)"
+      ],
+      "statement": "The testing of high-risk AI systems shall be performed, as appropriate, at any time throughout the development process, and, in any event, prior to their being placed on the market or put into service. Testing shall be carried out against prior defined metrics and probabilistic thresholds that are appropriate to the intended purpose of the high-risk AI system.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.VV.001",
+          "type": "PARTLY"
+        },
+        {
+          "cr": "CR.PERF.001.1",
+          "type": "PARTLY"
+        },
+        {
+          "cr": "CR.PERF.001.2",
+          "type": "PARTLY"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0016",
+      "sp_refs": [
+        "AIA:9(9)"
+      ],
+      "statement": "When implementing the risk management system as provided for in paragraphs 1 to 7, providers shall give consideration to whether in view of its intended purpose the high-risk AI system is likely to have an adverse impact on persons under the age of 18 and, as appropriate, other vulnerable groups.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.RM.009",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0017",
+      "sp_refs": [
+        "AIA:10(1)"
+      ],
+      "statement": "High-risk AI systems which make use of techniques involving the training of AI models with data shall be developed on the basis of training, validation and testing data sets that meet the quality criteria referred to in paragraphs 2, 3 and 4 of this Article and in Article 4a(1) whenever such data sets are used.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.DATA.001",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0018",
+      "sp_refs": [
+        "AIA:10(2)"
+      ],
+      "statement": "Training, validation and testing data sets shall be subject to data governance and management practices appropriate for the intended purpose of the high-risk AI system. Those practices shall concern in particular:",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.DATA.001.1",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0019",
+      "sp_refs": [
+        "AIA:10(2)(a)"
+      ],
+      "statement": "Training, validation and testing data sets shall be subject to data governance and management practices appropriate for the intended purpose of the high-risk AI system. Those practices shall concern in particular: the relevant design choices;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.DATA.001.1.1",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0020",
+      "sp_refs": [
+        "AIA:10(2)(b)"
+      ],
+      "statement": "Training, validation and testing data sets shall be subject to data governance and management practices appropriate for the intended purpose of the high-risk AI system. Those practices shall concern in particular: data collection processes and the origin of data, and in the case of personal data, the original purpose of the data collection;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.DATA.001.1.2",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0021",
+      "sp_refs": [
+        "AIA:10(2)(c)"
+      ],
+      "statement": "Training, validation and testing data sets shall be subject to data governance and management practices appropriate for the intended purpose of the high-risk AI system. Those practices shall concern in particular: relevant data-preparation processing operations, such as annotation, labelling, cleaning, updating, enrichment and aggregation;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.DATA.001.1.3",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0022",
+      "sp_refs": [
+        "AIA:10(2)(d)"
+      ],
+      "statement": "Training, validation and testing data sets shall be subject to data governance and management practices appropriate for the intended purpose of the high-risk AI system. Those practices shall concern in particular: the formulation of assumptions, in particular with respect to the information that the data are supposed to measure and represent;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.DATA.001.1.4",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0023",
+      "sp_refs": [
+        "AIA:10(2)(e)"
+      ],
+      "statement": "Training, validation and testing data sets shall be subject to data governance and management practices appropriate for the intended purpose of the high-risk AI system. Those practices shall concern in particular: an assessment of the availability, quantity and suitability of the data sets that are needed;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.DATA.001.1.5",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0024",
+      "sp_refs": [
+        "AIA:10(2)(f)"
+      ],
+      "statement": "Training, validation and testing data sets shall be subject to data governance and management practices appropriate for the intended purpose of the high-risk AI system. Those practices shall concern in particular: examination in view of possible biases that are likely to affect the health and safety of persons, have a negative impact on fundamental rights or lead to discrimination prohibited under Union law, especially where data outputs influence inputs for future operations;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.DATA.001.1.6",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0025",
+      "sp_refs": [
+        "AIA:10(2)(g)"
+      ],
+      "statement": "Training, validation and testing data sets shall be subject to data governance and management practices appropriate for the intended purpose of the high-risk AI system. Those practices shall concern in particular: appropriate measures to detect, prevent and mitigate possible biases identified according to point (f);",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.DATA.001.1.7",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0026",
+      "sp_refs": [
+        "AIA:10(2)(h)"
+      ],
+      "statement": "Training, validation and testing data sets shall be subject to data governance and management practices appropriate for the intended purpose of the high-risk AI system. Those practices shall concern in particular: the identification of relevant data gaps or shortcomings that prevent compliance with this Regulation, and how those gaps and shortcomings can be addressed.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.DATA.001.1.8",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0027",
+      "sp_refs": [
+        "AIA:10(3)"
+      ],
+      "statement": "Training, validation and testing data sets shall be relevant, sufficiently representative, and to the best extent possible, free of errors and complete in view of the intended purpose. They shall have the appropriate statistical properties, including, where applicable, as regards the persons or groups of persons in relation to whom the high-risk AI system is intended to be used. Those characteristics of the data sets may be met at the level of individual data sets or at the level of a combination thereof.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.DATA.001.2",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0028",
+      "sp_refs": [
+        "AIA:10(4)"
+      ],
+      "statement": "Data sets shall take into account, to the extent required by the intended purpose, the characteristics or elements that are particular to the specific geographical, contextual, behavioural or functional setting within which the high-risk AI system is intended to be used.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.DATA.001.3",
+          "type": "COVERS"
+        },
+        {
+          "cr": "CR.ODD.001",
+          "type": "SUP_PROCESS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0029",
+      "sp_refs": [
+        "AIA:4a(1)",
+        "AIA:4a(1)(a)",
+        "AIA:4a(1)(b)",
+        "AIA:4a(1)(c)",
+        "AIA:4a(1)(d)",
+        "AIA:4a(1)(e)",
+        "AIA:4a(1)(f)"
+      ],
+      "statement": "To the extent strictly necessary to ensure bias detection and correction in relation to high-risk AI systems in accordance with Article 10(2), points (f) and (g), of this Regulation, providers of such systems may exceptionally process special categories of personal data, subject to appropriate safeguards for the fundamental rights and freedoms of natural persons. In addition to the provisions set out in Regulations (EU) 2016/679 and (EU) 2018/1725 and Directive (EU) 2016/680, as applicable, all the following conditions shall be met in order for such processing to occur: (a) the bias detection and correction cannot be effectively fulfilled by processing other data, including synthetic or anonymised data; (b) the special categories of personal data are subject to technical limitations on the re-use of personal data, and state-of-the-art security and privacy-preserving measures, including pseudonymisation; (c) the special categories of personal data are subject to measures to ensure that the personal data processed are secured and protected, subject to suitable safeguards, including strict controls and documentation of the access, to avoid misuse and to ensure that only authorised persons have access to those personal data with appropriate confidentiality obligations; (d) the special categories of personal data are not transmitted, transferred or otherwise accessed by other parties; (e) the special categories of personal data are deleted once the bias has been corrected or the personal data has reached the end of its retention period, whichever comes first; and (f) the records of processing activities pursuant to Regulations (EU) 2016/679 and (EU) 2018/1725 and Directive (EU) 2016/680 include the reasons why the processing of special categories of personal data was strictly necessary to detect and correct biases, and why that objective could not be achieved by processing other data.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.DATA.001.4",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0030",
+      "sp_refs": [
+        "AIA:11(1)"
+      ],
+      "statement": "The technical documentation of a high-risk AI system shall be drawn up before that system is placed on the market or put into service and shall be kept up-to date.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.TD.001",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0031",
+      "sp_refs": [
+        "AIA:11(1)-2"
+      ],
+      "statement": "That technical documentation shall be drawn up in such a way as to demonstrate that the high-risk AI system complies with the requirements set out in this Section and to provide national competent authorities and notified bodies with the necessary information in a clear and comprehensive form to assess the compliance of the AI system with those requirements. It shall contain, at a minimum, the elements set out in Annex IV. SMEs, including start-ups, and SMCs, may provide the elements of the technical documentation specified in Annex IV in a simplified manner. To that end, the Commission shall establish a simplified technical documentation form targeted at the needs of SMEs, including start-ups, and SMCs. Where an SME, including a start-up, or an SMC, opts to provide the information required in Annex IV in a simplified manner, it shall use the form referred to in this paragraph. Notified bodies shall accept the form for the purposes of the conformity assessment.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.TD.001",
+          "type": "PARTLY"
+        },
+        {
+          "cr": "CR.TD.002",
+          "type": "PARTLY"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0032",
+      "sp_refs": [
+        "AIA:12(1)"
+      ],
+      "statement": "High-risk AI systems shall technically allow for the automatic recording of events (logs) over the lifetime of the system.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.LOG.001",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0033",
+      "sp_refs": [
+        "AIA:12(2)(a)"
+      ],
+      "statement": "In order to ensure a level of traceability of the functioning of a high-risk AI system that is appropriate to the intended purpose of the system, logging capabilities shall enable the recording of events relevant for: identifying situations that may result in the high-risk AI system presenting a risk within the meaning of Article 79(1) or in a substantial modification;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.LOG.002",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0034",
+      "sp_refs": [
+        "AIA:12(2)(b)"
+      ],
+      "statement": "In order to ensure a level of traceability of the functioning of a high-risk AI system that is appropriate to the intended purpose of the system, logging capabilities shall enable the recording of events relevant for: facilitating the post-market monitoring referred to in Article 72; and",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.LOG.003",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0035",
+      "sp_refs": [
+        "AIA:12(2)(c)"
+      ],
+      "statement": "In order to ensure a level of traceability of the functioning of a high-risk AI system that is appropriate to the intended purpose of the system, logging capabilities shall enable the recording of events relevant for: monitoring the operation of high-risk AI systems referred to in Article 26(5).",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.LOG.003",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0036",
+      "sp_refs": [
+        "AIA:13(1)"
+      ],
+      "statement": "High-risk AI systems shall be designed and developed in such a way as to ensure that their operation is sufficiently transparent to enable deployers to interpret a system’s output and use it appropriately. An appropriate type and degree of transparency shall be ensured with a view to achieving compliance with the relevant obligations of the provider and deployer set out in Section 3.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.HO.005",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0037",
+      "sp_refs": [
+        "AIA:13(2)"
+      ],
+      "statement": "High-risk AI systems shall be accompanied by instructions for use in an appropriate digital format or otherwise that include concise, complete, correct and clear information that is relevant, accessible and comprehensible to deployers.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.INFO.001",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0038",
+      "sp_refs": [
+        "AIA:13(3)(a)"
+      ],
+      "statement": "The instructions for use shall contain at least the following information: the identity and the contact details of the provider and, where applicable, of its authorised representative;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.INFO.003",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0039",
+      "sp_refs": [
+        "AIA:13(3)(b)"
+      ],
+      "statement": "The instructions for use shall contain at least the following information: the characteristics, capabilities and limitations of performance of the high-risk AI system, including:",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.INFO.004",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0040",
+      "sp_refs": [
+        "AIA:13(3)(b)(i)"
+      ],
+      "statement": "The instructions for use shall contain at least the following information: the characteristics, capabilities and limitations of performance of the high-risk AI system, including: its intended purpose;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.INFO.002",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0041",
+      "sp_refs": [
+        "AIA:13(3)(b)(ii)"
+      ],
+      "statement": "The instructions for use shall contain at least the following information: the characteristics, capabilities and limitations of performance of the high-risk AI system, including: the level of accuracy, including its metrics, robustness and cybersecurity referred to in Article 15 against which the high-risk AI system has been tested and validated and which can be expected, and any known and foreseeable circumstances that may have an impact on that expected level of accuracy, robustness and cybersecurity;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.INFO.005",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0042",
+      "sp_refs": [
+        "AIA:13(3)(b)(iii)"
+      ],
+      "statement": "The instructions for use shall contain at least the following information: the characteristics, capabilities and limitations of performance of the high-risk AI system, including: any known or foreseeable circumstance, related to the use of the high-risk AI system in accordance with its intended purpose or under conditions of reasonably foreseeable misuse, which may lead to risks to the health and safety or fundamental rights referred to in Article 9(2);",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.INFO.002",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0043",
+      "sp_refs": [
+        "AIA:13(3)(b)(iv)"
+      ],
+      "statement": "The instructions for use shall contain at least the following information: the characteristics, capabilities and limitations of performance of the high-risk AI system, including: where applicable, the technical capabilities and characteristics of the high-risk AI system to provide information that is relevant to explain its output;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.INFO.006",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0044",
+      "sp_refs": [
+        "AIA:13(3)(b)(v)"
+      ],
+      "statement": "The instructions for use shall contain at least the following information: the characteristics, capabilities and limitations of performance of the high-risk AI system, including: when appropriate, its performance regarding specific persons or groups of persons on which the system is intended to be used;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.INFO.007",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0045",
+      "sp_refs": [
+        "AIA:13(3)(b)(vi)"
+      ],
+      "statement": "The instructions for use shall contain at least the following information: the characteristics, capabilities and limitations of performance of the high-risk AI system, including: when appropriate, specifications for the input data, or any other relevant information in terms of the training, validation and testing data sets used, taking into account the intended purpose of the high-risk AI system;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.INFO.008",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0046",
+      "sp_refs": [
+        "AIA:13(3)(b)(vii)"
+      ],
+      "statement": "The instructions for use shall contain at least the following information: the characteristics, capabilities and limitations of performance of the high-risk AI system, including: where applicable, information to enable deployers to interpret the output of the high-risk AI system and use it appropriately;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.INFO.009",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0047",
+      "sp_refs": [
+        "AIA:13(3)(c)"
+      ],
+      "statement": "The instructions for use shall contain at least the following information: the changes to the high-risk AI system and its performance which have been pre-determined by the provider at the moment of the initial conformity assessment, if any;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.INFO.010",
+          "type": "PARTLY"
+        },
+        {
+          "cr": "CR.CHG.002",
+          "type": "PARTLY"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0048",
+      "sp_refs": [
+        "AIA:13(3)(d)"
+      ],
+      "statement": "The instructions for use shall contain at least the following information: the human oversight measures referred to in Article 14, including the technical measures put in place to facilitate the interpretation of the outputs of the high-risk AI systems by the deployers;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.INFO.011",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0049",
+      "sp_refs": [
+        "AIA:13(3)(e)"
+      ],
+      "statement": "The instructions for use shall contain at least the following information: the computational and hardware resources needed, the expected lifetime of the high-risk AI system and any necessary maintenance and care measures, including their frequency, to ensure the proper functioning of that AI system, including as regards software updates;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.INFO.012",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0050",
+      "sp_refs": [
+        "AIA:13(3)(f)"
+      ],
+      "statement": "The instructions for use shall contain at least the following information: where relevant, a description of the mechanisms included within the high-risk AI system that allows deployers to properly collect, store and interpret the logs in accordance with Article 12.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.INFO.013",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0051",
+      "sp_refs": [
+        "AIA:14(1)"
+      ],
+      "statement": "High-risk AI systems shall be designed and developed in such a way, including with appropriate human-machine interface tools, that they can be effectively overseen by natural persons during the period in which they are in use.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.HO.001",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0052",
+      "sp_refs": [
+        "AIA:14(3)"
+      ],
+      "statement": "The oversight measures shall be commensurate with the risks, level of autonomy and context of use of the high-risk AI system, and shall be ensured through either one or both of the following types of measures:",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.HO.002",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0053",
+      "sp_refs": [
+        "AIA:14(3)(a)"
+      ],
+      "statement": "The oversight measures shall be commensurate with the risks, level of autonomy and context of use of the high-risk AI system, and shall be ensured through either one or both of the following types of measures: measures identified and built, when technically feasible, into the high-risk AI system by the provider before it is placed on the market or put into service;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.HO.002.1",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0054",
+      "sp_refs": [
+        "AIA:14(3)(b)"
+      ],
+      "statement": "The oversight measures shall be commensurate with the risks, level of autonomy and context of use of the high-risk AI system, and shall be ensured through either one or both of the following types of measures: measures identified by the provider before placing the high-risk AI system on the market or putting it into service and that are appropriate to be implemented by the deployer.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.HO.002.2",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0055",
+      "sp_refs": [
+        "AIA:14(4)(a)"
+      ],
+      "statement": "For the purpose of implementing paragraphs 1, 2 and 3, the high-risk AI system shall be provided to the deployer in such a way that natural persons to whom human oversight is assigned are enabled, as appropriate and proportionate: to properly understand the relevant capacities and limitations of the high-risk AI system and be able to duly monitor its operation, including in view of detecting and addressing anomalies, dysfunctions and unexpected performance;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.HO.003",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0056",
+      "sp_refs": [
+        "AIA:14(4)(b)"
+      ],
+      "statement": "For the purpose of implementing paragraphs 1, 2 and 3, the high-risk AI system shall be provided to the deployer in such a way that natural persons to whom human oversight is assigned are enabled, as appropriate and proportionate: to remain aware of the possible tendency of automatically relying or over-relying on the output produced by a high-risk AI system (automation bias), in particular for high-risk AI systems used to provide information or recommendations for decisions to be taken by natural persons;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.HO.004",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0057",
+      "sp_refs": [
+        "AIA:14(4)(c)"
+      ],
+      "statement": "For the purpose of implementing paragraphs 1, 2 and 3, the high-risk AI system shall be provided to the deployer in such a way that natural persons to whom human oversight is assigned are enabled, as appropriate and proportionate: to correctly interpret the high-risk AI system’s output, taking into account, for example, the interpretation tools and methods available;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.HO.005",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0058",
+      "sp_refs": [
+        "AIA:14(4)(d)"
+      ],
+      "statement": "For the purpose of implementing paragraphs 1, 2 and 3, the high-risk AI system shall be provided to the deployer in such a way that natural persons to whom human oversight is assigned are enabled, as appropriate and proportionate: to decide, in any particular situation, not to use the high-risk AI system or to otherwise disregard, override or reverse the output of the high-risk AI system;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.HO.006",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0059",
+      "sp_refs": [
+        "AIA:14(4)(e)"
+      ],
+      "statement": "For the purpose of implementing paragraphs 1, 2 and 3, the high-risk AI system shall be provided to the deployer in such a way that natural persons to whom human oversight is assigned are enabled, as appropriate and proportionate: to intervene in the operation of the high-risk AI system or interrupt the system through a ‘stop’ button or a similar procedure that allows the system to come to a halt in a safe state.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.FS.012",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0060",
+      "sp_refs": [
+        "AIA:15(1)"
+      ],
+      "statement": "High-risk AI systems shall be designed and developed in such a way that they achieve an appropriate level of accuracy, robustness, and cybersecurity, and that they perform consistently in those respects throughout their lifecycle.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.PERF.001",
+          "type": "PARTLY"
+        },
+        {
+          "cr": "CR.ROB.003",
+          "type": "PARTLY"
+        },
+        {
+          "cr": "CR.SEC.005",
+          "type": "PARTLY"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0061",
+      "sp_refs": [
+        "AIA:15(3)"
+      ],
+      "statement": "The levels of accuracy and the relevant accuracy metrics of high-risk AI systems shall be declared in the accompanying instructions of use.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.INFO.005",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0062",
+      "sp_refs": [
+        "AIA:15(4)"
+      ],
+      "statement": "High-risk AI systems shall be as resilient as possible regarding errors, faults or inconsistencies that may occur within the system or the environment in which the system operates, in particular due to their interaction with natural persons or other systems. Technical and organisational measures shall be taken in this regard.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.ROB.003",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0063",
+      "sp_refs": [
+        "AIA:15(4)-3"
+      ],
+      "statement": "High-risk AI systems that continue to learn after being placed on the market or put into service shall be developed in such a way as to eliminate or reduce as far as possible the risk of possibly biased outputs influencing input for future operations (feedback loops), and as to ensure that any such feedback loops are duly addressed with appropriate mitigation measures.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.CHG.006",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0064",
+      "sp_refs": [
+        "AIA:15(5)"
+      ],
+      "statement": "High-risk AI systems shall be resilient against attempts by unauthorised third parties to alter their use, outputs or performance by exploiting system vulnerabilities.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.SEC.005",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0065",
+      "sp_refs": [
+        "AIA:15(5)-2"
+      ],
+      "statement": "The technical solutions aiming to ensure the cybersecurity of high-risk AI systems shall be appropriate to the relevant circumstances and the risks.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.SEC.005",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0066",
+      "sp_refs": [
+        "AIA:15(5)-3"
+      ],
+      "statement": "The technical solutions to address AI specific vulnerabilities shall include, where appropriate, measures to prevent, detect, respond to, resolve and control for attacks trying to manipulate the training data set (data poisoning), or pre-trained components used in training (model poisoning), inputs designed to cause the AI model to make a mistake (adversarial examples or model evasion), confidentiality attacks or model flaws.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.SEC.006",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0067",
+      "sp_refs": [
+        "AIA:17(1)"
+      ],
+      "statement": "Providers of high-risk AI systems shall put a quality management system in place that ensures compliance with this Regulation. That system shall be documented in a systematic and orderly manner in the form of written policies, procedures and instructions, and shall include at least the following aspects:",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.QMS.001",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0068",
+      "sp_refs": [
+        "AIA:17(1)(a)"
+      ],
+      "statement": "Providers of high-risk AI systems shall put a quality management system in place that ensures compliance with this Regulation. That system shall be documented in a systematic and orderly manner in the form of written policies, procedures and instructions, and shall include at least the following aspects: a strategy for regulatory compliance, including compliance with conformity assessment procedures and procedures for the management of modifications to the high-risk AI system;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.QMS.001.1",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0069",
+      "sp_refs": [
+        "AIA:17(1)(b)"
+      ],
+      "statement": "Providers of high-risk AI systems shall put a quality management system in place that ensures compliance with this Regulation. That system shall be documented in a systematic and orderly manner in the form of written policies, procedures and instructions, and shall include at least the following aspects: techniques, procedures and systematic actions to be used for the design, design control and design verification of the high-risk AI system;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.QMS.001.2",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0070",
+      "sp_refs": [
+        "AIA:17(1)(c)"
+      ],
+      "statement": "Providers of high-risk AI systems shall put a quality management system in place that ensures compliance with this Regulation. That system shall be documented in a systematic and orderly manner in the form of written policies, procedures and instructions, and shall include at least the following aspects: techniques, procedures and systematic actions to be used for the development, quality control and quality assurance of the high-risk AI system;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.QMS.001.3",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0071",
+      "sp_refs": [
+        "AIA:17(1)(d)"
+      ],
+      "statement": "Providers of high-risk AI systems shall put a quality management system in place that ensures compliance with this Regulation. That system shall be documented in a systematic and orderly manner in the form of written policies, procedures and instructions, and shall include at least the following aspects: examination, test and validation procedures to be carried out before, during and after the development of the high-risk AI system, and the frequency with which they have to be carried out;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.QMS.001.4",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0072",
+      "sp_refs": [
+        "AIA:17(1)(e)"
+      ],
+      "statement": "Providers of high-risk AI systems shall put a quality management system in place that ensures compliance with this Regulation. That system shall be documented in a systematic and orderly manner in the form of written policies, procedures and instructions, and shall include at least the following aspects: technical specifications, including standards, to be applied and, where the relevant harmonised standards are not applied in full or do not cover all of the relevant requirements set out in Section 2, the means to be used to ensure that the high-risk AI system complies with those requirements;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.QMS.001.5",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0073",
+      "sp_refs": [
+        "AIA:17(1)(f)"
+      ],
+      "statement": "Providers of high-risk AI systems shall put a quality management system in place that ensures compliance with this Regulation. That system shall be documented in a systematic and orderly manner in the form of written policies, procedures and instructions, and shall include at least the following aspects: systems and procedures for data management, including data acquisition, data collection, data analysis, data labelling, data storage, data filtration, data mining, data aggregation, data retention and any other operation regarding the data that is performed before and for the purpose of the placing on the market or the putting into service of high-risk AI systems;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.QMS.001.6",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0074",
+      "sp_refs": [
+        "AIA:17(1)(g)"
+      ],
+      "statement": "Providers of high-risk AI systems shall put a quality management system in place that ensures compliance with this Regulation. That system shall be documented in a systematic and orderly manner in the form of written policies, procedures and instructions, and shall include at least the following aspects: the risk management system referred to in Article 9;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.QMS.001.7",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0075",
+      "sp_refs": [
+        "AIA:17(1)(h)"
+      ],
+      "statement": "Providers of high-risk AI systems shall put a quality management system in place that ensures compliance with this Regulation. That system shall be documented in a systematic and orderly manner in the form of written policies, procedures and instructions, and shall include at least the following aspects: the setting-up, implementation and maintenance of a post-market monitoring system, in accordance with Article 72;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.QMS.001.8",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0076",
+      "sp_refs": [
+        "AIA:17(1)(i)"
+      ],
+      "statement": "Providers of high-risk AI systems shall put a quality management system in place that ensures compliance with this Regulation. That system shall be documented in a systematic and orderly manner in the form of written policies, procedures and instructions, and shall include at least the following aspects: procedures related to the reporting of a serious incident in accordance with Article 73;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.QMS.001.9",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0077",
+      "sp_refs": [
+        "AIA:17(1)(j)"
+      ],
+      "statement": "Providers of high-risk AI systems shall put a quality management system in place that ensures compliance with this Regulation. That system shall be documented in a systematic and orderly manner in the form of written policies, procedures and instructions, and shall include at least the following aspects: the handling of communication with national competent authorities, other relevant authorities, including those providing or supporting the access to data, notified bodies, other operators, customers or other interested parties;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.QMS.001.10",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0078",
+      "sp_refs": [
+        "AIA:17(1)(k)"
+      ],
+      "statement": "Providers of high-risk AI systems shall put a quality management system in place that ensures compliance with this Regulation. That system shall be documented in a systematic and orderly manner in the form of written policies, procedures and instructions, and shall include at least the following aspects: systems and procedures for record-keeping of all relevant documentation and information;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.QMS.001.11",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0079",
+      "sp_refs": [
+        "AIA:17(1)(l)"
+      ],
+      "statement": "Providers of high-risk AI systems shall put a quality management system in place that ensures compliance with this Regulation. That system shall be documented in a systematic and orderly manner in the form of written policies, procedures and instructions, and shall include at least the following aspects: resource management, including security-of-supply related measures;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.QMS.001.12",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0080",
+      "sp_refs": [
+        "AIA:17(1)(m)"
+      ],
+      "statement": "Providers of high-risk AI systems shall put a quality management system in place that ensures compliance with this Regulation. That system shall be documented in a systematic and orderly manner in the form of written policies, procedures and instructions, and shall include at least the following aspects: an accountability framework setting out the responsibilities of the management and other staff with regard to all the aspects listed in this paragraph.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.QMS.001.13",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0081",
+      "sp_refs": [
+        "AIA:19(1)"
+      ],
+      "statement": "Providers of high-risk AI systems shall keep the logs referred to in Article 12(1), automatically generated by their high-risk AI systems, to the extent such logs are under their control. Without prejudice to applicable Union or national law, the logs shall be kept for a period appropriate to the intended purpose of the high-risk AI system, of at least six months, unless provided otherwise in the applicable Union or national law, in particular in Union law on the protection of personal data.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.LOG.006",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0082",
+      "sp_refs": [
+        "AIA:72(1)"
+      ],
+      "statement": "Providers shall establish and document a post-market monitoring system in a manner that is proportionate to the nature of the AI technologies and the risks of the high-risk AI system.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.PMM.001",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0083",
+      "sp_refs": [
+        "AIA:72(2)"
+      ],
+      "statement": "The post-market monitoring system shall actively and systematically collect, document and analyse relevant data which may be provided by deployers or which may be collected through other sources on the performance of high-risk AI systems throughout their lifetime, and which allow the provider to evaluate the continuous compliance of AI systems with the requirements set out in Chapter III, Section 2. Where relevant, post-market monitoring shall include an analysis of the interaction with other AI systems. This obligation shall not cover sensitive operational data of deployers which are law-enforcement authorities.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.PMM.002",
+          "type": "COVERS"
+        },
+        {
+          "cr": "CR.PERF.001.4",
+          "type": "SUP_PROCESS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0084",
+      "sp_refs": [
+        "AIA:72(3)"
+      ],
+      "statement": "The post-market monitoring system shall be based on a post-market monitoring plan. The post-market monitoring plan shall be part of the technical documentation referred to in Annex IV. The Commission, taking utmost account of the opinion of the Board, shall adopt guidance, including a template, on the post-market monitoring plan by 2 September 2027.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.PMM.003",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0085",
+      "sp_refs": [
+        "AIA:73(1)"
+      ],
+      "statement": "Providers of high-risk AI systems placed on the Union market shall report any serious incident to the market surveillance authorities of the Member States where that incident occurred.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.INC.001",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0086",
+      "sp_refs": [
+        "AIA:73(2)"
+      ],
+      "statement": "The report referred to in paragraph 1 shall be made immediately after the provider has established a causal link between the AI system and the serious incident or the reasonable likelihood of such a link, and, in any event, not later than 15 days after the provider or, where applicable, the deployer, becomes aware of the serious incident.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.INC.002",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0087",
+      "sp_refs": [
+        "AIA:73(3)"
+      ],
+      "statement": "Notwithstanding paragraph 2 of this Article, in the event of a widespread infringement or a serious incident as defined in Article 3, point (49)(b), the report referred to in paragraph 1 of this Article shall be provided immediately, and not later than two days after the provider or, where applicable, the deployer becomes aware of that incident.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.INC.002",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0088",
+      "sp_refs": [
+        "AIA:73(4)"
+      ],
+      "statement": "Notwithstanding paragraph 2, in the event of the death of a person, the report shall be provided immediately after the provider or the deployer has established, or as soon as it suspects, a causal relationship between the high-risk AI system and the serious incident, but not later than 10 days after the date on which the provider or, where applicable, the deployer becomes aware of the serious incident.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.INC.002",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0089",
+      "sp_refs": [
+        "AIA:73(5)"
+      ],
+      "statement": "Where necessary to ensure timely reporting, the provider or, where applicable, the deployer, may submit an initial report that is incomplete, followed by a complete report.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.INC.002",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0090",
+      "sp_refs": [
+        "AIA:73(6)"
+      ],
+      "statement": "Following the reporting of a serious incident pursuant to paragraph 1, the provider shall, without delay, perform the necessary investigations in relation to the serious incident and the AI system concerned. This shall include a risk assessment of the incident, and corrective action.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.INC.003",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0091",
+      "sp_refs": [
+        "AIA:73(6)-2"
+      ],
+      "statement": "The provider shall cooperate with the competent authorities, and where relevant with the notified body concerned, during the investigations referred to in the first subparagraph, and shall not perform any investigation which involves altering the AI system concerned in a way which may affect any subsequent evaluation of the causes of the incident, prior to informing the competent authorities of such action.",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.INC.003",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0092",
+      "sp_refs": [
+        "AIA:AnnexIV-1(a)"
+      ],
+      "statement": "The technical documentation referred to in Article 11(1) shall contain at least the following information, as applicable to the relevant AI system: A general description of the AI system including: its intended purpose, the name of the provider and the version of the system reflecting its relation to previous versions;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.TD.002.1.1",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0093",
+      "sp_refs": [
+        "AIA:AnnexIV-1(b)"
+      ],
+      "statement": "The technical documentation referred to in Article 11(1) shall contain at least the following information, as applicable to the relevant AI system: A general description of the AI system including: how the AI system interacts with, or can be used to interact with, hardware or software, including with other AI systems, that are not part of the AI system itself, where applicable;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.TD.002.1.2",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0094",
+      "sp_refs": [
+        "AIA:AnnexIV-1(c)"
+      ],
+      "statement": "The technical documentation referred to in Article 11(1) shall contain at least the following information, as applicable to the relevant AI system: A general description of the AI system including: the versions of relevant software or firmware, and any requirements related to version updates;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.TD.002.1.3",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0095",
+      "sp_refs": [
+        "AIA:AnnexIV-1(d)"
+      ],
+      "statement": "The technical documentation referred to in Article 11(1) shall contain at least the following information, as applicable to the relevant AI system: A general description of the AI system including: the description of all the forms in which the AI system is placed on the market or put into service, such as software packages embedded into hardware, downloads, or APIs;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.TD.002.1.4",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0096",
+      "sp_refs": [
+        "AIA:AnnexIV-1(e)"
+      ],
+      "statement": "The technical documentation referred to in Article 11(1) shall contain at least the following information, as applicable to the relevant AI system: A general description of the AI system including: the description of the hardware on which the AI system is intended to run;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.TD.002.1.5",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0097",
+      "sp_refs": [
+        "AIA:AnnexIV-1(f)"
+      ],
+      "statement": "The technical documentation referred to in Article 11(1) shall contain at least the following information, as applicable to the relevant AI system: A general description of the AI system including: where the AI system is a component of products, photographs or illustrations showing external features, the marking and internal layout of those products;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.TD.002.1.6",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0098",
+      "sp_refs": [
+        "AIA:AnnexIV-1(g)"
+      ],
+      "statement": "The technical documentation referred to in Article 11(1) shall contain at least the following information, as applicable to the relevant AI system: A general description of the AI system including: a basic description of the user-interface provided to the deployer;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.TD.002.1.7",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0099",
+      "sp_refs": [
+        "AIA:AnnexIV-1(h)"
+      ],
+      "statement": "The technical documentation referred to in Article 11(1) shall contain at least the following information, as applicable to the relevant AI system: A general description of the AI system including: instructions for use for the deployer, and a basic description of the user-interface provided to the deployer, where applicable;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.TD.002.1.8",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0100",
+      "sp_refs": [
+        "AIA:AnnexIV-2(a)"
+      ],
+      "statement": "The technical documentation referred to in Article 11(1) shall contain at least the following information, as applicable to the relevant AI system: A detailed description of the elements of the AI system and of the process for its development, including: the methods and steps performed for the development of the AI system, including, where relevant, recourse to pre-trained systems or tools provided by third parties and how those were used, integrated or modified by the provider;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.TD.002.2.1",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0101",
+      "sp_refs": [
+        "AIA:AnnexIV-2(b)"
+      ],
+      "statement": "The technical documentation referred to in Article 11(1) shall contain at least the following information, as applicable to the relevant AI system: A detailed description of the elements of the AI system and of the process for its development, including: the design specifications of the system, namely the general logic of the AI system and of the algorithms; the key design choices including the rationale and assumptions made, including with regard to persons or groups of persons in respect of who, the system is intended to be used; the main classification choices; what the system is designed to optimise for, and the relevance of the different parameters; the description of the expected output and output quality of the system; the decisions about any possible trade-off made regarding the technical solutions adopted to comply with the requirements set out in Chapter III, Section 2;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.TD.002.2.2",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0102",
+      "sp_refs": [
+        "AIA:AnnexIV-2(c)"
+      ],
+      "statement": "The technical documentation referred to in Article 11(1) shall contain at least the following information, as applicable to the relevant AI system: A detailed description of the elements of the AI system and of the process for its development, including: the description of the system architecture explaining how software components build on or feed into each other and integrate into the overall processing; the computational resources used to develop, train, test and validate the AI system;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.TD.002.2.3",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0103",
+      "sp_refs": [
+        "AIA:AnnexIV-2(d)"
+      ],
+      "statement": "The technical documentation referred to in Article 11(1) shall contain at least the following information, as applicable to the relevant AI system: A detailed description of the elements of the AI system and of the process for its development, including: where relevant, the data requirements in terms of datasheets describing the training methodologies and techniques and the training data sets used, including a general description of these data sets, information about their provenance, scope and main characteristics; how the data was obtained and selected; labelling procedures (e.g. for supervised learning), data cleaning methodologies (e.g. outliers detection);",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.TD.002.2.4",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0104",
+      "sp_refs": [
+        "AIA:AnnexIV-2(e)"
+      ],
+      "statement": "The technical documentation referred to in Article 11(1) shall contain at least the following information, as applicable to the relevant AI system: A detailed description of the elements of the AI system and of the process for its development, including: assessment of the human oversight measures needed in accordance with Article 14, including an assessment of the technical measures needed to facilitate the interpretation of the outputs of AI systems by the deployers, in accordance with Article 13(3), point (d);",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.TD.002.2.5",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0105",
+      "sp_refs": [
+        "AIA:AnnexIV-2(f)"
+      ],
+      "statement": "The technical documentation referred to in Article 11(1) shall contain at least the following information, as applicable to the relevant AI system: A detailed description of the elements of the AI system and of the process for its development, including: where applicable, a detailed description of pre-determined changes to the AI system and its performance, together with all the relevant information related to the technical solutions adopted to ensure continuous compliance of the AI system with the relevant requirements set out in Chapter III, Section 2;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.TD.002.2.6",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0106",
+      "sp_refs": [
+        "AIA:AnnexIV-2(g)"
+      ],
+      "statement": "The technical documentation referred to in Article 11(1) shall contain at least the following information, as applicable to the relevant AI system: A detailed description of the elements of the AI system and of the process for its development, including: the validation and testing procedures used, including information about the validation and testing data used and their main characteristics; metrics used to measure accuracy, robustness and compliance with other relevant requirements set out in Chapter III, Section 2, as well as potentially discriminatory impacts; test logs and all test reports dated and signed by the responsible persons, including with regard to pre-determined changes as referred to under point (f);",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.TD.002.2.7",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0107",
+      "sp_refs": [
+        "AIA:AnnexIV-2(h)"
+      ],
+      "statement": "The technical documentation referred to in Article 11(1) shall contain at least the following information, as applicable to the relevant AI system: A detailed description of the elements of the AI system and of the process for its development, including: cybersecurity measures put in place;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.TD.002.2.8",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0108",
+      "sp_refs": [
+        "AIA:AnnexIV-3"
+      ],
+      "statement": "The technical documentation referred to in Article 11(1) shall contain at least the following information, as applicable to the relevant AI system: Detailed information about the monitoring, functioning and control of the AI system, in particular with regard to: its capabilities and limitations in performance, including the degrees of accuracy for specific persons or groups of persons on which the system is intended to be used and the overall expected level of accuracy in relation to its intended purpose; the foreseeable unintended outcomes and sources of risks to health and safety, fundamental rights and discrimination in view of the intended purpose of the AI system; the human oversight measures needed in accordance with Article 14, including the technical measures put in place to facilitate the interpretation of the outputs of AI systems by the deployers; specifications on input data, as appropriate;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.TD.002.3",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0109",
+      "sp_refs": [
+        "AIA:AnnexIV-4"
+      ],
+      "statement": "The technical documentation referred to in Article 11(1) shall contain at least the following information, as applicable to the relevant AI system: A description of the appropriateness of the performance metrics for the specific AI system;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.TD.002.4",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0110",
+      "sp_refs": [
+        "AIA:AnnexIV-5"
+      ],
+      "statement": "The technical documentation referred to in Article 11(1) shall contain at least the following information, as applicable to the relevant AI system: A detailed description of the risk management system in accordance with Article 9;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.TD.002.5",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0111",
+      "sp_refs": [
+        "AIA:AnnexIV-6"
+      ],
+      "statement": "The technical documentation referred to in Article 11(1) shall contain at least the following information, as applicable to the relevant AI system: A description of relevant changes made by the provider to the system through its lifecycle;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.TD.002.6",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0112",
+      "sp_refs": [
+        "AIA:AnnexIV-7"
+      ],
+      "statement": "The technical documentation referred to in Article 11(1) shall contain at least the following information, as applicable to the relevant AI system: A list of the harmonised standards applied in full or in part the references of which have been published in the Official Journal of the European Union; where no such harmonised standards have been applied, a detailed description of the solutions adopted to meet the requirements set out in Chapter III, Section 2, including a list of other relevant standards and technical specifications applied;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.TD.002.7",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0113",
+      "sp_refs": [
+        "AIA:AnnexIV-8"
+      ],
+      "statement": "The technical documentation referred to in Article 11(1) shall contain at least the following information, as applicable to the relevant AI system: A copy of the EU declaration of conformity referred to in Article 47;",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.TD.002.8",
+          "type": "COVERS"
+        }
+      ]
+    },
+    {
+      "sr_id": "SR.AIA.0114",
+      "sp_refs": [
+        "AIA:AnnexIV-9"
+      ],
+      "statement": "The technical documentation referred to in Article 11(1) shall contain at least the following information, as applicable to the relevant AI system: A detailed description of the system in place to evaluate the AI system performance in the post-market phase in accordance with Article 72, including the post-market monitoring plan referred to in Article 72(3).",
+      "obligation": "SHALL",
+      "origin": "LITERAL",
+      "author": "Catalogue author",
+      "date": "2026-10-09",
+      "coverage_complete": true,
+      "links": [
+        {
+          "cr": "CR.TD.002.9",
+          "type": "COVERS"
+        }
+      ]
+    }
+  ]
+}

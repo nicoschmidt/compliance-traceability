@@ -1,0 +1,8 @@
+{
+  "$schema": "../../../../../schemas/pack.schema.json",
+  "pack_id": "AIA",
+  "title": "Regulation (EU) 2024/1689 (AI Act), as amended by Reg. (EU) 2026/1744",
+  "sources": [
+    "AIA"
+  ]
+}

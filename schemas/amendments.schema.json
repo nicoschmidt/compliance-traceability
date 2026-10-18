@@ -1,0 +1,224 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "amendments.schema.json",
+  "$defs": {
+    "Amendment": {
+      "additionalProperties": false,
+      "description": "replace: new text/heading for target_ref. delete: removes target_ref and its descendants.\ninsert: adds `provisions` (a block in document order) after insert_after and its descendants.",
+      "properties": {
+        "op": {
+          "enum": [
+            "replace",
+            "insert",
+            "delete"
+          ],
+          "title": "Op",
+          "type": "string"
+        },
+        "amending_ref": {
+          "description": "Provision of the amending act, e.g. \"Art 1(9)(a) Reg. (EU) 2026/1744\"",
+          "minLength": 1,
+          "title": "Amending Ref",
+          "type": "string"
+        },
+        "target_ref": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Target Ref"
+        },
+        "text": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Text"
+        },
+        "heading": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Heading"
+        },
+        "insert_after": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Insert After"
+        },
+        "provisions": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/RawProvision"
+          },
+          "title": "Provisions",
+          "type": "array"
+        },
+        "note": {
+          "default": "",
+          "title": "Note",
+          "type": "string"
+        }
+      },
+      "required": [
+        "op",
+        "amending_ref"
+      ],
+      "title": "Amendment",
+      "type": "object"
+    },
+    "RawProvision": {
+      "additionalProperties": false,
+      "description": "One unit of the source's native structure. Text is verbatim; text of licensed sources is internal only and\nstripped from exports (spec § 7).",
+      "properties": {
+        "ref": {
+          "description": "Native reference, unique in the document; SP ID = <SD>:<ref>",
+          "minLength": 1,
+          "title": "Ref",
+          "type": "string"
+        },
+        "parent": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "ref of the parent provision",
+          "title": "Parent"
+        },
+        "kind": {
+          "anyOf": [
+            {
+              "enum": [
+                "section",
+                "article",
+                "annex",
+                "paragraph",
+                "subparagraph",
+                "point",
+                "subpoint",
+                "definition"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Kind"
+        },
+        "heading": {
+          "default": "",
+          "title": "Heading",
+          "type": "string"
+        },
+        "text": {
+          "default": "",
+          "title": "Text",
+          "type": "string"
+        },
+        "verbatim": {
+          "default": true,
+          "description": "false if the text is condensed or otherwise not the official wording",
+          "title": "Verbatim",
+          "type": "boolean"
+        },
+        "note": {
+          "default": "",
+          "title": "Note",
+          "type": "string"
+        }
+      },
+      "required": [
+        "ref"
+      ],
+      "title": "RawProvision",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "$Schema"
+    },
+    "doc_id": {
+      "minLength": 1,
+      "title": "Doc Id",
+      "type": "string"
+    },
+    "title": {
+      "minLength": 1,
+      "title": "Title",
+      "type": "string"
+    },
+    "amends": {
+      "description": "doc_id of the raw document the amendments apply to",
+      "minLength": 1,
+      "title": "Amends",
+      "type": "string"
+    },
+    "oj_ref": {
+      "default": "",
+      "title": "Oj Ref",
+      "type": "string"
+    },
+    "source_url": {
+      "default": "",
+      "title": "Source Url",
+      "type": "string"
+    },
+    "amendments": {
+      "description": "Applied in order",
+      "items": {
+        "$ref": "#/$defs/Amendment"
+      },
+      "title": "Amendments",
+      "type": "array"
+    }
+  },
+  "required": [
+    "doc_id",
+    "title",
+    "amends",
+    "amendments"
+  ],
+  "title": "AmendingAct",
+  "type": "object"
+}

@@ -80,6 +80,9 @@ python check_catalogue.py catalogue --public-only
 | `check_catalogue.py` | Release check of a JSON catalogue (`--fmt` rewrites files in canonical form first) |
 | `make_catalogue.py` | Generate the catalogue workbook from a JSON catalogue |
 | `build_project.py` | Create project input sheets (`--init [--seed]`) / build check items and views |
+| `ctm/project.py` | Project selection and applicability on catalogue tables (used by `build_project.py` and the web viewer) |
+| `backend/` | Web viewer API (FastAPI): `python -m backend CATALOGUE_DIR` |
+| `frontend/` | Web viewer UI (React + Vite) |
 | `tools/backbone_metrics.py` | Checkpoint metrics of a catalogue |
 | `tests/test_model.py` | Model, store, schema and checker tests (pytest) |
 | `tests/test_phase1.py` | End-to-end test of the workbooks (sample fixture in `tests/fixtures/`) |
@@ -102,10 +105,35 @@ python build_project.py data/Catalogue_CAT-2026.1-draft.xlsx data/P26901.xlsx   
 Rebuilding keeps every entry in the CI sheet (matched by CI ID `<object>/<CR>`). It also keeps manual
 applicability overrides, and moves check items that no longer exist to `CI_ORPHANED`. A `.bak` copy is written first.
 
+## Web viewer
+
+A local browser alternative to the workbooks. It lets you browse every source document (provisions → SRs → linked CRs),
+the master list and the decisions. It can also open a project seed and show one view per basis document, holding only
+the selected requirements down to the check items. Scoping tags filter any view to the applicable items. In a project
+the tags start from the seed and can be changed temporarily. Every ID is a link, and `/id/<ID>` opens any ID
+(e.g. `/id/CR.VV.009.4`).
+
+```bash
+pip install -e .[web]                                  # fastapi + uvicorn
+cd frontend && npm install && npm run build && cd ..   # once, and after frontend changes
+python -m backend catalogue --projects ../compliance-traceability-private/projects    # http://127.0.0.1:8765
+```
+
+- Options: the same pack options as the other tools (`--pack`, `--public-only`, `--no-packs`).
+- `--internal` serves the verbatim text of licensed sources. Keep the server local (default host 127.0.0.1).
+- `--projects DIR` (repeatable) sets the seed folders; the default is `projects/`. A seed can also be loaded from a file
+  in the browser.
+- *Reload catalogue* picks up JSON edits without a restart.
+- Frontend development: run `npm run dev` in `frontend/` (http://localhost:5173; `/api` is proxied to port 8765).
+- Applicability (selection by basis, D0044 link conditions, refinement substitution) is computed by `ctm/project.py`,
+  the same code that builds the project workbooks. The viewer shows the rule proposal; verdicts and evidence stay in
+  the workbook.
+
 ## Tests
 
 ```bash
-pytest                                              # tests/test_model.py: public catalogue + sample fixtures
+pytest                                              # test_model.py, test_project.py, backend/tests/test_api.py
+cd frontend && npm test                             # data layer of the web viewer (vitest)
 python tests/test_phase1.py OUTDIR path/to/recalc.py
 ```
 

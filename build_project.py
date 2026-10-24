@@ -20,7 +20,7 @@ from ctm.schema import (CATALOGUE, PROJECT_INPUT, PRJ_FIELDS, CI_COLS, CI_EDITAB
 from ctm.register import write_register, read_register, as_default_format, labels, label
 from ctm.common import (header, body_cell, add_list_validation, add_status_colours, read_table, col_letter,
                         combine_formula, counts_over, R, BODY, BOLD, CHK_FONT, F, WRAP)
-from ctm.project import AUTO_PREFIX, natkey, select_project, checklist_rows, split_full, split_refs  # noqa: F401
+from ctm.project import AUTO_PREFIX, natkey, select_project, checklist_rows
 from ctm.store import load_project_seed, seed_inputs
 
 

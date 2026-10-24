@@ -139,7 +139,7 @@ def create_app(root, packs=None, defaults=True, internal=False, projects=(), sta
 
     @app.get('/api/projects/{pid}')
     def project_seed(pid: str):
-        path, seed, err = state.seeds().get(pid, (None, None, 'unknown project'))
+        _, seed, err = state.seeds().get(pid, (None, None, 'unknown project'))
         if not seed:
             raise HTTPException(404, detail=err)
         return seed.model_dump(mode='json', exclude={'schema_ref'}, exclude_none=True)
@@ -147,7 +147,7 @@ def create_app(root, packs=None, defaults=True, internal=False, projects=(), sta
     @app.post('/api/project/evaluate')
     def project_evaluate(seed: dict = Body(...), tags: Optional[dict] = Body(None)):
         sd = _seed_with_tags(seed, tags)
-        prj, basis, tags_, objects, _ = seed_inputs(sd)
+        _, basis, tags_, objects, _ = seed_inputs(sd)
         known = {r['sd_id'] for r in state.tables['SD']}
         basis_ids = [b['sd_id'] for b in basis]
         S, crs = _evaluate(state, basis_ids, tags_, objects)

@@ -15,6 +15,7 @@ sys.path.insert(0, ROOT)
 from openpyxl import load_workbook
 import make_catalogue, check_catalogue, build_project
 from ctm import vocab
+from ctm.project import split_refs
 from ctm.store import load_catalogue, load_project_seed, to_tables
 from ctm.schema import CATALOGUE, CI_COLS
 from ctm.common import read_table
@@ -83,7 +84,7 @@ basis = [b.sd_id for b in SEED.basis]
 sps = {r['sp_id']: r for r in C['SP'] if r['sd_id'] in basis}
 srs = {}
 for r in C['SR']:
-    refs = build_project.split_refs(r['sp_refs'])
+    refs = split_refs(r['sp_refs'])
     if refs[0] in sps: srs[r['sr_id']] = dict(r, refs=refs)
 crs_ids = [row[0].value for row in v['V_CR'].iter_rows(min_row=2) if row[0].value]
 crs = {r['cr_id']: r for r in C['CR'] if r['cr_id'] in crs_ids}

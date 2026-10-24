@@ -20,27 +20,8 @@ from ctm.schema import (CATALOGUE, PROJECT_INPUT, PRJ_FIELDS, CI_COLS, CI_EDITAB
 from ctm.register import write_register, read_register, as_default_format, labels, label
 from ctm.common import (header, body_cell, add_list_validation, add_status_colours, read_table, col_letter,
                         combine_formula, counts_over, R, BODY, BOLD, CHK_FONT, F, WRAP)
-from ctm import rules
+from ctm.project import AUTO_PREFIX, natkey, select_project, checklist_rows, split_full, split_refs  # noqa: F401
 from ctm.store import load_project_seed, seed_inputs
-
-AUTO_PREFIX = 'Rule '   # auto-generated applicability justifications start with this
-
-
-def split_refs(s):
-    return [x.strip() for x in str(s or '').replace(',', ';').split(';') if x.strip()]
-
-
-def natkey(s):
-    return [int(t) if t.isdigit() else t for t in re.split(r'(\d+)', str(s))]
-
-
-def split_full(s):
-    """Cell "CR.X; CR.Y [SET]" of column refines_full -> [(cr_id, set)]."""
-    out = []
-    for x in split_refs(s):
-        m = re.match(r'^(.*?)\s*(?:\[(.*)\])?$', x)
-        out.append((m.group(1), (m.group(2) or '').strip()))
-    return out
 
 
 # ------------------------------------------------------------------------------------------ init
@@ -105,155 +86,29 @@ def build_project(cat_path, prj_path, out_path=None):
             old_ci[r['ci_id']] = r
     pid = prj.get('Project ID') or 'PRJ'
 
-    YES = label(reg, 'YN', 'YES')
-    A = {e['key']: e['label'] for e in reg['APPL']}
-    deprecated = label(reg, 'CRSTATUS', 'DEPRECATED')
     role_attr = {e['label']: e['attr'] for e in reg['SPROLE']}
-    link_counts = {e['label']: e['attr'] == YES for e in reg['LINKTYPE']}
     sd_status = {r['sd_id']: r['lifecycle_status'] for r in C['SD']}
-
-    # ---- selection by basis
     basis = [b['sd_id'] for b in P['BASIS'] if b['sd_id']]
-    sp = {r['sp_id']: r for r in C['SP'] if r['sd_id'] in basis}
-    sr = {}
-    for r in C['SR']:
-        refs = split_refs(r['sp_refs'])
-        if refs and refs[0] in sp:
-            r = dict(r, sd_id=sp[refs[0]]['sd_id'], refs=refs)
-            sr[r['sr_id']] = r
-    links = [l for l in C['LINK_SR_CR'] if l['sr_id'] in sr]
-    crs_all = {r['cr_id']: r for r in C['CR'] if r['status'] != deprecated}
-    children = {}
-    for r in crs_all.values():
-        if r['parent_cr']:
-            children.setdefault(r['parent_cr'], []).append(r['cr_id'])
-    sel = {l['cr_id'] for l in links if link_counts.get(l['link_type']) and l['cr_id'] in crs_all}
-    stack = list(sel)
-    while stack:                                   # descendants
-        k = stack.pop()
-        for c in children.get(k, []):
-            if c not in sel: sel.add(c); stack.append(c)
-    for k in list(sel):                            # ancestors
-        p = crs_all[k]['parent_cr']
-        while p and p in crs_all:
-            sel.add(p); p = crs_all[p]['parent_cr']
-    crs = {k: crs_all[k] for k in sorted(sel, key=natkey)}
-    corr = [c for c in C['CORR'] if c['from_sp'] in sp or c['to_sp'] in sp]
-
-    def leaves(k):
-        ch = [c for c in children.get(k, []) if c in crs]
-        return [k] if not ch else [x for c in ch for x in leaves(c)]
-
-    # ---- source-specific link conditions and guidance (spec § 4.5, § 5.4): per source of the basis, the counting
-    #      links on the nearest linked CR on the path leaf -> root decide. A leaf CR is applicable if its own rule holds
-    #      and the condition of at least one source holds (OR); a link without condition always holds.
-    on_cr = {}
-    for l in links:
-        if link_counts.get(l['link_type']) and l['cr_id'] in crs_all:
-            on_cr.setdefault(l['cr_id'], []).append((sr[l['sr_id']]['sd_id'], str(l.get('condition') or '').strip(),
-                                                     str(l.get('guidance') or '').strip()))
-
-    def source_links(k):
-        """{sd: [(condition, guidance)]} of the nearest CR on the path k -> root that the source links."""
-        out, n, seen = {}, k, set()
-        while n and n in crs_all and n not in seen:
-            seen.add(n)
-            for sd, c, g in on_cr.get(n, []):
-                if out.setdefault(sd, (n, []))[0] == n:
-                    out[sd][1].append((c, g))
-            n = crs_all[n]['parent_cr']
-        return {sd: v[1] for sd, v in out.items()}
-
-    def effective_rule(k):
-        base = str(crs[k]['applicability_rule'] or '').strip()
-        conds = []
-        for lst in source_links(k).values():
-            if any(not c for c, _ in lst):
-                conds = []; break                   # one source requires the CR without condition
-            for c, _ in lst:
-                if c not in conds:
-                    conds.append(c)
-        if not conds:
-            return base or 'TRUE'
-        cond = conds[0] if len(conds) == 1 else ' OR '.join(f'({c})' for c in conds)
-        return cond if base in ('', 'TRUE') else f'({base}) AND ({cond})'
-
-    def guidance(k):
-        out = [str(crs[k]['assessor_guidance'] or '')] if crs[k]['assessor_guidance'] else []
-        for sd, lst in source_links(k).items():
-            out += [f'[{sd}] {g}' for _, g in lst if g and f'[{sd}] {g}' not in out]
-        return '\n'.join(out)
-
-    # ---- rule results of leaf CRs
     objects = P['OBJECTS']
-    levels = {o['level'] for o in objects}
-    rule_res, eff_rule, guid = {}, {}, {}
-    for k, r in crs.items():
-        if any(c in crs for c in children.get(k, [])):
-            continue                                # parents are rolled up, not assessed
-        eff_rule[k], guid[k] = effective_rule(k), guidance(k)
-        try:
-            ast = rules.parse(eff_rule[k])
-            rule_res[k] = (rules.evaluate(ast, tags), rules.unknown_tags(ast, tags))
-        except rules.RuleError as ex:
-            rule_res[k] = (None, [f'rule error: {ex}'])
+    S = select_project(C, reg, basis, tags, objects)
+    sp, sr, links, crs, children, corr, subst, guid = S.sp, S.sr, S.links, S.crs, S.children, S.corr, S.subst, S.guid
 
-    # ---- substitution by full refinements (D0033, D0045): a selected leaf CR with a complete set of full
-    #      refinements (all members selected and applicable, i.e. at least one CI not N/A by rule) gets no own CIs;
-    #      its status is rolled up from the members of all its complete sets
-    full_sets = {}                                  # x -> {set: [y]} over the whole catalogue
-    for y in sorted(crs_all, key=natkey):
-        for x, st in split_full(crs_all[y].get('refines_full')):
-            if x != y:
-                full_sets.setdefault(x, {}).setdefault(st, []).append(y)
-    sel_full = {x for x, sets in full_sets.items() if x in crs and any(y in crs for ys in sets.values() for y in ys)}
-
-    def applicable(y):
-        return any(rule_res[l][0] is not False and crs[l]['object_level'] in levels for l in leaves(y))
-    chained = lambda y: any(l in sel_full for l in leaves(y))     # refiner substituted itself: not supported
-    subst = {}
-    for x, sets in full_sets.items():
-        if x not in rule_res:
-            continue
-        ys = [y for members in sets.values() if all(y in crs and applicable(y) and not chained(y) for y in members)
-              for y in members]
-        if ys:
-            subst[x] = list(dict.fromkeys(ys))
-
-    # ---- CI generation
+    # ---- merge with the previous CIs: keep project entries and manual applicability overrides
     ci_rows = []
-    for k, r in crs.items():
-        if k not in rule_res or k in subst:
-            continue                                # parents and substituted CRs have no own CIs
-        res, unk = rule_res[k]
-        for o in objects:
-            if o['level'] != r['object_level']:
-                continue
-            ci_id = f'{o["object_id"]}/{k}'
-            if res is False:
-                auto, just = A['NA_FEAT'], f'{AUTO_PREFIX}not met: {eff_rule[k]}'
-            elif res is None:
-                auto, just = A['APPLICABLE'], f'{AUTO_PREFIX}undetermined ({", ".join(unk)}) – assessor to confirm'
-            else:
-                auto, just = A['APPLICABLE'], ''
-            row = dict(ci_id=ci_id, object_id=o['object_id'], level=o['level'], cr_id=k, domain=r['domain'],
-                       title=r['title'], statement=r['statement'], acceptance_criterion=r['acceptance_criterion'],
-                       assessor_guidance=guid[k], expected_evidence=r['expected_evidence'],
-                       rule_applicability=auto, applicability=auto, applicability_justification=just)
-            prev = old_ci.pop(ci_id, None)
-            if prev:
-                manual = prev['applicability'] not in ('', None) and prev['applicability'] != prev['rule_applicability']
-                for f in CI_EDITABLE:
-                    if f in ('applicability', 'applicability_justification'):
-                        continue
-                    row[f] = prev.get(f, '')
-                if manual:
-                    row['applicability'] = prev['applicability']
-                    row['applicability_justification'] = prev['applicability_justification']
-                elif prev['applicability_justification'] and not str(prev['applicability_justification']).startswith(AUTO_PREFIX):
-                    row['applicability_justification'] = prev['applicability_justification']
-            ci_rows.append(row)
-    ci_rows.sort(key=lambda x: (natkey(x['cr_id']), x['object_id']))
+    for row in S.ci_rows:
+        prev = old_ci.pop(row['ci_id'], None)
+        if prev:
+            manual = prev['applicability'] not in ('', None) and prev['applicability'] != prev['rule_applicability']
+            for f in CI_EDITABLE:
+                if f in ('applicability', 'applicability_justification'):
+                    continue
+                row[f] = prev.get(f, '')
+            if manual:
+                row['applicability'] = prev['applicability']
+                row['applicability_justification'] = prev['applicability_justification']
+            elif prev['applicability_justification'] and not str(prev['applicability_justification']).startswith(AUTO_PREFIX):
+                row['applicability_justification'] = prev['applicability_justification']
+        ci_rows.append(row)
     orphaned = list(old_ci.values())
 
     # ---- workbook
@@ -281,7 +136,7 @@ def build_project(cat_path, prj_path, out_path=None):
                      ['ci_id', 'object_id', 'cr_id', 'title', 'verdict', 'finding_severity', 'assessor_remarks'],
                      'Findings register (Major / Minor / Observation)')
     for sd_id in basis:
-        _v_checklist(wb, sd_id, sp, sr, links, crs, _expand(leaves, subst), ci_rows, link_counts, v_sr, guid)
+        _v_checklist(wb, S, sd_id, ci_rows, v_sr)
     _v_summary(wb, reg, prj, basis, nCI, v_cr, v_sr, v_sp)
     _snapshot(wb, C)
     _readme(wb)
@@ -295,20 +150,6 @@ def build_project(cat_path, prj_path, out_path=None):
     wb.save(out_path)
     return dict(ci=len(ci_rows), cr=len(crs), sr=len(sr), sp=len(sp), links=len(links), orphaned=len(orphaned),
                 substituted=len(subst))
-
-
-def _expand(leaves, subst):
-    """leaves() with substituted CRs replaced by the leaves of their full refinements (for checklist views)."""
-    def f(k, seen=()):
-        out = []
-        for l in leaves(k):
-            if l in subst and l not in seen:
-                for y in subst[l]:
-                    out += [x for x in f(y, seen + (l,)) if x not in out]
-            elif l not in out:
-                out.append(l)
-        return out
-    return f
 
 
 # ------------------------------------------------------------------------------------------ CI
@@ -547,7 +388,7 @@ def _v_register_view(wb, name, idx_key, nCI, keys, title):
     ws.freeze_panes = 'B4'
 
 
-def _v_checklist(wb, sd_id, sp, sr, links, crs, leaves, ci_rows, link_counts, v_sr, guid=None):
+def _v_checklist(wb, S, sd_id, ci_rows, v_sr):
     ws = wb.create_sheet(f'V_CL_{sd_id}'[:31])
     ws['A1'] = f'Checklist view in the clause order of {sd_id} (read-only mirror of sheet CI – enter data in CI)'
     ws['A1'].font = Font(name=F, bold=True, size=12)
@@ -555,21 +396,8 @@ def _v_checklist(wb, sd_id, sp, sr, links, crs, leaves, ci_rows, link_counts, v_
            'Guidance', 'Object', 'Applicability', 'Evidence', 'Compliance statement', 'Assessor remarks', 'Verdict',
            'Severity', 'Reviewer remarks', 'Status', '_ci_id']
     header(ws, hdr, [14, 22, 16, 44, 14, 15, 36, 34, 30, 15, 16, 22, 30, 30, 11, 13, 26, 14, 8], row=3)
-    ci_by_cr = {}
-    for c in ci_rows:
-        ci_by_cr.setdefault(c['cr_id'], []).append(c)
-    rows = []
-    srs = sorted([r for r in sr.values() if r['sd_id'] == sd_id],
-                 key=lambda r: (float(sp[r['refs'][0]]['seq'] or 0), natkey(r['sr_id'])))
-    for r in srs:
-        p = sp[r['refs'][0]]
-        heading = p['heading'] or (sp.get(p['parent_sp'], {}).get('heading') if p['parent_sp'] else '') or ''
-        counted = [l['cr_id'] for l in links if l['sr_id'] == r['sr_id'] and link_counts.get(l['link_type']) and l['cr_id'] in crs]
-        items = [(cr, c) for k in counted for cr in leaves(k) for c in ci_by_cr.get(cr, [])]
-        if not items:
-            rows.append((p['native_ref'], heading, r, None, None))
-        for cr, c in items:
-            rows.append((p['native_ref'], heading, r, cr, c))
+    rows = [(p['native_ref'], heading, r, cr, c) for p, heading, r, cr, c in checklist_rows(S, sd_id, ci_rows)]
+    crs, guid = S.crs, S.guid
     vsr_id, vsr_st = f'V_SR!$A$2:$A${v_sr["n"]}', f'V_SR!$O$2:$O${v_sr["n"]}'
     keys = ['object_id', 'applicability', 'evidence_refs', 'client_statement', 'assessor_remarks', 'verdict',
             'finding_severity', 'reviewer_remarks', 'status']

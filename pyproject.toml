@@ -10,11 +10,12 @@ requires-python = ">=3.9"
 dependencies = ["openpyxl>=3.1", "pydantic>=2.6"]
 
 [project.optional-dependencies]
-dev = ["pytest", "jsonschema"]
+dev = ["pytest", "jsonschema", "httpx"]
+web = ["fastapi>=0.110", "uvicorn>=0.29"]
 
 [tool.setuptools]
-packages = ["ctm"]
+packages = ["ctm", "backend"]
 
 [tool.pytest.ini_options]
-testpaths = ["tests"]
-python_files = ["test_model.py"]   # tests/test_phase1.py is a script (needs OUTDIR and a LibreOffice recalc script)
+testpaths = ["tests", "backend/tests"]
+python_files = ["test_model.py", "test_project.py", "test_api.py"]   # tests/test_phase1.py is a script (needs OUTDIR and a LibreOffice recalc script)

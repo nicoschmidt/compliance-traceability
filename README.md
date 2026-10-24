@@ -1,6 +1,6 @@
 # Compliance Traceability Toolkit
 
-Implements spec v0.3.8, §§ 8.1 and 8.3. Requires Python 3.9+, `openpyxl` and `pydantic` 2 (`pip install -e .[dev]`).
+Implements spec v0.3.8, §§ 8.1 and 8.3. Requires Python 3.9+, `openpyxl` and `pydantic` 2 (`pip install -e ".[dev]"`).
 The end-to-end test needs LibreOffice to recalculate the formulas.
 
 The catalogue is stored as JSON, which is the single source of truth. The data model in `ctm/model.py` defines
@@ -114,7 +114,7 @@ the tags start from the seed and can be changed temporarily. Every ID is a link,
 (e.g. `/id/CR.VV.009.4`).
 
 ```bash
-pip install -e .[web]                                  # fastapi + uvicorn
+pip install -e ".[web]"                                # fastapi + uvicorn
 cd frontend && npm install && npm run build && cd ..   # once, and after frontend changes
 python -m backend catalogue --projects ../compliance-traceability-private/projects    # http://127.0.0.1:8765
 ```

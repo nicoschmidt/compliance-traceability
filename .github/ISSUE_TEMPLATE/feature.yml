@@ -1,0 +1,42 @@
+name: Feature
+description: A capability the application should have
+labels: ["type:feature"]
+body:
+  - type: textarea
+    id: story
+    attributes:
+      label: What and for whom
+      description: One or two sentences. Who benefits, and what can they do afterwards that they cannot do now?
+      placeholder: As a <user>, I can ... so that ...
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Observable, checkable statements. If you cannot test it, it is not a criterion.
+      value: |
+        - [ ] 
+        - [ ] 
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context and constraints
+      description: Relevant ADRs, domain docs, prior discussion, known edge cases.
+  - type: dropdown
+    id: adr
+    attributes:
+      label: Does this require an architecture decision?
+      options:
+        - "No"
+        - "Yes — ADR still to be written"
+        - "Yes — covered by an existing ADR"
+    validations:
+      required: true
+  - type: textarea
+    id: outofscope
+    attributes:
+      label: Explicitly out of scope
+      description: What this issue deliberately does not cover.

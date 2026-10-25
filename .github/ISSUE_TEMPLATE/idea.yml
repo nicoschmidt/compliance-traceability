@@ -1,0 +1,14 @@
+name: Idea
+description: Capture something noticed in passing. Refined later, never worked on as is.
+labels: ["idea"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A title is enough. Refinement turns this into a feature, bug or spike — or closes it.
+        About the way of working rather than the product? Add the `process` label.
+  - type: textarea
+    id: details
+    attributes:
+      label: What came to mind
+      description: Optional. A line or two, if they come for free.

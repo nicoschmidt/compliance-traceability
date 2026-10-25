@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Managed by ai-dev-process. Refuses a commit on main or master.
+#
+# Activated per clone, because git does not read hook settings from the
+# repository itself:
+#
+#   git config core.hooksPath .githooks
+#
+# This is a backstop for the rule in .claude/rules/process/workflow.md, not a
+# replacement for it. `git commit --no-verify` bypasses it, visibly.
+
+branch="$(git symbolic-ref --short -q HEAD || true)"
+case "$branch" in
+  main|master)
+    echo "pre-commit: refusing to commit on '$branch'." >&2
+    echo "Every change reaches $branch through a branch and a pull request:" >&2
+    echo "  git switch -c <type>/<issue>-<slug>" >&2
+    exit 1
+    ;;
+esac
+exit 0

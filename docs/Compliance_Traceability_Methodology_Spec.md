@@ -2,10 +2,10 @@
 
 | | |
 |---|---|
-| **Version** | 0.3.8 (master list and one pack per source; source-specific link conditions; refinement sets) |
-| **Date** | 18 October 2026 |
+| **Version** | 0.3.9 (decisions as ADRs in the project repository; checkpoint reports moved there) |
+| **Date** | 25 October 2026 |
 | **Project** | Functional Safety & AI — assessment of AI systems under the Machinery Regulation (EU) 2023/1230 |
-| **Status** | Draft. Method, data model and roadmap. Phase 1 implemented and tested. Phase 2 in progress: legal backbone (MR complete for manufacturers + AIA) ISO/IEC CD TS 22440-1 and ISO/IEC TR 5469 built and checked as private packs; all common requirements in the public master list (§ 8.3); refinements between standards and law typed (full / partly), full refinements substitute the legal requirement in projects. prEN 18228 next. Decision register: § 10. |
+| **Status** | Draft. Method, data model and roadmap. Phase 1 implemented and tested. Phase 2 in progress: legal backbone (MR complete for manufacturers + AIA) ISO/IEC CD TS 22440-1 and ISO/IEC TR 5469 built and checked as private packs; all common requirements in the public master list (§ 8.3); refinements between standards and law typed (full / partly), full refinements substitute the legal requirement in projects. prEN 18228 next. Decisions: ADRs in the project repository, mapped in § 10. |
 | **Predecessor** | `MR_AIA_Traceability_Step1.xlsx` (MR Annex III ↔ AI Act matrix, 8 Oct 2026) |
 
 ### Change log
@@ -23,6 +23,7 @@
 | 0.3.6 | 17 Oct 2026 | Phase 2 step 3: ISO/IEC TR 5469:2024 onboarded with derived SRs (A8); the client draft checklist was re-granularised so that 62 % of the TR links land on existing MR/AIA/TS CRs (§ 5.1, checkpoint P2-3). One set of full refinements per CR; full refinements only where none exists yet; chained full refinements are warned (§ 4.5, D0036). New tags `AI.rl`, `dev.virtual_testing`; rule `AI.tech_class != I` (then `TS.SWTC`) for ML-specific TR CRs (§ 4.6). TE objects used for per-element classification (§ 4.7, § 9). Annex C requirement levels recorded as measure ratings (§ 5.1 A7/A8, D0037). New open task: combined checklist view (§ 10.2 D30, § 12 Phase 3). |
 | 0.3.7 | 17 Oct 2026 | Repository split (§ 7, § 8.3, D0040): the public repository holds code, schemas, spec, the legal sources and the master list of all publishable CRs (the *core*); licensed sources are *packs* (private repository) with their raw and derived files, pack-own CRs, CR overlays and decisions. References point from a pack to the core only. New CR attribute `provenance`, *dormant* CRs (§ 4.5); CR overlays with source-conditional rules via the implicit tag `basis.<SD>` (§ 4.6, § 8.3). Neutral terminology in the public catalogue: tags `TS.AUL`/`TS.SWTC` renamed `AI.usage_level`/`AI.tech_class` (TR 5469 terms, D0042); TS 22440-1 wording, draft values and rating-derived rules moved to pack overlays, 24 CRs that mirror the draft's structure kept in the pack until publication (D0041). Pilot record moved to the private repository (§ 9). |
 | 0.3.8 | 18 Oct 2026 | Master list and packs (§ 7, § 8.3, D0043): `catalogue/` is the public master list of **all** CRs (incl. the 24 former pack CRs, reworded, D0046) with the list of known packs; every source document is its own pack with the same format and loading for public and private packs (public: MR, AIA, MR-AIDA; private: TS22440-1, TR5469). CR overlays, pack-own CRs, `provenance`, dormant CRs and the implicit tag `basis.<SD>` removed. Source-specific applicability and guidance are attributes of the coverage link: `condition` (OR across the sources of the basis, nearest linked CR per source) and `guidance` (§ 4.5, § 5.4, D0044). Several full-refinement sets per CR (§ 4.5, D0045; closes D31). Unreached CRs are warned as orphans only when all known packs are loaded (§ 8.3). Standard terms and clause references may be used in CR text (§ 7). Pilot P26901 unchanged (302 CIs, 275 applicable, 12 substitutions, 4,384 statuses identical). |
+| 0.3.9 | 25 Oct 2026 | Decisions D1–D38 moved to architecture decision records (ADR-0003 to ADR-0040) in the private project repository `compliance-traceability-project`; § 10 keeps the mapping, so that references in the catalogue data and in this document stay resolvable. Checkpoint reports moved there from `docs/` (§ 7). Catalogue decisions (D0001 ff.) unchanged. |
 
 ---
 
@@ -479,7 +480,8 @@ Draft standards (CD, ENQ) are confidential committee documents. Their content is
 
 | Repository | Content | Access |
 |---|---|---|
-| Public (`compliance-traceability`) | Code, schemas, spec, test fixtures; the **master list** (`catalogue/`: all CRs, catalogue-wide decisions, the list of known packs); the **public packs** of EU law (`packs/MR`, `packs/AIA`, `packs/MR-AIDA`); all checkpoint reports (`docs/`, project-owner decision 18 Oct 2026; may move to a separate project-management repository later) | Public (MIT licence) |
+| Public (`compliance-traceability`) | Code, schemas, spec, test fixtures; the **master list** (`catalogue/`: all CRs, catalogue-wide decisions, the list of known packs); the **public packs** of EU law (`packs/MR`, `packs/AIA`, `packs/MR-AIDA`) | Public (MIT licence) |
+| Project (`compliance-traceability-project`) | Decisions (ADRs, formerly § 10), checkpoint reports, iterations and the project's working agreements | Private |
 | Private (`compliance-traceability-private`) | **Private packs** of licensed sources (`packs/TS22440-1`, `packs/TR5469`; later `packs/EN18228`): verbatim `raw.json`, `derived.json` (annotations, SRs, coverage links with conditions and guidance, correspondences), pack decisions; project records; generated workbooks that include pack content | Users covered by the licences |
 
 Rules for the public part: all leaf requirements are public CRs (project-owner decision 18 Oct 2026, D0046); their text is our own and must not replicate the wording of a licensed source closely (checked by `test_public_text_not_verbatim` in the private repository: no run of 8 words shared with the raw text of a private pack). Terms defined in standards and clause references are allowed. SRs, link conditions and guidance of licensed sources stay in their pack; without the pack, the master list shows the requirements but not which source they give compliance against. The list of known packs (IDs and titles) is public. A workbook generated with private packs loaded is as confidential as the packs. Whether a licence permits sharing a pack with several users must be checked per licence; if not, each user can rebuild `raw.json` from an own copy with the onboarding scripts (open, § 10.2 D36).
@@ -565,7 +567,7 @@ Move when either threshold is crossed: more than ~5 source documents or ~1,000 l
 
 **Product:** a camera-based person detection system that triggers a slow-down or stop of a machine.
 
-| Item | Pilot setting (status in § 10) |
+| Item | Pilot setting (status: ADRs mapped in § 10) |
 |---|---|
 | AI system category | `AI.cat = B15`: protective device designed to detect the presence of persons (MR Annex I Part B item 15, Annex II item 2). The model is frozen after training, so it is **not** Part A item 5. System-type tags: `sys.protective_device = yes`, `sys.control_system = yes` (slow-down/stop logic). |
 | AIA | Safety component → Art 6(1) via Section B, so the AI requirements arrive through the MR delegated act. Check whether third-party assessment is required (Part B with no AI-covering hEN). Modelled in CR.CONF.001.2: module A is only acceptable for Part B if category-specific harmonised standards cover all relevant EHSRs. |
@@ -589,55 +591,48 @@ Move when either threshold is crossed: more than ~5 source documents or ~1,000 l
 
 ## 10 Decisions
 
-Method and project-owner decisions. Catalogue decisions (scope, links, merges per provision) are logged in `catalogue/decisions.json` and in the decision files of the private packs (D0001 ff., one sequence) and referenced here where they implement a decision. Status: **Accepted** (decided, may still be open for implementation), **Implemented**, **Open**.
+Method and project-owner decisions are recorded as architecture decision records (ADRs) in the private project repository `compliance-traceability-project` (`docs/adr/`), with their context, the decision, its status and its consequences. Decisions D1–D38 of earlier versions of this specification are ADR-0003 to ADR-0040 there; the table below keeps their numbers resolvable. Catalogue decisions (scope, links, merges per provision) are not ADRs: they remain in `catalogue/decisions.json` and in the decision files of the packs (D0001 ff., one sequence).
 
-### 10.1 Method decisions (v0.2)
-
-| # | Question | Decision (9 Oct 2026) | Status |
-|---|---|---|---|
-| D1 | Pilot boundary | **AI safety component.** Domain PHYS is Inherited or Not in scope (agreed). | Implemented (D0001) |
-| D2 | Verdict scale | **Pass / Fail / Info needed / Pending**, applicable items only. N/A, Inherited and *Not in scope (agreed)* live in the separate applicability field. Partial only at roll-up. | Implemented |
-| D3 | Finding severity | **Major / Minor** (for Fail); **Observation** (also possible on Pass) | Implemented |
-| D4 | Catalogue governance | **Author only.** No catalogue reviewer; the four-eyes principle applies to assessments. | Implemented |
-| D5 | Fundamental-rights requirements | Included as CRs tagged `FR`; not applicable by default for machinery | Implemented (D0011) |
-| D6 | Integrity-level mapping PL ↔ SIL ↔ systematic capability of the AI part | Taken from the applied standards; no in-house mapping | Implemented (CR.FS.016; mapping in the guidance of the TS 22440-1 link) |
-| D7 | Draft standards in client reports | Allowed in UC2/UC2-G with a "draft edition" disclaimer; never used for presumption statements | Accepted (report template: Phase 7) |
-| D8 | Tool for v1 | Excel, with script-generated views and the register rule (§ 6.3) | Implemented (JSON store + generated workbooks, v0.3.2) |
-
-### 10.2 Project-owner decisions (Phase 2)
-
-| # | Question | Decision | Status |
-|---|---|---|---|
-| D9 | `MR-AIDA` (anticipated delegated act) | Not populated; AIA provisions act as proxy in project bases; confirmed by MR Art 8 ¶3 (Omnibus) | Accepted (D0003, D0017) |
-| D10 | Reporting of out-of-boundary physical provisions | Stay *Out of catalogue scope* and roll up as *Not assessed*; no separate status | Accepted (checkpoint P2-1) |
-| D11 | Machine-type chapters 2, 4, 5, 6 of MR Annex III | Deferred to Phase 5 | Accepted (D0002) |
-| D12 | Granularity of technical documentation (Annex IV) | One CR per content element (TD.002.x, TD.011–016) | Implemented |
-| D13 | Work split | Data, method and strategy prepared in this project; code changes as a change request with a tested `git apply` patch, applied by the preparer once the project owner approves (18 Oct 2026) or in Claude Code; data and docs written into the repositories directly; nothing committed by the preparer | Implemented |
-| D14 | Completing the MR before standards | MR complete for manufacturers (Arts 1–3, 6–11, 17–25, 52, 54; Annexes I–X); other articles unlisted with logged scope (A10) | Implemented (D0014) |
-| D15 | Partly completed machinery | Listed, out of catalogue scope until Phase 5; tag `prod.type` available for later rules | Accepted (D0015) |
-| D16 | Conformity-route and IFU scoping tags | `prod.type`, `conf.module`, `ifu.digital`, `use.non_professional` replace manual N/A | Implemented (D0024) |
-| D17 | MR corrigendum dates | Modelled as amending act MR-COR (application 20 Jan 2027); taken from a secondary source | Open – verify against OJ L 169, 4.7.2023 |
-| D18 | Licensed / draft text | Verbatim draft text allowed in `raw.json` (internal store); exports strip it unless `--internal` | Implemented (D0025) |
-| D19 | SP depth | 6 levels below a root (ISO clause numbering) | Implemented (D0032) |
-| D20 | Refinements from standards | Stand-alone CRs with typed `refines` (*Full* / *Partly*); full refinements substitute the legal leaf CR in projects | Accepted (D0026, D0033); substitution: code change requested |
-| D21 | AI-based development tools | Domain TOOL, tag `dev.ai_tools`, object level DEV | Implemented (D0031) |
-| D22 | Pilot systematic capability of the AI part | `INT.AISC = 3` (PL d ≈ SIL 2) | Open – confirm (P2-2 Q1) |
-| D23 | Pilot `dev.ai_tools` | `no` (no AI-assisted labelling or other AI tools) | Open – confirm (P2-2 Q2) |
-| D24 | Checklist granularity after TS 22440-1 | 13 test-method groups kept as separate CIs; reduced by substitution (D20) | Open (P2-2 Q3; pilot review, Phase 3) |
-| D25 | "Should" provisions of standards | Atomised as SRs with obligation *Should*, assessed under the CR named as recommendation | Open (P2-2 Q4) |
-| D26 | TR 5469 granularity | Client draft checklist used as input and re-granularised; SRs link first to existing CRs; draft item numbers in SR notes | Implemented (D0035) |
-| D27 | TR 5469 Annex C requirement levels | SIL 1/2/3 (PL b–c / d / e) → low / middle / high, recorded as measure rating; pilot *middle* | Open – confirm (P2-3 Q1) |
-| D28 | Pilot `dev.virtual_testing` | Not set; the five toolchain check items show "assessor to confirm" | Open – confirm (P2-3 Q2) |
-| D29 | TE objects | Three element groups as TE objects; per-element classification and Class-I treatment | Open – confirm (P2-3 Q3) |
-| D30 | **Combined checklist view** | A view in which a legal CR and its partial refinements (and the SRs of several sources reaching the same check item) are reviewed together in one step, with one combined status. Reason: `V_CL_TR5469` repeats shared check items (236 rows, 115 distinct check items). | **Open – Phase 3 task** (D0039) |
-| D31 | Alternative full refinement sets | Several sets per CR (one per standard may refine the same legal CR); substituted when any set is complete (§ 4.5). Existing sets labelled by source; candidate TR 5469 full sets for CRs already refined by TS 22440-1 to be reviewed | Implemented (D0045, 18 Oct 2026); review open |
-| D32 | Condition `AI.tech_class != I` for ML-specific TR CRs | On the TR 5469 links to DATA.008.1–3, MODEL.008/009, ROB.014, RM.022, VV.012 | Open – confirm (P2-3 Q4) |
-| D33 | Repository split | Superseded by D37 | Superseded (D0040 → D0043) |
-| D34 | Terminology in the public catalogue | Neutral tag names (TR 5469 terms); standard terms and clause references allowed in CR text; TS 22440-1 wording, draft values and ratings in the guidance and conditions of the TS links | Implemented (D0042, D0046) |
-| D35 | CRs mirroring the TS draft's structure | Public, in our own wording (24 CRs: VV.003 group, TOOL.001 group, DATA.003.1, DATA.005, PERF.003; project-owner decision 18 Oct 2026) | Implemented (D0046) |
-| D36 | Packs per licence | One pack per source (D37). Sharing rights per licence still to be checked ("bring your own copy" fallback, § 7) | Open – licence check |
-| D37 | Master list and packs | All CRs in the public master list; one pack per source document, same format and loading for public and private packs; public list of known packs; orphans warned only with all known packs loaded (§ 8.3) | Implemented (D0043) |
-| D38 | Source-specific applicability | Conditions and guidance on coverage links; OR across the sources of the basis; per source the nearest linked CR decides (§ 4.5) | Implemented (D0044) |
+| # | Question | ADR |
+|---|---|---|
+| D1 | Pilot boundary | ADR-0003 |
+| D2 | Verdict scale | ADR-0004 |
+| D3 | Finding severity | ADR-0005 |
+| D4 | Catalogue governance | ADR-0006 |
+| D5 | Fundamental-rights requirements | ADR-0007 |
+| D6 | Integrity-level mapping PL ↔ SIL ↔ systematic capability of the AI part | ADR-0008 |
+| D7 | Draft standards in client reports | ADR-0009 |
+| D8 | Tool for v1 | ADR-0010 |
+| D9 | `MR-AIDA` (anticipated delegated act) | ADR-0011 |
+| D10 | Reporting of out-of-boundary physical provisions | ADR-0012 |
+| D11 | Machine-type chapters 2, 4, 5, 6 of MR Annex III | ADR-0013 |
+| D12 | Granularity of technical documentation (Annex IV) | ADR-0014 |
+| D13 | Work split | ADR-0015 |
+| D14 | Completing the MR before standards | ADR-0016 |
+| D15 | Partly completed machinery | ADR-0017 |
+| D16 | Conformity-route and IFU scoping tags | ADR-0018 |
+| D17 | MR corrigendum dates | ADR-0019 |
+| D18 | Licensed / draft text | ADR-0020 |
+| D19 | SP depth | ADR-0021 |
+| D20 | Refinements from standards | ADR-0022 |
+| D21 | AI-based development tools | ADR-0023 |
+| D22 | Pilot systematic capability of the AI part | ADR-0024 |
+| D23 | Pilot `dev.ai_tools` | ADR-0025 |
+| D24 | Checklist granularity after TS 22440-1 | ADR-0026 |
+| D25 | "Should" provisions of standards | ADR-0027 |
+| D26 | TR 5469 granularity | ADR-0028 |
+| D27 | TR 5469 Annex C requirement levels | ADR-0029 |
+| D28 | Pilot `dev.virtual_testing` | ADR-0030 |
+| D29 | TE objects | ADR-0031 |
+| D30 | **Combined checklist view** | ADR-0032 |
+| D31 | Alternative full refinement sets | ADR-0033 |
+| D32 | Condition `AI.tech_class != I` for ML-specific TR CRs | ADR-0034 |
+| D33 | Repository split | ADR-0035 |
+| D34 | Terminology in the public catalogue | ADR-0036 |
+| D35 | CRs mirroring the TS draft's structure | ADR-0037 |
+| D36 | Packs per licence | ADR-0038 |
+| D37 | Master list and packs | ADR-0039 |
+| D38 | Source-specific applicability | ADR-0040 |
 
 ---
 

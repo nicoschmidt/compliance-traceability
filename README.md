@@ -1,6 +1,6 @@
 # Compliance Traceability Toolkit
 
-Implements spec v0.3.8, §§ 8.1 and 8.3. Requires Python 3.9+, `openpyxl` and `pydantic` 2 (`pip install -e ".[dev]"`).
+Implements spec v0.3.9, §§ 8.1 and 8.3. Requires Python 3.9+, `openpyxl` and `pydantic` 2 (`pip install -e ".[dev]"`).
 The end-to-end test needs LibreOffice to recalculate the formulas.
 
 The catalogue is stored as JSON, which is the single source of truth. The data model in `ctm/model.py` defines

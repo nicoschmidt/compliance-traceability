@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Checkpoint metrics of a catalogue (docs/Checkpoint_P2-1_Legal_Backbone.md, §§ 1–2).
+"""Checkpoint metrics of a catalogue (§§ 1–2 of the checkpoint report P2-1, in the project repository).
 
 usage: python tools/backbone_metrics.py CATALOGUE_DIR [--json OUT.json] [--pack DIR ...] [--public-only | --no-packs]
 """

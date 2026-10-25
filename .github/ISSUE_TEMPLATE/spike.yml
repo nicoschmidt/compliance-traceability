@@ -1,0 +1,32 @@
+name: Spike
+description: A time-boxed investigation that answers a question
+labels: ["type:spike"]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: The question to answer
+      description: A single question with a decidable answer. Not "look into X".
+    validations:
+      required: true
+  - type: input
+    id: timebox
+    attributes:
+      label: Time box
+      placeholder: e.g. 4 hours
+    validations:
+      required: true
+  - type: textarea
+    id: decision
+    attributes:
+      label: What decision depends on the answer
+      description: Which ADR or feature is blocked until this is answered?
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Expected output
+      description: A written finding, a prototype to be thrown away, a draft ADR?
+    validations:
+      required: true

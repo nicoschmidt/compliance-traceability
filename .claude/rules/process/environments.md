@@ -23,13 +23,25 @@ Two kinds of session work in this repository, with different capabilities.
 - Work prepared in a chat session is handed over as a local branch. A local
   commit is not delivered until the maintainer pushes it.
 
+## What a session can read
+
+| Session | Issues, pull requests, milestones (REST) | A project board (GraphQL, `project` scope) |
+| --- | --- | --- |
+| Claude Code on the maintainer's machine, with their token | yes | yes |
+| A cloud session (Claude with a workspace, Claude Code in the cloud) with the repository attached | yes, private repositories too | no |
+| A plain chat without tools | public repositories only | no |
+
+So whatever a session needs in order to work — whether an issue is ready,
+which iteration it belongs to, what comes next — lives in issues and
+milestones. Nothing a session needs lives only on a board. A board may stay
+as the maintainer's view, grouped by milestone.
+
 ## Where the process lives
 
 - `.claude/rules/process/` — these rules, managed by ai-dev-process at the
   version and in the role in `.ai-dev-process.lock`. Changed upstream, never
   here.
-- `.ai-dev-process.conf` — the board, the home repository and the member
-  repositories. Project-owned, the same in every repository of the project.
+- `.ai-dev-process.conf` — the home repository and the member repositories. Project-owned, the same in every repository of the project.
 - `CLAUDE.md` — what this project is, its hard rules, its process parameters
   and deviations. In a member repository: the home repository's, imported,
   plus what holds for this repository only.

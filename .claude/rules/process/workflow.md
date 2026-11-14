@@ -14,7 +14,7 @@ project, and where each kind of work lives, is in `repositories.md`.
 - GitHub issues are the single source of truth for work items. No TODO files,
   no backlog in markdown, no list in a branch.
 - An issue lives in the repository whose contents it changes; work for the
-  whole project, and the epics, live in the home repository.
+  whole project lives in the home repository.
 - **No work without an issue.** Before the first edit, name the issue and the
   branch. If no issue exists, write one first — or, where the environment
   cannot create it, draft it and hand it over (see `handover.md`).
@@ -35,6 +35,9 @@ session. So capturing it is cheap and refining it is a separate step.
   GitHub-facing step an assistant with credentials may take directly. An idea
   commits nobody to anything, and capture must cost seconds. Everything else in
   `handover.md` still applies.
+- **Ideas are issues, never draft items on a board.** A draft carries no
+  labels and is invisible to every session that reads issues, and so to the
+  retro.
 - **An `idea` issue is never worked on.** It leaves the inbox only through
   refinement (below).
 
@@ -45,11 +48,21 @@ Refinement turns an idea into work, or closes it. An issue is ready when:
 1. it uses one of the templates — feature, bug or spike — and carries the
    matching `type:` label instead of `idea`
 2. its acceptance criteria are checkable statements, not intentions
-3. it is small enough for one pull request; anything sized `L` is cut first
-4. it names what it needs: the ADR it depends on, or "none"
-5. size and iteration are set on the board
+3. it is small enough for one pull request; anything larger is cut first
+4. it names what it needs: the issues and ADRs it depends on
+   (`Needs: #12, ADR-0003`), or "none"
+5. it is in a milestone, the iteration it belongs to (`iterations.md`)
 
-Moving it to `Ready` on the board stays the maintainer's click.
+Every item can be read from the issue itself, by every session that can read
+the repository. Assigning the milestone is the maintainer's judgement that
+the issue is ready, made in refinement; there is no separate click.
+
+## Which issue next
+
+The next issue is the one with the lowest number in the current milestone
+whose needs are all closed, unless the maintainer names another. Before
+implementing it, the session checks that it is ready. If it is not, the
+session stops and says which item is missing.
 
 ## Branches, commits, pull requests
 
@@ -64,7 +77,31 @@ Moving it to `Ready` on the board stays the maintainer's click.
   from GitHub; never predict it.
 - One pull request per issue. The body references the issue (`Closes #n`) and
   fills in the template rather than restating the commits.
+- A branch starts from `main` after the previous pull request is merged. One
+  that had to start earlier is rebased onto `main` after that merge, and
+  pushed with `--force-with-lease` if it was pushed already. That holds under
+  every merge method, so the process does not need to know which one the
+  maintainer uses.
+- After the merge, `scripts/process/after-merge.sh <branch>` cleans up. It
+  deletes a branch only where it is at the merged pull request's last commit.
 - **Never merge your own pull request.** The maintainer reviews and merges.
 - Commits use Conventional Commits: `feat:`, `fix:`, `docs:`, `test:`,
   `refactor:`, `chore:`. The message carries the reasoning — a chat window
   does not survive, a commit message does.
+
+## Corrections in review
+
+What the maintainer notices in review or while testing a pull request is
+either a refinement of its issue or an extension of it.
+
+- **A refinement** changes how the issue's goal is met: a criterion was
+  imprecise, or the assistant assumed something the maintainer did not. It
+  goes into the same branch and pull request, as a commit of its own whose
+  reasoning starts with "At the maintainer's request in review:". The amended
+  criterion is commented on the issue, so the issue shows what was built.
+  Merging code that misses the goal, only to change it again under another
+  issue, is the worse path.
+- **An extension** adds something the issue's goal did not contain. It is an
+  issue of its own (`iterations.md`, adding scope).
+- The maintainer decides which it is. When a request looks like an
+  extension, the assistant says so once, then does as decided.

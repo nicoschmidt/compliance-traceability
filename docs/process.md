@@ -15,15 +15,16 @@ fix, not a choice to make.
 | --- | --- |
 | Something came to mind, no time now | Capture it as an `idea` issue — see [Capture](#capture). Seconds, not minutes. |
 | The inbox is filling up | A refinement session: `/ai-dev-process:refine-backlog` |
-| Start something new | Is there a ready issue? If not, refine one. Then set it to `Ready`; the assistant creates the branch. |
+| Start something new | Is there a ready issue in the current milestone? If not, refine one: putting it in a milestone makes it ready. The assistant checks, then creates the branch. |
+| Something matters more right now | Write it as an issue in the current milestone, or in a new milestone before it. It is never built without an issue. |
 | Work was prepared in a chat session | Read the local branch diff, push it, open the pull request. |
 | A pull request is open | Review it, tick the definition of done, merge. |
-| A pull request was merged | Run the cleanup block in step 8 below; card to `Done`. |
+| A pull request was merged | Run the cleanup block in step 8 below. |
 | A decision that is hard to reverse | Write the ADR **before** the code: `/ai-dev-process:write-adr` |
-| An iteration goal is reached | Retro: `/ai-dev-process:close-iteration` |
-| Something feels too big | Set its size to `L`. It is cut before it enters an iteration. |
+| An iteration goal is reached, or its milestone is empty | Move what is open, close the milestone, retro: `/ai-dev-process:close-iteration` |
+| Something feels too big | Cut it into issues that each fit one pull request, before it enters a milestone. |
 | The process itself gets in the way | Capture a `process` idea. The retro will find it. |
-| Lost the thread | Open the board, filter `Status: In progress`. That is what is actually started. |
+| Lost the thread | Open the current milestone: its open issues with a linked pull request are in review, the rest are still to do. |
 
 ## Capture
 
@@ -51,21 +52,24 @@ A refinement session empties the inbox. For each open `idea` issue:
   and that is fine
 - **merge** it into an existing issue, and close it as a duplicate
 - **transfer** it to the process repository when it is clearly generic
-- **refine** it: rewrite it to a template, checkable acceptance criteria, size
-  and iteration — until it meets the definition of ready in
+- **refine** it: rewrite it to a template, checkable acceptance criteria, what
+  it needs, and a milestone — until it meets the definition of ready in
   `.claude/rules/process/workflow.md`
 
-Every outcome is handed over as one block to paste. `Ready` stays a click.
+Every outcome is handed over as one block to paste. Putting an issue in a
+milestone is the decision that it is ready.
 
 ## What the maintainer gets handed, and what they do
 
 The maintainer owns every step that reaches GitHub, and composes none of them.
 For each step the assistant hands over the finished artefact and the command:
 the issue text, the pull request body, the exact `git`/`gh` invocation with
-real numbers and paths. Size and iteration arrive set; status does not.
+real numbers and paths. Label and milestone arrive set; no status is kept by
+hand.
 
-Drafted bodies live beside the repository (`../pr-<n>-body.md`,
-`../create-*.sh`) and are never committed. The tooling they use lives under
+Drafted bodies live beside the repository, in the project folder
+(`pr-<n>-body.md`, `create-*.sh`), and are never committed. Every command
+handed over runs in the project folder and names no absolute path. The tooling they use lives under
 `scripts/process/`.
 
 So the maintainer's part is: read it, judge it, paste it. A command with a
@@ -76,50 +80,59 @@ a command, is a defect — say so.
 
 1. **Issue.** From refinement, or written directly from a template: feature,
    bug or spike.
-   → *Handed over:* the body and a block that creates the issue and sets size
-   and iteration. Needs the `project` scope once: `gh auth refresh -s project`
-2. **`Ready`.** → *The maintainer's click.*
+   → *Handed over:* the body and a block that creates the issue with its label
+   and milestone.
+2. **Ready.** It is in a milestone, with a `type:` label and no `idea`. → *The
+   maintainer's decision, made by the milestone.* The assistant checks it
+   before it starts, and stops if it does not hold.
 3. **Branch.** `<type>/<issue>-<slug>`, created by the assistant so it can
    commit. → *Nothing to do;* the branch stays local until step 5.
 4. **Work.** Chat for product and architecture; Claude Code against the code.
-5. **`In review`.** → *Handed over:* `../pr-<n>-body.md`, plus `git push` and
+5. **Pull request.** → *Handed over:* `../pr-<n>-body.md`, plus `git push` and
    `gh pr create --body-file …` with the values filled in. Read the body first.
 6. **Review.** Tick the checklist for real. Line-level changes as review
    suggestions; questions about the goal on the issue; "is this even right" in
-   a chat session. → *The maintainer's alone.*
+   a chat session. Something that should be different before the merge goes
+   back to the session: it commits the correction to the same branch, says
+   whether it looks like an extension instead, and hands over the push and the
+   amended criterion for the issue. → *The maintainer's alone.*
 7. **Merge.** → *The maintainer's alone.* The assistant never merges.
 8. **After.** → *Handed over,* with the branch name filled in:
 
    ```bash
-   git switch main && git pull
-   git branch -d <branch>                  # local
-   git push origin --delete <branch>       # remote, if it still exists
-   git fetch --prune
+   cd <repository>
+   bash scripts/process/after-merge.sh <branch>
+   cd ..
    ```
 
-   `gh repo edit --delete-branch-on-merge` makes the remote half unnecessary.
+   It deletes the branch only where it is at the merged pull request's last
+   commit, under any merge method, and keeps it with the reason otherwise.
+   `gh repo edit --delete-branch-on-merge` saves it the remote half.
 
 ## Several repositories
 
 A project may be one repository or several; `.ai-dev-process.conf` names the
-board, the home repository and the members, and
-`.claude/rules/process/repositories.md` says what lives where. In short:
+home repository and the members, and `.claude/rules/process/repositories.md`
+says what lives where. In short:
 
-- vision, ADRs, iterations and epics are in the home repository; code and
-  data, with their own issues, in the members
-- all repositories are checked out beside each other; a member's `CLAUDE.md`
-  imports the home repository's
-- one board for all of them; one issue and one pull request per repository
-  for work that spans several, under an epic in the home repository
+- vision, ADRs and iterations are in the home repository; code and data, with
+  their own issues, in the members
+- all repositories are checked out in the project folder; a member's
+  `CLAUDE.md` imports the home repository's
+- an iteration is a milestone of the same title in every repository with
+  issues in it; work that spans several repositories is one issue and one
+  pull request per repository, in that milestone
 - nothing from a private repository reaches a public one
 
 ## When something goes wrong
 
-**Branch has fallen behind `main`**
+**Branch has fallen behind `main`**, or it started before the previous pull
+request was merged:
 
 ```bash
-git switch main && git pull
-git switch <branch> && git rebase main
+git fetch origin
+git switch <branch> && git rebase origin/main
+git push --force-with-lease      # only if the branch was pushed already
 ```
 
 **Committed on `main` by accident** — do not push. The pre-commit hook should
@@ -134,21 +147,10 @@ git switch <rescue-branch>
 **Two pieces of work want the same file.** Put them on one branch and say so
 in the pull request, or finish the first and rebase the second.
 
-**An iteration keeps growing.** Cut the goal, move the remainder to issues.
+**An iteration keeps growing.** Check that every addition is an issue in the
+milestone. When the goal is met, close the milestone and move the rest on.
 
 **A decision was made without an ADR.** Stop, write it, then continue.
-
-**A handover script says it found several boards.** `board_number` in
-`.ai-dev-process.conf` is not set yet. `gh project list --owner <owner>`
-shows the numbers; write the right one there, in every repository of the
-project.
-
-**A handover script says a field or an option does not exist.** The board is
-the authority:
-
-```bash
-bash scripts/process/show-board.sh
-```
 
 **CI says a managed file changed.** It was edited here. Restore it, and put
 the change where it belongs — upstream, or as a deviation in `CLAUDE.md`:

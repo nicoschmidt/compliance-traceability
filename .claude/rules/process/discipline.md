@@ -7,7 +7,13 @@ to notice when process erodes, so noticing is part of the assistant's job.
 Stop and raise it when:
 
 - work is about to start without an issue, or on `main`
-- work is about to start on an issue that still carries `idea`
+- implementation is about to start on an issue that is not ready: it still
+  carries `idea`, has no `type:` label, or is in no milestone (`workflow.md`)
+- something is being built that no issue in a milestone shows, such as scope
+  added in passing (`iterations.md`)
+- the current milestone has no open issues left, or its goal has been met
+  while issues are still open: move what is open, close the milestone, write
+  the retro
 - a decision that is expensive to reverse has been made without an ADR
 - an ADR has been accepted and its follow-ups have not become issues
 - an iteration is being planned whose goal is not one sentence, or that does

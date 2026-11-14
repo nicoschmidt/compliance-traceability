@@ -13,7 +13,7 @@ and say so: without it, the project's hard rules are missing from the session.
 
 The way of working is [ai-dev-process](https://github.com/nicoschmidt/ai-dev-process),
 at the version in `.ai-dev-process.lock`, in `.claude/rules/process/`. The
-board and the other repositories are named in `.ai-dev-process.conf`.
+other repositories are named in `.ai-dev-process.conf`.
 
 ## What this repository is
 

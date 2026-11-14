@@ -22,21 +22,25 @@ the field". Hand over the artefact and the command. The maintainer's work is
 reading, judging and executing — never composing. A command that still holds a
 placeholder, or a step that arrives as an instruction, is a defect.
 
-## Facts are set, judgements are not
+## Facts arrive set, on the issue
 
-- Board fields that are facts about the work — size, iteration — arrive set:
-  `gh project item-edit` in the same block as `gh issue create`, through
-  `scripts/process/gh-board.sh`.
-- **Status is the maintainer's click.** Moving a card to `Ready`, `In review`
-  or `Done` is a judgement about whether the work is there yet; handing it over
-  as a command would hand over the judgement with it.
-- The board is the one named in `.ai-dev-process.conf`; the helpers read it
-  from there. Field and option names come from the board, read at run time —
-  not from memory and not from an older script. A lookup that fails prints
-  what the board does have.
-- Every block says which repository it runs in: a `cd` to its absolute path,
-  or `--repo owner/name`. In a project of several repositories, a command
-  without one is a defect.
+- An issue arrives with its facts in the same block that creates it: its
+  `type:` label and, once it is refined, its milestone
+  (`gh issue create --label … --milestone …`). Nothing is set on a board.
+- **Readiness is the maintainer's judgement**, and it is made visibly: by
+  assigning the milestone in refinement, in a command the maintainer reads
+  before running it. No status is kept by hand, and none is handed over.
+- Milestone titles and labels are read from GitHub at run time, not from
+  memory and not from an older script. A lookup that fails prints what the
+  repository does have.
+- **Commands run in the project folder** (`repositories.md`) and name no
+  absolute path, because where the project folder lives differs per machine
+  and per developer. A copy-paste block starts with `cd <repository>` and
+  ends with `cd ..`, so the next block starts in the project folder again; a
+  script in the project folder starts with
+  `cd "$(dirname "$0")/<repository>"`, so it runs from anywhere. A `gh` call
+  aimed at another repository carries `--repo owner/name`. A block that does
+  not say which repository it runs in is a defect.
 - Where a step genuinely cannot be a command — a review, a merge, a repository
   setting — name the exact path through the interface.
 
@@ -46,7 +50,7 @@ A handover script is exercised against a stand-in for `gh` first, and fails
 loudly rather than reporting a success it did not achieve. An environment
 without credentials has otherwise never run the script at all, and the
 maintainer discovering that by pasting it is not a review, it is a wasted
-evening. The harness is `scripts/process/test-gh-board.sh`.
+evening. The harness is `scripts/process/test-gh-issues.sh`.
 
 ## Content beside the repository, tooling inside it
 
@@ -54,11 +58,12 @@ The line runs between **content and tooling**, not between one-off and
 reusable.
 
 - **Content is not committed.** A drafted issue body, a pull request body, and
-  the one-off `create-*.sh` that carries one live beside the repository
-  (`../pr-<n>-body.md`, `../create-*.sh`). Inside, they would be a second task
-  list next to GitHub issues. Delete them once they have run.
+  the one-off `create-*.sh` that carries one live beside the repository, in
+  the project folder (`../pr-<n>-body.md` seen from inside the repository).
+  Inside, they would be a second task list next to GitHub issues. Delete them
+  once they have run.
 - **Tooling is committed**, under `scripts/`. It carries no work items — it
-  reads the board, sets a field, tests itself — and it changes in the same
+  creates an issue, sets its milestone, tests itself — and it changes in the same
   reviewed commit as the rules it implements.
 
 ## The one thing the assistant does itself
